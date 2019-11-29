@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-03-16T02:13:03Z" product-name="glpairs">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_glpairs_domain_model_pair">
+				<source>Pair</source>
+				<target><![CDATA[Kartenset]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.type">
+				<source>Pairs type</source>
+				<target><![CDATA[Memorytyp]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.name">
+				<source>Name</source>
+				<target><![CDATA[Name]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.image1">
+				<source>Image1</source>
+				<target><![CDATA[Bild1]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.height1">
+				<source>Height of image1</source>
+				<target><![CDATA[Höhe von Bild1]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.width1">
+				<source>Width of image1</source>
+				<target><![CDATA[Breite von Bild1]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.image2">
+				<source>Image2</source>
+				<target><![CDATA[Bild2]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.height2">
+				<source>Height of image2</source>
+				<target><![CDATA[Höhe von Bild2]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.width2">
+				<source>Width of image2</source>
+				<target><![CDATA[Breits von Bild2]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.bordersize">
+				<source>Border width</source>
+				<target><![CDATA[Rahmenbreite]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.description">
+				<source>Description</source>
+				<target><![CDATA[Beschreibung]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.fontsize">
+				<source>Fontsize of the description</source>
+				<target><![CDATA[Fontgröße der Beschreibung]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.textheight">
+				<source>Height of the text card</source>
+				<target><![CDATA[Höhe der Textkarte]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.textwidth">
+				<source>Width of the text card</source>
+				<target><![CDATA[Breite der Textkarte]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.tabimage1">
+				<source>Image1</source>
+				<target><![CDATA[Bild1]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.tabimage2">
+				<source>Image2</source>
+				<target><![CDATA[Bild2]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.tabtext1">
+				<source>Textcard1</source>
+				<target><![CDATA[Textkarte1]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.tabtext2">
+				<source>Textcard2</source>
+				<target><![CDATA[Textkarte2]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finaltextactive">
+				<source>Activate final information</source>
+				<target><![CDATA[Aktivieren der Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finaltext">
+				<source>Content of the final information</source>
+				<target><![CDATA[Inhalt der Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finaltextwidth">
+				<source>The width of the final information</source>
+				<target><![CDATA[Die Breite der Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finaltextheight">
+				<source>The height of the final information</source>
+				<target><![CDATA[Die Höhe der Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finalpic_width">
+				<source>Width of the final information picture(s)</source>
+				<target><![CDATA[Breite für Bilder der Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finalpic_height">
+				<source>Height of the final information picture(s)</source>
+				<target><![CDATA[Höhe für Bilder der Schlussinformation]]></target>
+			</trans-unit>
+
+			<trans-unit id="tx_glpairs_domain_model_pairs">
+				<source>Pairs</source>
+				<target><![CDATA[Memory]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.name">
+				<source>Name</source>
+				<target><![CDATA[Name]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.type">
+				<source>Pairs type</source>
+				<target><![CDATA[Memorytyp]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.splitmode">
+				<source>Split mode</source>
+				<target><![CDATA[Geteilter Modus]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.width">
+				<source>Number of cards in one row</source>
+				<target><![CDATA[Anzahl Karten in einer Zeile]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.cardheight">
+				<source>Card height</source>
+				<target><![CDATA[Kartenhöhe]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.cardwidth">
+				<source>Card width</source>
+				<target><![CDATA[Kartenbreite]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.bordersize">
+				<source>Border width</source>
+				<target><![CDATA[Rahmenbreite]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.fontsize">
+				<source>Fontsize</source>
+				<target><![CDATA[Fontgröße]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.has_pairs">
+				<source>Has Pairs</source>
+				<target><![CDATA[Kartenpaare]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.type.same">
+				<source>Same picture</source>
+				<target><![CDATA[Das selbe Bild]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.type.2pics">
+				<source>Two pictures</source>
+				<target><![CDATA[Zwei Bilder]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.type.text">
+				<source>Picture to text</source>
+				<target><![CDATA[Bild zu Text]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.type.textonly">
+				<source>Text only</source>
+				<target><![CDATA[Nur Text]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.tabadvanced">
+				<source>Advanced Options</source>
+				<target><![CDATA[Erweiterte Optionen]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.tabfinalinfo">
+				<source>Final Informations</source>
+				<target><![CDATA[Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.pluspoints">
+				<source>Points for correct choice</source>
+				<target><![CDATA[Punkte für richtige Auswahl]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.minuspoints">
+				<source>Penalty points for wrong choice</source>
+				<target><![CDATA[Minuspunkte für falsche Auswahl]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.backimage">
+				<source>Color of the backside</source>
+				<target><![CDATA[Farbe der Kartenrückseite]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.backimage.red">
+				<source>Red</source>
+				<target><![CDATA[Rot]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.backimage.blue">
+				<source>Blue</source>
+				<target><![CDATA[Blau]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.backimage.mixed">
+				<source>Mixed</source>
+				<target><![CDATA[Gemischt]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.turnbackdelay">
+				<source>Delay for turning cards back</source>
+				<target><![CDATA[Verzögerung für das umdrehen der Karten]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.hintdelay">
+				<source>Delay for the hint</source>
+				<target><![CDATA[Verzögerung für den Hinweis]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.turnduration">
+				<source>Duration for the turn of the cards</source>
+				<target><![CDATA[Dauer für das Umdrehen der Karten]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.stackduration">
+				<source>Duration for the move to the stack</source>
+				<target><![CDATA[Dauer für das Bewegen auf den Kartenstapel]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.testmodeturndelay">
+				<source>Delay between every turn of the test mode</source>
+				<target><![CDATA[Pause zwischen jeder Kartendrehung im Testmodus]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.testmode">
+				<source>Test mode</source>
+				<target><![CDATA[Testmodus]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.finaltextwidth">
+				<source>The width of the final information</source>
+				<target><![CDATA[Die Breite der Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.finaltextheight">
+				<source>The height of the final information</source>
+				<target><![CDATA[Die Höhe der Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.finalpic_width">
+				<source>Width of the final inforamtion picture(s)</source>
+				<target><![CDATA[Breite für Bilder der Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.finalpic_height">
+				<source>Height of the final inforamtion picture(s)</source>
+				<target><![CDATA[Höhe für Bilder der Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.maxcards">
+				<source>Max. cards in one game</source>
+				<target><![CDATA[Max. Anzahl an Karten in einem Spiel]]></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

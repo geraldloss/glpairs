@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-03-16T02:13:03Z" product-name="glpairs">
+		<header/>
+		<body>
+
+			<trans-unit id="settings.titleOfPairs.alttitle">
+				<source>Title of the pairs game</source>
+				<target><![CDATA[Title des Memory Spiels]]></target>
+			</trans-unit>
+			<trans-unit id="settings.titleOfPairs.description">
+				<source>Write a title just for internal use.</source>
+				<target><![CDATA[Hier kann ein Titel zur internen Verwendung eingetragen werden.]]></target>
+			</trans-unit>
+			<trans-unit id="settings.titleOfPairs.details">
+				<source>The title has no influence to the functions of the pairs. It is just for commenting reasons. You can left it empty if you wont.</source>
+				<target><![CDATA[Der Titel hat keinen Einfluss auf die Funktion des Memory. Es dient nur als Kommentar um es wiederzuerkennen. Sie können das Feld auch leer lassen wenn Sie wollen.]]></target>
+			</trans-unit>
+
+			<trans-unit id="settings.pairsgame.alttitle">
+				<source>The pairs game</source>
+				<target><![CDATA[Das Memory Spiel]]></target>
+			</trans-unit>
+			<trans-unit id="settings.pairsgame.description">
+				<source>Choose a pairs game. Click here for more details.</source>
+				<target><![CDATA[Wählen Sie ein Memory Spiel aus. Klicken Sie hier für mehr Details.]]></target>
+			</trans-unit>
+			<trans-unit id="settings.pairsgame.details">
+				<source>
+					Before you can choose in this field a pairs game, you must have defined a pairs record in a folder.
+					For this you need to create a folder and go in the list view into it. There you are able to create pair records and a pairs record. The latter you can finally choose in this field.
+				</source>
+				<target>
+					<![CDATA[Bevor Sie hier ein Memory Spiel auswählen können, müssen Sie zuerst einen Memory Datensatz in einem Verzeichnis (Folder) anlegen.
+					Dafür müssen Sie ein Verzeichnis erstellen und dort in die List Ansicht hineingehen. Dann sind Sie in der Lage dort Datensätze für Kartensets und Memory Spiele anzulegen. Letztere können Sie dann in diesem Feld auswählen]]>
+				</target>
+			</trans-unit>
+
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-03-16T02:13:03Z" product-name="glpairs">
+		<header/>
+		<body>
+			<trans-unit id="flexform.plugin.general.sheet_title">
+				<source>Basic configurations</source>
+			</trans-unit>
+			<trans-unit id="flexform.plugin.general.pairs_title">
+				<source>Title of the pairs game</source>
+			</trans-unit>
+			<trans-unit id="flexform.plugin.general.pairsgame">
+				<source>The pairs game</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

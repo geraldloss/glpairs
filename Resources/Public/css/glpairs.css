@@ -1,0 +1,186 @@
+/* The main frame around the whole pairs game */
+div.glpairs_cls_main_frame{
+    
+}
+
+/* the sub frames with the card content */
+div.glpairs_cls_main_sub_frame{
+    
+}
+
+div.glpairs_cls_separator_middle{
+    height: 0px;
+    width: auto;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #aaa;
+    margin: 5px;
+}
+
+/* table container for the content */
+table.glpairs_cls_content_container{
+    border: 0px gray solid;
+    margin: 0px;
+    padding: 0px;
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+/* table row of the content container */
+tr.glpairs_cls_content_container{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* table box of the content container common definitions*/
+td.glpairs_cls_content_common{
+    margin: 0px;
+    padding: 0px;    
+    text-align: center;
+    vertical-align: top;
+    border: none;
+}
+
+/* the container for the overall card */
+div.glpairs_cls_click_content{
+    cursor: pointer;
+    margin: 1px;
+}
+
+
+/* Inner Table element for the text, we use a table 
+   just for the vertical alignment */
+table.glpairs_cls_content_text{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    text-decoration:none;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Table with the result */
+table.glpairs_cls_result{
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    border-top: 0px; 
+    border-bottom: 0px; 
+    margin-bottom:0px;
+}
+
+/* One Cell of the result table */
+td.glpairs_cls_result{
+    border-bottom: 0px;
+}
+
+/* The class of the result div for negative points*/
+div.glpairs_cls_result_negative{
+    background-color: red;
+    color: black;
+    font-weight: bold;
+}
+
+/* The class of the result div for positive points */
+div.glpairs_cls_result_positive{
+    background-color: green;
+    color: black;
+    font-weight: bold;
+}
+
+/* The content container for cards with the border format*/
+td.glpairs_cls_card_border,
+img.glpairs_cls_card_border{
+    border: solid;
+    border-color: gray;
+    padding: 0px;
+}
+
+/* The content container with the border format which is for 
+   cards in a wrong combination */
+td.glpairs_cls_card_border_wrong,
+img.glpairs_cls_card_border_wrong{
+    border: solid;
+    border-color: red;
+    padding: 0px;
+}
+
+/* The content container with the border format which is for 
+   cards in a correct combination */
+td.glpairs_cls_card_border_right,
+img.glpairs_cls_card_border_right{
+    border: solid;
+    border-color: green;
+    padding: 0px;
+}
+
+
+/* The img from the backside of the card with full transparency
+   it is only for holding the size of the card with the background 
+   image*/
+img.glpairs_cls_card_back{
+    opacity: 0.0;
+}
+
+/* The common properties for the div with the card */
+/*      */
+div.glpairs_cls_card_common{
+    position: absolute;
+    backface-visibility:             hidden;
+        -moz-backface-visibility:    hidden;
+        -ms-backface-visibility:     hidden;
+        -o-backface-visibility:      hidden;
+        -webkit-backface-visibility: hidden;
+    transform-origin:             50% 50% 0px;
+        -moz-transform-origin:    50% 50% 0px;
+        -ms-transform-origin:     50% 50% 0px;
+        -o-transform-origin:      50% 50% 0px;
+        -webkit-transform-origin: 50% 50% 0px;
+    transition: all 0.5s;
+        -moz-transition:    all 0.5s;
+        -ms-transition:     all 0.5s;
+        -o-transition:      all 0.5s;
+        -webkit-transition: all 0.5s;
+}
+
+/* The frontside of the card for the rotation */
+div.glpairs_cls_card_visible{
+    transform:             rotateY( 0deg );
+        -moz-transform:    rotateY( 0deg );
+        -ms-transform:     rotateY( 0deg );
+        -o-transform:      rotateY( 0deg );
+        -webkit-transform: rotateY( 0deg );
+}
+
+/* The backside of the card for the rotation */
+div.glpairs_cls_card_invisible{
+    transform:             rotateY( 180deg );
+        -moz-transform:    rotateY( 180deg );
+        -ms-transform:     rotateY( 180deg );
+        -o-transform:      rotateY( 180deg );
+        -webkit-transform: rotateY( 180deg );
+}
+
+/* The card on the stack after a correct guess */
+div.glpairs_cls_card_stack{
+    border-style: solid;
+    border-color: #aaa;
+    border-width: 2px;
+}
+
+/* parameters for the hint to click on the screen */
+div.glpairs_cls_click_hint{
+    position: absolute;
+    width: auto;
+    color: red;
+    font-size: 20px;
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,0.3);
+    /* just for IE a transparent background */
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}

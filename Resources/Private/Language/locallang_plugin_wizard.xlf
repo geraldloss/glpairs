@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-03-16T02:13:03Z" product-name="glpairs">
+		<header/>
+		<body>
+			<trans-unit id="pi1.wizzard.title">
+				<source>Pairs</source>
+			</trans-unit>
+			<trans-unit id="pi1.wizzard.description">
+				<source>A Pairs game for the frontend</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

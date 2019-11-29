@@ -1,0 +1,38 @@
+plugin.tx_glpairs {
+	view {
+		templateRootPath {
+			0 = EXT:glpairs/Resources/Private/Templates/
+			1 = {$plugin.tx_glpairs.view.templateRootPath}
+		}
+		partialRootPath {
+			0 = EXT:glpairs/Resources/Private/Partials/
+			1 = {$plugin.tx_glpairs.view.partialRootPath}
+		}
+		layoutRootPath {
+			0 = EXT:glpairs/Resources/Private/Layouts/
+			1 = {$plugin.tx_glpairs.view.layoutRootPath}
+		}
+	}
+}
+
+page.includeJSFooter { 
+	# include jQuery library at the end of the body, if it is not deactivated
+	jQueryLib = EXT:glpairs/Resources/Public/js/jquery-3.1.1.min.js
+	jQueryLib.if.isTrue = {$plugin.tx_glpairs.libraries.inlcudeJQuery}
+
+	# include Bootstrap library at the end of the body, if it is not deactivated
+	bootstrapLib = EXT:glpairs/Resources/Public/js/bootstrap.min.js
+	bootstrapLib.if.isTrue = {$plugin.tx_glpairs.libraries.includeBootstrapJs}
+
+	# include the glpairs library at the end of the body, if it is not deactivated
+	glpairsLib = EXT:glpairs/Resources/Public/js/glpairs.min.js
+}
+
+page.includeCSS {
+	# include the Bootstrap CSS content file, if it is not deactivated in the options
+	bootstrapCss = EXT:glpairs/Resources/Public/css/bootstrap.min.css
+	bootstrapCss.if.isTrue = {$plugin.tx_glpairs.libraries.includeBootstrapCss}
+	
+	# include the glpairs CSS content file
+	cssFileGlpairs = {$plugin.tx_glpairs.cssFile}
+}

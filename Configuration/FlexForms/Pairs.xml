@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<common>
+			<ROOT>
+				<type>array</type>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:glpairs/Resources/Private/Language/locallang_flexForms.xlf:flexform.plugin.general.sheet_title</sheetTitle>
+					<cshFile>LLL:EXT:glpairs/Resources/Private/Language/locallang_csh_flexform.xml</cshFile>
+				</TCEforms>
+				<el>
+					<!-- The Title of the pair for internal use -->
+					<settings.titleOfPairs>
+						<TCEforms>
+							<label>LLL:EXT:glpairs/Resources/Private/Language/locallang_flexForms.xlf:flexform.plugin.general.pairs_title</label>
+							<config>
+								<type>input</type>
+							</config>
+						</TCEforms>
+					</settings.titleOfPairs>
+					<!-- the actual pairs game defined in the backend and assigned to this plugin -->
+					<settings.pairsgame>
+						<TCEforms>
+							<label>LLL:EXT:glpairs/Resources/Private/Language/locallang_flexForms.xlf:flexform.plugin.general.pairsgame</label>
+							<config>
+			                    <type>select</type>		                    	
+			                    <foreign_table>tx_glpairs_domain_model_pairs</foreign_table>
+					            <items type="array">
+				                	<numIndex index="0" type="array">
+				                    	<numIndex index="0"></numIndex>
+				                        <numIndex index="1">0</numIndex>
+				                	</numIndex>
+			                    </items>
+			                    <size>1</size>
+			                    <autoSizeMax>1</autoSizeMax>
+			                    <maxitems>1</maxitems>
+			                    <minitems>1</minitems>
+			                    <renderType>selectSingle</renderType>
+							</config>
+						</TCEforms>
+					</settings.pairsgame>
+				</el>
+			</ROOT>
+		</common>
+	</sheets>
+</T3DataStructure>

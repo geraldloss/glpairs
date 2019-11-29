@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-03-14T23:14:03Z" product-name="glpairs">
+		<header/>
+		<body>
+			<trans-unit id="glpairs.constants.inlcudeJQuery">
+				<source>Include jQuery library, deactivate this option if you are already using jQuery (Version 3.x) in your homepage</source>
+			</trans-unit>
+			<trans-unit id="glpairs.constants.includeBootstrapJs">
+				<source>Include Bootstrap library, deactivate this option if you are already using Bootstrap (Version 3.x) in your homepage</source>
+			</trans-unit>
+			<trans-unit id="glpairs.constants.includeBootstrapCss">
+				<source>Include Bootstrap CSS content file, deactivate this option if you are already using Bootstrap (Version 3.x) in your homepage</source>
+			</trans-unit>
+			<trans-unit id="glpairs.constants.cssFile">
+				<source>Path to the glpairs CSS content file.</source>
+			</trans-unit>
+			<trans-unit id="glpairs.subcategory.libraries">
+				<source>Activation of libraries</source>
+			</trans-unit>
+			<trans-unit id="glpairs.subcategory.css">
+				<source>Settings for CSS files</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

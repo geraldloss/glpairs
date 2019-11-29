@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-03-16T02:13:03Z" product-name="glpairs">
+		<header/>
+		<body>
+
+			<trans-unit id="name.alttitle">
+				<source>Title of the pairs game</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>Write a title just for internal use.</source>
+			</trans-unit>
+			<trans-unit id="name.details">
+				<source>The title has no influence to the functions of the pairs. It is just for commenting reasons. You can left it empty if you wont.</source>
+			</trans-unit>
+
+			<trans-unit id="type.alttitle">
+				<source>Type of the pairs game</source>
+			</trans-unit>
+			<trans-unit id="type.description">
+				<source>Choose a type of the pairs game. Click here for a more detailed description</source>
+			</trans-unit>
+			<trans-unit id="type.details">
+				<source>
+					<![CDATA[You can choose four kinds of types: 
+	      									 
+					 Same picture: 
+					 Here we use only image1 of every single pair. This image you can find under two cards and you have to find this both.
+					 
+					 Two pictures: 
+					 Here we use image1 and image2. You have to assign to both fields similair pictures, e.g. two cats. In the game you have to find the cards with the both similair pictures.
+					 
+					 Picture to text: 
+					 Here we use image1 and the description. You have to find the correct description for every picture which you can see in the game. This is a good possibility exercise foreign languages.
+					
+					 Text only:
+					 Here we can define two cards with a text. Usually it should be two texts of two different languages. The play need to find the both cards with the same meaning. This is another good posibility to learn languages.]]>  
+				</source>
+			</trans-unit>
+
+			<trans-unit id="splitmode.alttitle">
+				<source>Build the pairs game in split mode.</source>
+			</trans-unit>
+			<trans-unit id="splitmode.description">
+				<source>Split mode means, that you have two areas for the cards. In the upper area you will find all cards of the first part of the pairs and in the lower area for the second part. Click here for more details. </source>
+			</trans-unit>
+			<trans-unit id="splitmode.details">
+				<source>
+					<![CDATA[In this mode you can choose only one card of the upper area and one card of the lower area. That means for every card in the upper area exists the coresponding card only in the lower area and vice versa. If you deactivate the split mode, than you have only one area with all cards together. The split mode makes mostly sense in the pairs type "Picture to text" or "Text only". ]]>  
+				</source>
+			</trans-unit>
+
+			<trans-unit id="width.alttitle">
+				<source>The number of cards in one row</source>
+			</trans-unit>
+			<trans-unit id="width.description">
+				<source>Describe how many cards should be displayed in one row</source>
+			</trans-unit>
+			<trans-unit id="width.details">
+				<source>Here you can define how many cards you will have displayed in one row. The number of rows result in the number of all cards. E.g. if you have defined a width of 5 and the number of all cards is 15, then you get 5 cards in always three rows.</source>
+			</trans-unit>
+			
+			<trans-unit id="cardheight.alttitle">
+				<source>The height of the cards.</source>
+			</trans-unit>
+			<trans-unit id="cardheight.description">
+				<source>With this property you can define the height of the cards. Click here for details.</source>
+			</trans-unit>
+			<trans-unit id="cardheight.details">
+				<source>With this property you can define the height of the cards. If you like to give all cards the same size, you just need to fill this property. If you like to give the cards individual sizes, then you need to fill the height and the width directly in the the settings of every single pair. If you have set no size here and in the single pairs, then it takes the original size of the image. If the pairs type is "Text only" then a default size of 100x80 will be given.</source>
+			</trans-unit>
+			
+			<trans-unit id="cardwidth.alttitle">
+				<source>The width of the cards.</source>
+			</trans-unit>
+			<trans-unit id="cardwidth.description">
+				<source>With this property you can define the width of the cards. Click here for details.</source>
+			</trans-unit>
+			<trans-unit id="cardwidth.details">
+				<source>With this property you can define the width of the cards. If you like to give all cards the same size, you just need to fill this property. If you like to give the cards individual sizes, then you need to fill the height and the width directly in the the settings of every single pair. If you have set no size here and in the single pairs, then it takes the original size of the image. If the pairs type is "Text only" then a default size of 100x80 will be given.</source>
+			</trans-unit>
+			
+			<trans-unit id="bordersize.alttitle">
+				<source>The border width of the cards.</source>
+			</trans-unit>
+			<trans-unit id="bordersize.description">
+				<source>With this property you can define the border width of the cards. Click here for details.</source>
+			</trans-unit>
+			<trans-unit id="bordersize.details">
+				<source>With this property you can define the border width of the cards. You need in this property to give a default border size for all cards. If you like to give the cards an individual border width, you can overrule this value in the single pairs properties.</source>
+			</trans-unit>
+			
+			<trans-unit id="fontsize.alttitle">
+				<source>Fontsize of the textcard.</source>
+			</trans-unit>
+			<trans-unit id="fontsize.description">
+				<source>The overall fontsize of the textcard. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="fontsize.details">
+				<source>With this property can you define the overall fontsize of the textcard ord textcards. If you like to define individuell fontsizes for every card you need to set this property in the settings of every single pair. If you leave always the fontsize properties empty you get displayed the text in the default fontsize of your homepage.</source>
+			</trans-unit>
+
+			<trans-unit id="has_pairs.alttitle">
+				<source>All pairs that belong to this game.</source>
+			</trans-unit>
+			<trans-unit id="has_pairs.description">
+				<source>All pairs that belong to this game. You can only choose cards with the same pairs type.</source>
+			</trans-unit>
+			<trans-unit id="has_pairs.details">
+				<source>Select all pairs that belong to this game. First you have to create all pairs you will get for this game in the list view of a folder. After that you can select in this property which of this pairs should be displayed in this game. You are only to choose cardswith the same type like this pairs game.</source>
+			</trans-unit>
+
+			<trans-unit id="pluspoints.alttitle">
+				<source>Number of point for every correct choice.</source>
+			</trans-unit>
+			<trans-unit id="pluspoints.description">
+				<source>If the user hast selected two correct cards, he gets this points an his result aggregated.</source>
+			</trans-unit>		
+		
+			<trans-unit id="minuspoints.alttitle">
+				<source>Number of penalty points for every wrong choice</source>
+			</trans-unit>
+			<trans-unit id="minuspoints.description">
+				<source>If the user has selected the wrong cards, he gets this point from his result subtracted.</source>
+			</trans-unit>		
+
+			<trans-unit id="backimage.alttitle">
+				<source>Color of the backside of the cards</source>
+			</trans-unit>
+			<trans-unit id="backimage.description">
+				<source>You have three choices. You can choose a red backside, a blue backside or mixed backsides. In the latter case has the fist card of a pair the red backside and the second card the blue backside. In this case it is a bit easyer to find the correct pair.</source>
+			</trans-unit>		
+
+			<trans-unit id="turnbackdelay.alttitle">
+				<source>Delay for the turn back of two selected cards</source>
+			</trans-unit>
+			<trans-unit id="turnbackdelay.description">
+				<source>Delay for the turn back of two selected cards in milliseconds. Click here for details.</source>
+			</trans-unit>		
+			<trans-unit id="turnbackdelay.details">
+				<source>If two cards are selected, the the user has to click anywhere on the game for going on. If he don't click on the game, the cards can turned back after this delay in milliseconds automatically. If you set this value to 0, then this feature is deactivated. If this feature is not deactivated, then the delay should be longer as the delay for the hint, that the user has to click on the screen.</source>
+			</trans-unit>	
+
+			<trans-unit id="hintdelay.alttitle">
+				<source>Delay for the hint</source>
+			</trans-unit>
+			<trans-unit id="hintdelay.description">
+				<source>Delay for the hint, that the user has to click on the screen in milliseconds. Click here for details.</source>
+			</trans-unit>		
+			<trans-unit id="hintdelay.details">
+				<source>If two cards are selected, the the user has to click anywhere on the game for going on. If he don't click on the game, then appears a hint for him after this delay in milliseconds. If you set this value to 0, then this feature is deactivated. If the automatic turn back of the cards is note deactivated, then the value of the hint delay should be shorter then the value of the automatic turn back delay.</source>
+			</trans-unit>	
+
+			<trans-unit id="turnduration.alttitle">
+				<source>Duration of a turn for the cards in milliseconds.</source>
+			</trans-unit>
+			<trans-unit id="turnduration.description">
+				<source>Here you can adjust the duration of a turn of the cards in milliseconds.</source>
+			</trans-unit>		
+
+			<trans-unit id="stackduration.alttitle">
+				<source>Duration for the animation to the card stack.</source>
+			</trans-unit>
+			<trans-unit id="stackduration.description">
+				<source>Here you can adjust the duration of the animation of the cards to the card stack in milliseconds.</source>
+			</trans-unit>		
+
+			<trans-unit id="testmodeturndelay.alttitle">
+				<source>Delay between every turn of a card in the test mode.</source>
+			</trans-unit>
+			<trans-unit id="testmodeturndelay.description">
+				<source>If the game is in test mode, then all cards get turned around in the beginning of the game for checking the content. Beween every turn of a single card can be a delay which you can define in this field in milliseconds.</source>
+			</trans-unit>		
+
+			<trans-unit id="testmode.alttitle">
+				<source>Testmode of the pairs game</source>
+			</trans-unit>
+			<trans-unit id="testmode.description">
+				<source>If this mode is turned on, then all cards are shown on their frontside and all card pairs which belongs together are shown side by side. So you can check if you have choosed the correct font for every card and if you have assigned the correct pictures or descriptions together.</source>
+			</trans-unit>		
+
+			<trans-unit id="finaltextwidth.alttitle">
+				<source>The width of the info window for the final information.</source>
+			</trans-unit>
+			<trans-unit id="finaltextwidth.description">
+				<source>Here you can describe the width of the window with the final information for all cards. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="finaltextwidth.details">
+				<source>Here you can describe the width of the window with the final information for all cards at once. The final information is always shown, if a correct pair is found and this feature is activated for this pair. If the field in the pair itself is empty, than it will take the value from this field. If there is also no value, the width will be set to a default value. Usually it is a good idea to set either the height or the width. If you set both values be carfully that the text can fit with the size of the window.</source>
+			</trans-unit>
+
+			<trans-unit id="finaltextheight.alttitle">
+				<source>The height of the info window for the final information.</source>
+			</trans-unit>
+			<trans-unit id="finaltextheight.description">
+				<source>Here you can describe the height of the window with the final information for all cards. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="finaltextheight.details">
+				<source>Here you can describe the height of the window with the final information for all cards at once. The final information is always shown, if a correct pair is found and this feature is activated for this pair. If the field in the pair itself is empty, than it will take the value from this field. If there is also no value, the height will be set to a default value. Usually it is a good idea to set either the height or the width. If you set both values be carfully that the text can fit with the size of the window</source>
+			</trans-unit>
+
+			<trans-unit id="finalpicwidth.alttitle">
+				<source>The width of the picture(s) in the final information window.</source>
+			</trans-unit>
+			<trans-unit id="finalpicwidth.description">
+				<source>Here you can describe the width of the picture(s) in the final information window. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="finalpicwidth.details">
+				<source>This are the overall settings of the width of the pictures in the final information window. If the width is not set in the pair iteself then this value is taken. If both field are empty, the the original size of the pictures are taken.</source>
+			</trans-unit>
+
+			<trans-unit id="finalpicheight.alttitle">
+				<source>The height of the picture(s) in the final information window.</source>
+			</trans-unit>
+			<trans-unit id="finalpicheight.description">
+				<source>Here you can describe the height of the picture(s) in the final information window. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="finalpicheight.details">
+				<source>This are the overall settings of the height of the pictures in the final information window. If the height is not set in the pair iteself then this value is taken. If both field are empty, the the original size of the pictures are taken.</source>
+			</trans-unit>
+
+			<trans-unit id="maxcards.alttitle">
+				<source>Max. number of cards which are displayed in one game.</source>
+			</trans-unit>
+			<trans-unit id="maxcards.description">
+				<source>If you have to many cards for one game, than you can limit the number of cards in one game here. I. e. you have assigned 100 cards to this game and the max. number is 20, than it will choose 20 random cards from the 100 in every game. If this option is 0 all cards will be displayed.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

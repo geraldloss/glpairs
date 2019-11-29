@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-11-18T00:38:36Z" product-name="glpairs">
+		<header/>
+		<body>
+			<trans-unit id="fluid_list_points" xml:space="preserve">
+				<source><![CDATA[Points:]]></source>
+			</trans-unit>
+			<trans-unit id="frontend_wrongCardClickedUpper" xml:space="preserve">
+				<source><![CDATA[You have already choosed a card in the upper area. Please choose now a card from the lower area.]]></source>
+			</trans-unit>
+			<trans-unit id="frontend_wrongCardClickedLower" xml:space="preserve">
+				<source><![CDATA[You have already choosed a card in the lower area. Please choose now a card from the upper area.]]></source>
+			</trans-unit>
+			<trans-unit id="frontend_gameFinished" xml:space="preserve">
+				<source><![CDATA[Congratulations! You have finished the game with &1 points.]]></source>
+			</trans-unit>
+			<trans-unit id="frontend_clickHint" xml:space="preserve">
+				<source><![CDATA[Click anywhere on the pairs game for going on...]]></source>
+			</trans-unit>
+			<trans-unit id="frontend_testmode" xml:space="preserve">
+				<source><![CDATA[Test mode. The cards are only displayed.]]></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

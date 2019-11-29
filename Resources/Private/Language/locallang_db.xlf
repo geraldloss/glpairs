@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+	<file datatype="plaintext" date="2014-03-16T02:13:03Z" original="messages" product-name="glpairs" source-language="en">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_glpairs_domain_model_pair">
+				<source>Pair</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.type">
+				<source>Pairs type</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.image1">
+				<source>Image1</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.height1">
+				<source>Height of image1</source> 
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.width1">
+				<source>Width of image1</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.image2">
+				<source>Image2</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.height2">
+				<source>Height of image2</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.width2">
+				<source>Width of image2</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.bordersize">
+				<source>Border width</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.fontsize">
+				<source>Fontsize of the description</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.textheight">
+				<source>Height of the text card</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.textwidth">
+				<source>Width of the text card</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.tabimage1">
+				<source>Image1</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.tabimage2">
+				<source>Image2</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.tabtext1">
+				<source>Textcard1</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.tabtext2">
+				<source>Textcard2</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finaltextactive">
+				<source>Activate final information</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finaltext">
+				<source>Content of the final information</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finaltextwidth">
+				<source>The width of the final information</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finaltextheight">
+				<source>The height of the final information</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finalpic_width">
+				<source>Width of the final information picture(s)</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pair.finalpic_height">
+				<source>Height of the final information picture(s)</source>
+			</trans-unit>
+
+			<trans-unit id="tx_glpairs_domain_model_pairs">
+				<source>Pairs</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.type">
+				<source>Pairs type</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.splitmode">
+				<source>Split mode</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.width">
+				<source>Number of cards in one row</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.cardheight">
+				<source>Card height</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.cardwidth">
+				<source>Card width</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.bordersize">
+				<source>Border width</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.fontsize">
+				<source>Fontsize</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.has_pairs">
+				<source>Has Pairs</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.type.same">
+				<source>Same picture</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.type.2pics">
+				<source>Two pictures</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.type.text">
+				<source>Picture to text</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.type.textonly">
+				<source>Text only</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.tabadvanced">
+				<source>Advanced Options</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model.tabfinalinfo">
+				<source>Final Informations</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.pluspoints">
+				<source>Points for correct choice</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.minuspoints">
+				<source>Penalty points for wrong choice</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.backimage">
+				<source>Color of the backside</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.backimage.red">
+				<source>Red</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.backimage.blue">
+				<source>Blue</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.backimage.mixed">
+				<source>Mixed</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.turnbackdelay">
+				<source>Delay for turning cards back</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.hintdelay">
+				<source>Delay for the hint</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.turnduration">
+				<source>Duration for the turn of the cards</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.stackduration">
+				<source>Duration for the move to the stack</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.testmodeturndelay">
+				<source>Delay between every turn of the test mode</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.testmode">
+				<source>Test mode</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.finaltextwidth">
+				<source>The width of the final information</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.finaltextheight">
+				<source>The height of the final information</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.finalpic_width">
+				<source>Width of the final inforamtion picture(s)</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.finalpic_height">
+				<source>Height of the final inforamtion picture(s)</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.maxcards">
+				<source>Max. cards in one game</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

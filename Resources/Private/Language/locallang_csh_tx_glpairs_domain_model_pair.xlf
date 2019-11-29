@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-03-16T02:13:03Z" product-name="glpairs">
+		<header/>
+		<body>
+
+			<trans-unit id="type.alttitle">
+				<source>Type of the pairs game</source>
+			</trans-unit>
+			<trans-unit id="type.description">
+				<source>Choose a type of the pairs game to which this card pair should belong. Click here for a more detailed description</source>
+			</trans-unit>
+			<trans-unit id="type.details">
+				<source>
+					<![CDATA[You can choose four kinds of types: 
+	      									 
+					 Same picture: 
+					 Here we use only image1 of every single pair. This image you can find under two cards and you have to find this both.
+					 
+					 Two pictures: 
+					 Here we use image1 and image2. You have to assign to both fields similair pictures, e.g. two cats. In the game you have to find the cards with the both similair pictures.
+					 
+					 Picture to text: 
+					 Here we use image1 and the description. You have to find the correct description for every picture which you can see in the game. This is a good possibility exercise foreign languages.
+					
+					 Text only:
+					 Here we can define two cards with a text. Usually it should be two texts of two different languages. The play need to find the both cards with the same meaning. This is another good posibility to learn languages.]]>  
+				</source>
+			</trans-unit>
+
+			<trans-unit id="name.alttitle">
+				<source>Name of the pair</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>Name of the pair, click here for further details.</source>
+			</trans-unit>
+			<trans-unit id="name.details">
+				<source>Set a Name for internal use. With this name you can easyer recognize a pair.
+						This pair record you need to define as many as you like to use in one pairs game. If you like to play a pairs game with 20 pairs of cards, then you need to define 20 sets of this records.
+						After you have defined enough of this records you can create a pairs record where you can assign all of this pair records.</source>
+			</trans-unit>
+
+			<trans-unit id="image1.alttitle">
+				<source>First image</source>
+			</trans-unit>
+			<trans-unit id="image1.description">
+				<source>First image, this image you must define in every case.</source>
+			</trans-unit>
+			<trans-unit id="image1.details">
+				<source>In all types of pairs games you need to define this image.</source>
+			</trans-unit>
+			
+			<trans-unit id="height1.alttitle">
+				<source>The height of image1</source>
+			</trans-unit>
+			<trans-unit id="height1.description">
+				<source>You can define the height of image1 here. If you leave it empty, the image is displayed in the size which is defined in the pairs settings. If both properties are empty, then the image is displayed in its original size.</source>
+			</trans-unit>
+
+			<trans-unit id="width1.alttitle">
+				<source>The width of image1</source>
+			</trans-unit>
+			<trans-unit id="width1.description">
+				<source>You can define the width of image1 here. If you leave it empty, the image is displayed in the size which is defined in the pairs settings. If both properties are empty, then the image is displayed in its original size.</source>
+			</trans-unit>
+
+			<trans-unit id="image2.alttitle">
+				<source>Second Image</source>
+			</trans-unit>
+			<trans-unit id="image2.description">
+				<source>Second Image for the pairs type 'Two Images'.</source>
+			</trans-unit>
+			<trans-unit id="image2.details">
+				<source>For the pairs type 'Two Images' you must define two simlair images in one pair. For instance two pictures of cats. In the game you must assign this both images together.</source>
+			</trans-unit>
+			
+			<trans-unit id="height2.alttitle">
+				<source>The height of image2</source>
+			</trans-unit>
+			<trans-unit id="height2.description">
+				<source>You can define the height of image2 here. If you leave it empty, the image is displayed in the size which is defined in the pairs settings. If both properties are empty, then the image is displayed in its original size.</source>
+			</trans-unit>
+
+			<trans-unit id="width2.alttitle">
+				<source>The width of image2</source>
+			</trans-unit>
+			<trans-unit id="width2.description">
+				<source>You can define the width of image2 here. If you leave it empty, the image is displayed in the size which is defined in the pairs settings. If both properties are empty, then the image is displayed in its original size.</source>
+			</trans-unit>
+
+			<trans-unit id="bordersize.alttitle">
+				<source>The border with of the card.</source>
+			</trans-unit>
+			<trans-unit id="bordersize.description">
+				<source>Here you can define the border width of the card. With this property you can overrule the default border width, which is set in the overall settings of the pairs game. If you like to give all cards the same size you should leave this property empty.</source>
+			</trans-unit>
+
+			<trans-unit id="description1.alttitle">
+				<source>Description of the image</source>
+			</trans-unit>
+			<trans-unit id="description1.description">
+				<source>Description of the image for the pairs type 'Picture To Text' or for "Text only"</source>
+			</trans-unit>
+			<trans-unit id="description1.details">
+				<source>Description for the second card with text. See the explanation of the field Type for the use of this field.</source>
+			</trans-unit>
+			
+			<trans-unit id="fontsize1.alttitle">
+				<source>Size for the font of the description</source>
+			</trans-unit>
+			<trans-unit id="fontsize1.description">
+				<source>Here you can define the size of the font of the description. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="fontsize1.details">
+				<source>You should adjust the font size here, for matching the description into the card. If you choose a to large fontsize the description will exceed over the borders. If you leave this property empty, then the text is displayed in the overall fontsize which should be set in the settings of the pairs game.</source>
+			</trans-unit>
+
+			<trans-unit id="textheight1.alttitle">
+				<source>Height of the card with the text.</source>
+			</trans-unit>
+			<trans-unit id="textheight1.description">
+				<source>The cards with the text should also have a proper size. Usually they have the same size like the picture cards. In the end you should define a size which fits to the text. If you leave this property empty, then this card gets the size of the overall settings in the pairs game. If there is in pairs game also no size set, then the size of the corresponding image will be automatically set to this card. If there is nowhere a size and a image set, then a default size of 100x80 will be given.</source>
+			</trans-unit>
+
+			<trans-unit id="textwidth1.alttitle">
+				<source>Width of the card with the text.</source>
+			</trans-unit>
+			<trans-unit id="textwidth1.description">
+				<source>The cards with the text should also have a proper size. Usually they have the same size like the picture cards. In the end you should define a size which fits to the text. If you leave this property empty, then this card gets the size of the overall settings in the pairs game. If there is in pairs game also no size set, then the size of the corresponding image will be automatically set to this card. If there is nowhere a size and a image set, then a default size of 100x80 will be given.</source>
+			</trans-unit>
+
+			<trans-unit id="description2.alttitle">
+				<source>Description of the image</source>
+			</trans-unit>
+			<trans-unit id="description2.description">
+				<source>Description for the second text card of the pairs type "Text only"</source>
+			</trans-unit>
+			<trans-unit id="description2.details">
+				<source>Description for the second card with text. See the explanation of the field Type for the use of this field.</source>
+			</trans-unit>
+			
+			<trans-unit id="fontsize2.alttitle">
+				<source>Size for the font of the description</source>
+			</trans-unit>
+			<trans-unit id="fontsize2.description">
+				<source>Here you can define the size of the font of the description. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="fontsize2.details">
+				<source>You should adjust the font size here, for matching the description into the card. If you choose a to large fontsize the description will exceed over the borders. If you leave this property empty, then the text is displayed in the overall fontsize which should be set in the settings of the pairs game.</source>
+			</trans-unit>
+
+			<trans-unit id="textheight2.alttitle">
+				<source>Height of the card with the text.</source>
+			</trans-unit>
+			<trans-unit id="textheight2.description">
+				<source>The cards with the text should also have a proper size. Usually they have the same size like the picture cards. In the end you should define a size which fits to the text. If you leave this property empty, then this card gets the size of the overall settings in the pairs game. If there is in pairs game also no size set, then the size of the corresponding image will be automatically set to this card. If there is nowhere a size and a image set, then a default size of 100x80 will be given.</source>
+			</trans-unit>
+
+			<trans-unit id="textwidth2.alttitle">
+				<source>Width of the card with the text.</source>
+			</trans-unit>
+			<trans-unit id="textwidth2.description">
+				<source>The cards with the text should also have a proper size. Usually they have the same size like the picture cards. In the end you should define a size which fits to the text. If you leave this property empty, then this card gets the size of the overall settings in the pairs game. If there is in pairs game also no size set, then the size of the corresponding image will be automatically set to this card. If there is nowhere a size and a image set, then a default size of 100x80 will be given.</source>
+			</trans-unit>
+
+			<trans-unit id="finaltextactive.alttitle">
+				<source>Acivate the final information.</source>
+			</trans-unit>
+			<trans-unit id="finaltextactive.description">
+				<source>If this flag is active, the you are able to define a text which is displayed at the end, if this pair is found of the user.</source>
+			</trans-unit>
+
+			<trans-unit id="finaltext.alttitle">
+				<source>The content the final information.</source>
+			</trans-unit>
+			<trans-unit id="finaltext.description">
+				<source>This is the content of the final information. If the final information is displayed, this content will be shown.</source>
+			</trans-unit>
+
+			<trans-unit id="finaltextwidth.alttitle">
+				<source>The width of the info window for the final information.</source>
+			</trans-unit>
+			<trans-unit id="finaltextwidth.description">
+				<source>Here you can describe the width of the window with the final information. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="finaltextwidth.details">
+				<source>Here you can describe the width of the window with the final information. If you leave this field empty than it will take the value from the overall settings in the pairs game. If there is also no value, the width will be set to a default value. Usually it is a good idea to set either the height or the width. If you set both values be carfully that the text can fit with the size of the window.</source>
+			</trans-unit>
+
+			<trans-unit id="finaltextheight.alttitle">
+				<source>The height of the info window for the final information.</source>
+			</trans-unit>
+			<trans-unit id="finaltextheight.description">
+				<source>Here you can describe the height of the window with the final information. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="finaltextheight.details">
+				<source>Here you can describe the height of the window with the final information. If you leave this field empty than it will take the value from the overall settings in the pairs game. If there is also no value, the height will be set to a default value. Usually it is a good idea to set either the height or the width. If you set both values be carfully that the text can fit with the size of the window.</source>
+			</trans-unit>
+
+			<trans-unit id="finalpicwidth.alttitle">
+				<source>The width of the picture(s) in the final information window.</source>
+			</trans-unit>
+			<trans-unit id="finalpicwidth.description">
+				<source>Here you can describe the width of the picture(s) in the final information window. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="finalpicwidth.details">
+				<source>If you leave this field empty, then the size of the overall width in the settings of the pairs game will be taken. If both fields are empty, the the original size of the picture(s) wil be taken.</source>
+			</trans-unit>
+
+			<trans-unit id="finalpicheight.alttitle">
+				<source>The height of the picture(s) in the final information window.</source>
+			</trans-unit>
+			<trans-unit id="finalpicheight.description">
+				<source>Here you can describe the height of the picture(s) in the final information window. Click here for more details.</source>
+			</trans-unit>
+			<trans-unit id="finalpicheight.details">
+				<source>If you leave this field empty, then the size of the overall height in the settings of the pairs game will be taken. If both fields are empty, the the original size of the picture(s) wil be taken.</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

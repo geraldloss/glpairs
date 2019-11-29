@@ -1,0 +1,41 @@
+{namespace glpairs=Loss\Glpairs\ViewHelpers}
+
+<td id="{glpairs:uid()}_{pairs.uid}_{pair.defaultExternalID}_{level}_td_card" 
+	class="glpairs_cls_content_container glpairs_cls_content_common"
+>
+
+	<div id="{glpairs:uid()}_{pairs.uid}_{pair.defaultExternalID}_{level}_overall_card" class="glpairs_cls_click_content"
+		 style="{f:if(condition: pair.defaultHeight, then: pair.defaultHeightTxt)}
+	    	    {f:if(condition: pair.defaultWidth,  then: pair.defaultWidthTxt)}"	
+	>
+	
+		  <!-- The back side of the text card "{pair.name}" with ID {pair.defaultExternalID} -->
+             <div id="{glpairs:uid()}_{pairs.uid}_{pair.defaultExternalID}_{level}_div_card_back" 
+             	   class="glpairs_cls_card_common glpairs_cls_card_visible" 
+             	   style="{f:if(condition: pair.defaultHeight, then: pair.defaultHeightTxt)}
+		    	      {f:if(condition: pair.defaultWidth,  then: pair.defaultWidthTxt)}
+             	   		  background-image:url({pair.internalImgPath}{pair.defaultBackImage});">
+             </div>
+
+
+		  <!-- The front side of the text card "{pair.name}" with external ID2 {pair.defaultExternalID} -->
+             <div id="{glpairs:uid()}_{pairs.uid}_{pair.defaultExternalID}_{level}_div_card_front" 
+             	   class="glpairs_cls_card_common glpairs_cls_card_invisible" 
+             	   style="height: {pair.defaultHeightMin}px; width: {pair.defaultWidth}px; opacity: 0.0; visibility: hidden;"> 
+
+	          <table class="glpairs_cls_content_text" 
+	          		 style="{f:if(condition: pair.defaultFontsize, then: 'font-size: {pair.defaultFontsize}px;' )}
+	          		 		background-color: white;">
+	          <tr>
+	          <td id="{glpairs:uid()}_{pairs.uid}_{pair.defaultExternalID}_{level}_front_card" class="glpairs_cls_card_border" 
+	          	  style=" {f:if(condition: pair.defaultHeightMin, then: pair.defaultHeightMinTxt)}
+			    	      {f:if(condition: pair.defaultWidth,  then: pair.defaultWidthTxt)}
+			    	      border-width: {pairs.Bordersize}px;"
+	          >
+	            {pair.defaultDescription}
+	          </td>
+	          </tr>
+	          </table>
+          </div>
+    </div> 
+</td>

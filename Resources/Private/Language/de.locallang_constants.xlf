@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-03-14T23:14:03Z" product-name="glpairs">
+		<header/>
+		<body>
+			<trans-unit id="glpairs.constants.inlcudeJQuery">
+				<source>Include jQuery library, deactivate this option if you are already using jQuery (Version 3.x) in your homepage</source>
+				<target><![CDATA[Füge die jQuery Bibliothek ein. Diese Option kann deaktiviert werden, wenn jQuery bereits auf der Homepage in Version 3.x verwendet wird.]]></target>
+			</trans-unit>
+			<trans-unit id="glpairs.constants.includeBootstrapJs">
+				<source>Include Bootstrap library, deactivate this option if you are already using Bootstrap (Version 3.x) in your homepage</source>
+				<target><![CDATA[Füge die Bootstrap Bibliothek ein. Diese Option kann deaktiviert werden, wenn Bootstrap bereits auf der Homepage in Version 3.x verwendet wird.]]></target>
+			</trans-unit>
+			<trans-unit id="glpairs.constants.includeBootstrapCss">
+				<source>Include Bootstrap CSS content file, deactivate this option if you are already using Bootstrap (Version 3.x) in your homepage</source>
+				<target><![CDATA[Füge die Bootstrap CSS-Datei ein. Diese Option kann deaktiviert werden, wenn Bootstrap bereits auf der Homepage in Version 3.x verwendet wird.]]></target>
+			</trans-unit>
+			<trans-unit id="glpairs.constants.cssFile">
+				<source>Path to the glpairs CSS content file.</source>
+				<target><![CDATA[Pfadt zur CSS-Datei für glpairs.]]></target>
+			</trans-unit>
+			<trans-unit id="glpairs.subcategory.libraries">
+				<source>Activation of libraries</source>
+				<target><![CDATA[Aktivierung der Bibliotheken]]></target>
+			</trans-unit>
+			<trans-unit id="glpairs.subcategory.css">
+				<source>Settings for CSS files</source>
+				<target><![CDATA[Einstellungen zu den CSS-Dateien]]></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

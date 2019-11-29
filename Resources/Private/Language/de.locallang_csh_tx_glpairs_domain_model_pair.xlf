@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-03-16T02:13:03Z" product-name="glpairs">
+		<header/>
+		<body>
+
+			<trans-unit id="type.alttitle">
+				<source>Type of the pairs game</source> <target>Typ des Memory Spiels</target> </trans-unit>
+			<trans-unit id="type.description">
+				<source>Choose a type of the pairs game to which this card pair should belong. Click here for a more detailed description</source>
+				<target><![CDATA[Wählen Sie den Typ des Memeory Spiels aus zu dem dieses Kartenpaar gehören soll. Klicken Sie hier für eine ausführliche Beschreibung.]]></target>
+			</trans-unit>
+			<trans-unit id="type.details">
+				<source>
+					<![CDATA[You can choose four kinds of types: 
+	      									 
+					 Same picture: 
+					 Here we use only image1 of every single pair. This image you can find under two cards and you have to find this both.
+					 
+					 Two pictures: 
+					 Here we use image1 and image2. You have to assign to both fields similair pictures, e.g. two cats. In the game you have to find the cards with the both similair pictures.
+					 
+					 Picture to text: 
+					 Here we use image1 and the description. You have to find the correct description for every picture which you can see in the game. This is a good possibility exercise foreign languages.
+
+					 Text only:
+					 Here we can define two cards with a text. Usually it should be two texts of two different languages. The play need to find the both cards with the same meaning. This is another good posibility to learn languages.]]>  
+				</source>
+				<target>
+					<![CDATA[Sie können zwischen vier verschiedenen Typen wählen: 
+					 
+					 Das selbe Bild: 
+					 In diesem Modus wird nur Bild1 verwendet. Dieses Bild können Sie unter zwei verschiedenen Karten finden. Diese beiden Karten gilt es im Spiel ausfindig zu machen.
+					 
+					 Zwei Bilder: 
+					 In diesem Modus wird Bild1 und Bild2 verwendet. Sie müssen beiden Feldern ähnliche Bilder zuordnen. Z. B. zwei Katzenbilder. Es gilt dann in dem Spiel diese beiden Karten wieder zu finden.
+					 
+					 Bild zu Text: 
+					 In diesen Modus wird Bild1 und die Beschreibung genutzt. Im Spiel muss nun zu jedem Bild der zugehörige Text zugeordnet werden. Das ist eine gute  Übung zum erlernen von fremden Sprachen. 
+					 
+					 Nur Text:
+					 In diesem Modus müssen zwei Karten mit Text definiert werden. Idealerweise sollten beide Karten in einer unterschiedlichen Sprache den selben Sachverhalt schildern. Der Spieler muss dann die beiden Karten mit der selber Bedeutung finden. Das ist eine weitere gute Möglichkeit um fremde Sprachen zu erlernen. ]]>
+				</target>
+			</trans-unit>
+
+			<trans-unit id="name.alttitle">
+				<source>Name of the pair</source>
+				<target><![CDATA[Name des Memory Spiels]]></target>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>Name of the pair, click here for further details.</source>
+				<target><![CDATA[Name des Memeory Spiels. Klicken Sie hier für weitere Details.]]></target>
+			</trans-unit>
+			<trans-unit id="name.details">
+				<source>
+					Set a Name for internal use. With this name you can easyer recognize a pair.
+					This pair record you need to define as many as you like to use in one pairs game. If you like to play a pairs game with 20 pairs of cards, then you need to define 20 sets of this records.
+					After you have defined enough of this records you can create a pairs record where you can assign all of this pair records.
+				</source>
+				<target><![CDATA[
+					Definieren Sie hier einen Namen zur internen Verwendung. Mit diesem Namen können Sie das Kartenset schneller wiederfinden.
+					Diesen Eintrag für ein Kartenset müssen sie so oft anlegen, wie sie in einem Memory Spiel mit Karten spielen möchten. D. h., wenn Sie in einem Memory Spiel mit 20 Kartensets spielen möchten müssen Sie hier 20 solche Einträge erstellen.
+					Nachdem Sie genügend Kartensets erstellt haben, können Sie ein Memory Eintrag erstellen. In diesem Eintrag können Sie dann alle hier erstellten Kartensets zuordnen.]]>
+				</target>
+			</trans-unit>
+
+			<trans-unit id="image1.alttitle">
+				<source>First image</source>
+				<target><![CDATA[Erstes Bild]]></target>
+			</trans-unit>
+			<trans-unit id="image1.description">
+				<source>First image, this image you must define in every case.</source>
+				<target><![CDATA[Erstes Bild. Dieses Bild müssen Sie immer definieren.]]></target>
+			</trans-unit>
+			<trans-unit id="image1.details">
+				<source>In all types of pairs games you need to define this image.</source>
+				<target><![CDATA[In allen Spieltypen von Memory müssen Sie dieses Bild definieren.]]></target>
+			</trans-unit>
+			
+			<trans-unit id="height1.alttitle">
+				<source>The height of image1</source>
+				<target><![CDATA[Die Höhe von Bild1]]></target>
+			</trans-unit>
+			<trans-unit id="height1.description">
+				<source>You can define the height of image1 here. If you leave it empty, the image is displayed in the size which is defined in the pairs settings. If both properties are empty, then the image is displayed in its original size.</source>
+				<target><![CDATA[Sie können hier die Höhe von Bild1 definieren. Wenn Sie dieses Feld leer lassen, dann wird das Bildes in seiner Größe angezeigt, die in den Einstellungen von dem Memory Spiel vorligen. Sind beide Einstellungen leer, dann wird das Bild in seiner originalen Größe angezeigt.]]></target>
+			</trans-unit>
+
+			<trans-unit id="width1.alttitle">
+				<source>The width of image1</source>
+				<target><![CDATA[Die Breite von Bild1]]></target>
+			</trans-unit>
+			<trans-unit id="width1.description">
+				<source>You can define the width of image1 here. If you leave it empty, the image is displayed in the size which is defined in the pairs settings. If both properties are empty, then the image is displayed in its original size.</source>
+				<target><![CDATA[Sie können hier die Breite von Bild1 definieren. Wenn Sie dieses Feld leer lassen, dann wird das Bildes in seiner Größe angezeigt, die in den Einstellungen von dem Memory Spiel vorligen. Sind beide Einstellungen leer, dann wird das Bild in seiner originalen Größe angezeigt.]]></target>
+			</trans-unit>
+
+			<trans-unit id="image2.alttitle">
+				<source>Second Image</source>
+				<target><![CDATA[Zweites Bild]]></target>
+			</trans-unit>
+			<trans-unit id="image2.description">
+				<source>Second Image for the pairs type 'Two Images'.</source>
+				<target><![CDATA[Das zweite Bild für den Memorytyp 'Zwei Bilder'.]]></target>
+			</trans-unit>
+			<trans-unit id="image2.details">
+				<source>For the pairs type 'Two Images' you must define two simlair images in one pair. For instance two pictures of cats. In the game you must assign this both images together.</source>
+				<target><![CDATA[Für den Memeorytyp 'Zwei Bilder' müssen Sie zwei ähnliche Bilder in diesem Kartenset angeben. Z. B. könnten Sie hier zwei Bilder von Katzen angeben. In dem Spiel müssen Sie dann die zwei KAtzen wieder zueinander zuordnen.]]></target>
+			</trans-unit>
+			
+			<trans-unit id="height2.alttitle">
+				<source>The height of image2</source>
+				<target><![CDATA[Die Höhe von Bild2]]></target>
+			</trans-unit>
+			<trans-unit id="height2.description">
+				<source>You can define the height of image2 here. If you leave it empty, the image is displayed in the size which is defined in the pairs settings. If both properties are empty, then the image is displayed in its original size.</source>
+				<target><![CDATA[Sie können hier die Höhe von Bild2 definieren. Wenn Sie dieses Feld leer lassen, dann wird das Bildes in seiner Größe angezeigt, die in den Einstellungen von dem Memory Spiel vorligen. Sind beide Einstellungen leer, dann wird das Bild in seiner originalen Größe angezeigt.]]></target>
+			</trans-unit>
+
+			<trans-unit id="width2.alttitle">
+				<source>The width of image2</source>
+				<target><![CDATA[Die Breite von Bild2]]></target>
+			</trans-unit>
+			<trans-unit id="width2.description">
+				<source>You can define the width of image2 here. If you leave it empty, the image is displayed in the size which is defined in the pairs settings. If both properties are empty, then the image is displayed in its original size.</source>
+				<target><![CDATA[Sie können hier die Breite von Bild2 definieren. Wenn Sie dieses Feld leer lassen, dann wird das Bildes in seiner Größe angezeigt, die in den Einstellungen von dem Memory Spiel vorligen. Sind beide Einstellungen leer, dann wird das Bild in seiner originalen Größe angezeigt.]]></target>
+			</trans-unit>
+
+			<trans-unit id="bordersize.alttitle">
+				<source>The border with of the card.</source>
+				<target><![CDATA[Die Rahmenbreite der Karte.]]></target>
+			</trans-unit>
+			<trans-unit id="bordersize.description">
+				<source>Here you can define the border width of the card. With this property you can overrule the default border width, which is set in the overall settings of the pairs game. If you like to give all cards the same size you should leave this property empty.</source>
+				<target><![CDATA[Hier können Sie die Rahmenbreite der Karte definieren, Mit dieser Einstellung können Sie die Standardrahmenbreite aus den übergreifenden Einstellungen des Memory Spieles übersteuern. Wenn Sie allen Karten die selbe größe geben wollen, sollten Sie diese Einstellung leer lassen.]]></target>
+			</trans-unit>
+
+			<trans-unit id="description1.alttitle">
+				<source>Description of the image</source>
+				<target><![CDATA[Beschreibung von dem Bild]]></target>
+			</trans-unit>
+			<trans-unit id="description1.description">
+				<source>Description of the image for the pairs type 'Picture To Text' or for "Text only"</source>
+				<target><![CDATA[Beschreibung des Bildes für den Memorytyp 'Bild Zu Text' oder für "Nur Text"]]></target>
+			</trans-unit>
+			<trans-unit id="description1.details">
+				<source>Description for the second card with text. See the explanation of the field Type for the use of this field.</source>
+				<target><![CDATA[Beschreibung für die zweite Textkarte. Siehe bei der Erklärung zum Feld Typ, wozu dieses Feld verwendet wird.]]></target>
+			</trans-unit>
+			
+			<trans-unit id="fontsize1.alttitle">
+				<source>Size for the font of the description</source>
+				<target><![CDATA[Größe des Fonts für die Beschreibung]]></target>
+			</trans-unit>
+			<trans-unit id="fontsize1.description">
+				<source>Here you can define the size of the font of the description. Click here for more details.</source>
+				<target><![CDATA[Hier können Sie die Fontgröße für die Beschreibung bestimmen. Klicken Sie hier für mehr Details.]]></target>
+			</trans-unit>
+			<trans-unit id="fontsize1.details">
+				<source>You should adjust the font size here, for matching the description into the card. If you choose a to large fontsize the description will exceed over the borders. If you leave this property empty, then the text is displayed in the overall fontsize which should be set in the settings of the pairs game.</source>
+				<target><![CDATA[Sie sollten hier die Fontgröße so bestimmen, dass die Beschreibung genau in die Karte hinein passt. Sollte die Fontgröße zu groß sein, wird die Beschreibung über die Ränder hinausragen. Wenn Sie diese Einstellung leer lassen, dann wird der Text in der Fontgröße der übergeordneten Einstellung in dem Memoryspiel angezeigt.]]></target>
+			</trans-unit>
+
+			<trans-unit id="textheight1.alttitle">
+				<source>Height of the card with the text.</source>
+				<target><![CDATA[Die Höhe der Karte mit dem Text]]></target>
+			</trans-unit>
+			<trans-unit id="textheight1.description">
+				<source>The cards with the text should also have a proper size. Usually they have the same size like the picture cards. In the end you should define a size which fits to the text. If you leave this property empty, then this card gets the size of the overall settings in the pairs game. If there is in pairs game also no size set, then the size of the corresponding image will be automatically set to this card. If there is nowhere a size and a image set, then a default size of 80x100 will be given.</source> 
+				<target state="needs-translation">Die Karten mit dem Text sollten auch eine ordentliche Größe haben. Normalerweise gibt man ihnen die selber Größe wie den Karten mit den Bildern. Letzten Endes sollten Sie hier eine Größe vergeben, sodass der Text hineinpasst. Wenn Sie diese Einstellung leer lassen, dann erhält diese Karte die Größe aus den übergreifenden Einstellung in dem Memory Spiel. Sind dort ebenfalls keine Größenangaben vergeben, dann wird die Originalgröße des korrespondierenden Bildes vergeben. Sollte überhaupt keine Größe vergeben worden sein und auch kein Bild vorhanden sein, dann wird eine Standardgröße von 100x80 Pixeln vergeben.</target> 
+			</trans-unit>
+
+			<trans-unit id="textwidth1.alttitle">
+				<source>Width of the card with the text.</source> 
+				<target>Die Breite der Karte mit dem Text</target> 
+			</trans-unit>
+			<trans-unit id="textwidth1.description">
+				<source>The cards with the text should also have a proper size. Usually they have the same size like the picture cards. In the end you should define a size which fits to the text. If there is in pairs game also no size set, then the size of the corresponding image will be automatically set to this card. If there is nowhere a size and a image set, then a default size of 80x100 will be given.</source> 
+				<target state="needs-translation">Die Karten mit dem Text sollten auch eine ordentliche Größe haben. Normalerweise gibt man ihnen die selbe Größe wie den Karten mit den Bildern. Letzten Endes sollten Sie hier eine Größe vergeben, sodass der Text hineinpasst. Wenn Sie diese Einstellung leer lassen, dann erhält diese Karte die Größe aus den übergreifenden Einstellung in dem Memory Spiel. Sind dort ebenfalls keine Größenangaben vergeben, dann wird die Originalgröße des korrespondierenden Bildes vergeben. Sollte überhaupt keine Größe vergeben worden sein und auch kein Bild vorhanden sein, dann wird eine Standardgröße von 100x80 Pixeln vergeben.</target> 
+			</trans-unit>
+
+			<trans-unit id="description2.alttitle">
+				<source>Description of the image</source> 
+				<target>Beschreibung von dem Bild</target> 
+			</trans-unit>
+			<trans-unit id="description2.description">
+				<source>Description for the second text card of the pairs type "Text only"</source> 
+				<target>Beschreibung für die zweite Textkarte für den Memorytyp "Nur Text"</target> 
+			</trans-unit>
+			<trans-unit id="description2.details">
+				<source>Description for the second card with text. See the explanation of the field Type for the use of this field.</source> 
+				<target>Beschreibung für die zweite Textkarte. Siehe bei der Erklärung zum Feld Typ, wozu dieses Feld verwendet wird.</target> 
+			</trans-unit>
+			
+			<trans-unit id="fontsize2.alttitle">
+				<source>Size for the font of the description</source> 
+				<target>Größe des Fonts für die Beschreibung</target> 
+			</trans-unit>
+			<trans-unit id="fontsize2.description">
+				<source>Here you can define the size of the font of the description. Click here for more details.</source> 
+				<target>Hier können Sie die Fontgröße für die Beschreibung bestimmen. Klicken Sie hier für mehr Details.</target> 
+			</trans-unit>
+			<trans-unit id="fontsize2.details">
+				<source>You should adjust the font size here, for matching the description into the card. If you choose a to large fontsize the description will exceed over the borders. If you leave this property empty, then the text is displayed in the overall fontsize which should be set in the settings of the pairs game.</source> 
+				<target>Sie sollten hier die Fontgröße so bestimmen, dass die Beschreibung genau in die Karte hinein passt. Sollte die Fontgröße zu groß sein, wird die Beschreibung über die Ränder hinausragen. Wenn Sie diese Einstellung leer lassen, dann wird der Text in der Fontgröße der übergeordneten Einstellung in dem Memoryspiel angezeigt.</target> 
+			</trans-unit>
+
+			<trans-unit id="textheight2.alttitle">
+				<source>Height of the card with the text.</source> 
+				<target>Die Höhe der Karte mit dem Text</target> 
+			</trans-unit>
+			<trans-unit id="textheight2.description">
+				<source>The cards with the text should also have a proper size. Usually they have the same size like the picture cards. In the end you should define a size which fits to the text. If you leave this property empty, then this card gets the size of the overall settings in the pairs game. If there is in pairs game also no size set, then the size of the corresponding image will be automatically set to this card. If there is nowhere a size and a image set, then a default size of 80x100 will be given.</source> 
+				<target>Die Karten mit dem Text sollten auch eine ordentliche Größe haben. Normalerweise gibt man ihnen die selber Größe wie den Karten mit den Bildern. Letzten Endes sollten Sie hier eine Größe vergeben, sodass der Text hineinpasst. Wenn Sie diese Einstellung leer lassen, dann erhält diese Karte die Größe aus den übergreifenden Einstellung in dem Memory Spiel. Sind dort ebenfalls keine Größenangaben vergeben, dann wird die Originalgröße des korrespondierenden Bildes vergeben. Sollte überhaupt keine Größe vergeben worden sein und auch kein Bild vorhanden sein, dann wird eine Standardgröße von 100x80 Pixeln vergeben.</target> 
+			</trans-unit>
+
+			<trans-unit id="textwidth2.alttitle">
+				<source>Width of the card with the text.</source> 
+				<target>Die Breite der Karte mit dem Text</target> 
+			</trans-unit>
+			<trans-unit id="textwidth2.description">
+				<source>The cards with the text should also have a proper size. Usually they have the same size like the picture cards. In the end you should define a size which fits to the text. If there is in pairs game also no size set, then the size of the corresponding image will be automatically set to this card. If there is nowhere a size and a image set, then a default size of 80x100 will be given.</source> 
+				<target state="needs-translation">Die Karten mit dem Text sollten auch eine ordentliche Größe haben. Normalerweise gibt man ihnen die selber Größe wie den Karten mit den Bildern. Letzten Endes sollten Sie hier eine Größe vergeben, sodass der Text hineinpasst. Wenn Sie diese Einstellung leer lassen, dann erhält diese Karte die Größe aus den übergreifenden Einstellung in dem Memory Spiel. Sind dort ebenfalls keine Größenangaben vergeben, dann wird die Originalgröße des korrespondierenden Bildes vergeben. Sollte überhaupt keine Größe vergeben worden sein und auch kein Bild vorhanden sein, dann wird eine Standardgröße von 100x80 Pixeln vergeben.</target> 
+			</trans-unit>
+
+			<trans-unit id="finaltextactive.alttitle">
+				<source>Acivate the final information.</source>
+				<target><![CDATA[Aktivieren der Schlussinformation.]]></target>
+			</trans-unit>
+			<trans-unit id="finaltextactive.description">
+				<source>If this flag is active, the you are able to define a text which is displayed at the end, if this pair is found of the user.</source>
+				<target><![CDATA[Wenn dieses Flag aktiviert ist, können Sie einen Text definieren, der immer gezeigt werden soll, wenn dieses Kartenpaar gefunden wurde.]]></target>
+			</trans-unit>
+
+			<trans-unit id="finaltext.alttitle">
+				<source>The content the final information.</source>
+				<target><![CDATA[Der Inhalt der Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="finaltext.description">
+				<source>This is the content of the final information. If the final information is displayed, this content will be shown.</source>
+				<target><![CDATA[Der Inhalt der Schlussinformation. Diese Infortmation wird immer angezeigt, wenn dieses Kartenpaar gefunden wurde.]]></target>
+			</trans-unit>
+
+			<trans-unit id="finaltextwidth.alttitle">
+				<source>The width of the info window for the final information.</source>
+				<target><![CDATA[Die Breite des Fensters für die Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="finaltextwidth.description">
+				<source>Here you can describe the width of the window with the final information. Click here for more details.</source>
+				<target><![CDATA[Hiermit können Sie die Breite für das Fenster mit der Schlussinformation definieren. Klicken Sie hier für mehr Informationen.]]></target>
+			</trans-unit>
+			<trans-unit id="finaltextwidth.details">
+				<source>Here you can describe the width of the window with the final information. If you leave this field empty than it will take the value from the overall settings in the pairs game. If there is also no value, the width will be set to a default value. Usually it is a good idea to set either the height or the width. If you set both values be carfully that the text can fit with the size of the window.</source>
+				<target><![CDATA[Hiermit können Sie die Breite für das Fenster mit der Schlussinformation definieren. Wenn Sie dieses Feld leer lassen, dann wird der Wert aus den Übergreifenden Einstellungen für das Memoryspiel verwendet. Ist dort auch kein Wert hinterlegt. dann wird ein Standardwert angenommen. Normalerweise ist es das Beste nur die Höhe oder die Breite zu definieren. Wenn Sie beide Werte setzen, dann achten Sie darauf, dass der Text in das Fester hinein passt.]]></target>
+			</trans-unit>
+
+			<trans-unit id="finaltextheight.alttitle">
+				<source>The height of the info window for the final information.</source>
+				<target><![CDATA[Die Höhe des Fensters für die Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="finaltextheight.description">
+				<source>Here you can describe the height of the window with the final information. Click here for more details.</source>
+				<target><![CDATA[Hiermit können Sie die Höhe für das Fenster mit der Schlussinformation definieren. Klicken Sie hier für mehr Informationen.]]></target>
+			</trans-unit>
+			<trans-unit id="finaltextheight.details">
+				<source>Here you can describe the height of the window with the final information. If you leave this field empty than it will take the value from the overall settings in the pairs game. If there is also no value, the height will be set to a default value. Usually it is a good idea to set either the height or the width. If you set both values be carfully that the text can fit with the size of the window.</source>
+				<target><![CDATA[Hiermit können Sie die Höhe für das Fenster mit der Schlussinformation definieren. Wenn Sie dieses Feld leer lassen, dann wird der Wert aus den Übergreifenden Einstellungen für das Memoryspiel verwendet. Ist dort auch kein Wert hinterlegt. dann wird ein Standardwert angenommen. Normalerweise ist es das Beste nur die Höhe oder die Breite zu definieren. Wenn Sie beide Werte setzen, dann achten Sie darauf, dass der Text in das Fester hinein passt.]]></target>
+			</trans-unit>
+
+			<trans-unit id="finalpicwidth.alttitle">
+				<source>The width of the picture(s) in the final information window.</source>
+				<target state="translated"><![CDATA[Die Breite des Bildes/der Bilder im Fenster für die Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="finalpicwidth.description">
+				<source>Here you can describe the width of the picture(s) in the final information window. Click here for more details.</source>
+				<target state="translated"><![CDATA[Hier können Sie die Breite des Bildes/der Bilder im Fenster mit der Schlussinformation definieren. Klicken Sie hier für mehr Details.]]></target>
+			</trans-unit>
+			<trans-unit id="finalpicwidth.details">
+				<source>If you leave this field empty, then the size of the overall width in the settings of the pairs game will be taken. If both fields are empty, the the original size of the picture(s) wil be taken.</source>
+				<target state="translated"><![CDATA[Wenn Sie dieses Feld leer lassen, dann werden die Werte für die Breite aus den Übergreifenden Einstellungen für das Memoryspiel verwendet. Wenn beide Felder leer sind, dann wird die Originalgröße der Bilder verwendet.]]></target>
+			</trans-unit>
+
+			<trans-unit id="finalpicheight.alttitle">
+				<source>The height of the picture(s) in the final information window.</source>
+				<target state="translated"><![CDATA[Die Höhe des Bildes/der Bilder im Fenster für die Schlussinformation]]></target>
+			</trans-unit>
+			<trans-unit id="finalpicheight.description">
+				<source>Here you can describe the height of the picture(s) in the final information window. Click here for more details.</source>
+				<target state="translated"><![CDATA[Hier können Sie die Höhe des Bildes/der Bilder im Fenster mit der Schlussinformation definieren. Klicken Sie hier für mehr Details.]]></target>
+			</trans-unit>
+			<trans-unit id="finalpicheight.details">
+				<source>If you leave this field empty, then the size of the overall height in the settings of the pairs game will be taken. If both fields are empty, the the original size of the picture(s) wil be taken.</source>
+				<target state="translated"><![CDATA[Wenn Sie dieses Feld leer lassen, dann werden die Werte für die Höhe aus den Übergreifenden Einstellungen für das Memoryspiel verwendet. Wenn beide Felder leer sind, dann wird die Originalgröße der Bilder verwendet.]]></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,34 @@
+plugin.tx_glpairs {
+
+	# customsubcategory=libraries=LLL:EXT:glpairs/Resources/Private/Language/locallang_constants.xlf:glpairs.subcategory.libraries
+	# customsubcategory=css=LLL:EXT:glpairs/Resources/Private/Language/locallang_constants.xlf:glpairs.subcategory.css
+
+	# the vendor name
+	vendorName = Loss
+	# the name of this extension
+	extensionname = glpairs
+	
+	# the paths for the fluid templates
+	view {
+		# cat=plugin.tx_glpairs/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:glpairs/Resources/Private/Templates/
+		# cat=plugin.tx_glpairs/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:glpairs/Resources/Private/Partials/
+		# cat=plugin.tx_glpairs/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:glpairs/Resources/Private/Layouts/
+	}
+	
+	# the javascript libraries
+	libraries{
+		#cat=plugin.tx_glpairs/libraries; type=boolean; label=LLL:EXT:glpairs/Resources/Private/Language/locallang_constants.xlf:glpairs.constants.inlcudeJQuery
+		inlcudeJQuery = true
+		#cat=plugin.tx_glpairs/libraries; type=boolean; label=LLL:EXT:glpairs/Resources/Private/Language/locallang_constants.xlf:glpairs.constants.includeBootstrapJs
+		includeBootstrapJs = true
+		#cat=plugin.tx_glpairs/libraries; type=boolean; label=LLL:EXT:glpairs/Resources/Private/Language/locallang_constants.xlf:glpairs.constants.includeBootstrapCss
+		includeBootstrapCss = true
+	}
+	
+	# the path to the CSS content file
+	#cat=plugin.tx_glpairs/css; type=string; label=LLL:EXT:glpairs/Resources/Private/Language/locallang_constants.xlf:glpairs.constants.cssFile
+	cssFile = EXT:glpairs/Resources/Public/css/glpairs.css
+}
