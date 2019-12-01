@@ -48,6 +48,10 @@ Version  Changes:
 2.0.0    Change the pairs game to jQuery 3.x with Bootstrap 3.x
          and remove the jQuery UI library. 
          Also introduce the static template. 
+-------  -------------------------------------------------------
+2.1.0    Update for Typo3 Version 8 and PHP 7 
+-------  -------------------------------------------------------
+2.2.0    Update for Typo3 Version 9 and 10-dev
 =======  =======================================================
 
 

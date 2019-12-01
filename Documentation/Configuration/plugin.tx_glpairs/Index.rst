@@ -9,7 +9,7 @@
 .. _ts-plugin-tx-glpairs:
 
 plugin.tx_glpairs
-=============
+=================
 
 .. only:: html
 

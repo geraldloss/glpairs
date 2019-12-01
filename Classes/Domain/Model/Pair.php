@@ -695,12 +695,12 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 				$l_strImagePath = $this->getDefaultImage(); 
 			
 			// image1 is set
-			} elseif ($this->image1 != '') {
-				$l_strImagePath = $this->getImage1();
+			} elseif ($this->getFalImage1Path() != '') {
+			    $l_strImagePath = $this->getFalImage1Path();
 				
 			// image2 is set
-			} elseif ($this->image2 != '') {
-				$l_strImagePath = $this->getImage2();
+			} elseif ($this->getFalImage2Path() != '') {
+			    $l_strImagePath = $this->getFalImage2Path();
 			
 			// if there is no image at all
 			} else {
@@ -809,12 +809,12 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 				$l_strImagePath = $this->getDefaultImage(); 
 			
 			// image1 is set
-			} elseif ($this->image1 != '') {
-				$l_strImagePath = $this->getImage1();
+			} elseif ($this->getFalImage1Path() != '') {
+			    $l_strImagePath = $this->getFalImage1Path();
 				
 			// image2 is set
-			} elseif ($this->image2 != '') {
-				$l_strImagePath = $this->getImage2();
+			} elseif ($this->getFalImage2Path() != '') {
+			    $l_strImagePath = $this->getFalImage2Path();
 			
 			// if there is no image at all
 			} else {
@@ -1572,6 +1572,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getFalImage2()
 	{
+	    
 	    return $this->falImage2;
 	}
 	
@@ -1598,12 +1599,15 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	        return '';
 	    }
 	    
-	    // return the path of the image 
-	    return Pair::C_STR_FILEADMIN_PATH .
-	           $this->getFalImage1()
-                       ->current()
-                       ->getOriginalResource()
-                       ->getIdentifier();
+	    // get the path of the image
+	    $imagePath = Pair::C_STR_FILEADMIN_PATH .
+	    $this->getFalImage1()
+	    ->current()
+	    ->getOriginalResource()
+	    ->getIdentifier();
+	    
+	    // return the path without leading slash 
+	    return ltrim($imagePath, '/');
 	}
 
 	/**
@@ -1619,11 +1623,15 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	        return '';
 	    }
 	    
-	    return Pair::C_STR_FILEADMIN_PATH .
-       	       $this->getFalImage2()
-            	    ->current()
-            	    ->getOriginalResource()
-            	    ->getIdentifier();
+	    // get the path of the image
+	    $imagePath = Pair::C_STR_FILEADMIN_PATH .
+                	    $this->getFalImage2()
+                      	     ->current()
+                    	     ->getOriginalResource()
+                    	     ->getIdentifier();
+	    
+	    // return the path without leading slash
+	    return ltrim($imagePath, '/');
 	}
 }
 ?>

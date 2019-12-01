@@ -26,8 +26,12 @@ There is probably a error like that.
 
 In both cases you have trouble with the ajax session in the beginning of the game. Usually you can
 solve it while you delete all the typo3 caches in the backend. If the error remains, then check if
-you have set the correct UTF settings in the install tool for your database. For this settings see
-the description in this document in the chapter :ref:`Installation<administration-installation>`.
+you have set the correct UTF settings in the install tool for your database. 
+
+If all not helps you can also have a look in the Typo3 Log for the resent messages. Sometimes you 
+can find there some helpful informations.
+
+.. image:: ../Images/typo3_error_log.png
 
 - **The pairs game has a destroyed layout and shows the frontside of all cards**
 

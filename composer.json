@@ -1,0 +1,35 @@
+{
+	"name" : "loss/glpairs",
+	"type" : "typo3-cms-extension",
+	"description" : "Provide a flexible pairs game. You are able to configure the pairs game in many different types. You can assign two cards with the same image, two cards with similar images, two cards with an image and a description of the image or two text cards with the same description (i.e. in different languages). See an example on https://www.schulze-thulin.de/en/games/pairs-german-welsh-irish/pairs-halle-in-german",
+	"authors" : [{
+			"name" : "Gerald Loss",
+			"role" : "Developer"
+		}
+	],
+	"require" : {
+		"typo3/cms-core" : "^9.5.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Loss\\Glpairs\\" : "Classes"
+		}
+	},
+	"replace" : {
+		"glpairs" : "self.version",
+		"typo3-ter/glpairs" : "self.version"
+	},
+	"homepage" : "https://www.schulze-thulin.de/en/games/pairs-german-welsh-irish/pairs-halle-in-german",
+	"support" : {
+		"email" : "gerald.loss@gmx.de",
+		"issues" : "https://github.com/geraldloss/glpairs/issues",
+		"source" : "https://github.com/geraldloss/glpairs"
+	},
+	"license" : "GPL-3.0+",
+	"keywords" : [
+		"TYPO3",
+		"extension",
+		"pairs",
+		"game"
+	]
+}

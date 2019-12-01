@@ -12,9 +12,7 @@
 Introduction
 ============
 
-**Attention! Since version 2.0.0 you need to include a static template. Please take sure to include
-this template like in the chapter** :ref:`Configuration<configuration>` **described.**
-
+**Attention! Since version 2.2 the images in the pairs are referenced by FAL. So after the update you need to reconfigure all images. See for that in chapter** :ref:`FAL Migration for Version 2.2<fal-migration>`
 
 
 This is a plugin to provide a pairs game. The extension is very flexible. You are able to adjust the
@@ -25,14 +23,9 @@ self-explanatory.
 You are able to configure a wide range of pairs games.
 
 - The standard is a pairs game where one pair is always the same picture.
-- You are also able to configure a pairs game, where one pair are two similar pictures. (i.e. two
-cats or two dogs)
-- The third possibility is to configure a pairs game, where one pair is a picture and a textcard. On
-the textcard is a description of the picture (i.e. a picture of a cat and a text card with the
-description “cat” or “Katze” if you like to learn german with it)
-- The last posibility is to configure a pairs game with two text cards. Usually you should use two
-different languages on both textcards. This is also a good possibility to learn foreign languages.
-(i.e. a text card with the description “dog” and a text card with the description “Hund”)
+- You are also able to configure a pairs game, where one pair are two similar pictures. (i.e. two cats or two dogs)
+- The third possibility is to configure a pairs game, where one pair is a picture and a textcard. On the textcard is a description of the picture (i.e. a picture of a cat and a text card with the description “cat” or “Katze” if you like to learn german with it)
+- The last posibility is to configure a pairs game with two text cards. Usually you should use two different languages on both textcards. This is also a good possibility to learn foreign languages. (i.e. a text card with the description “dog” and a text card with the description “Hund”)
 
 A pairs game with the picture to text pairs type.
 

@@ -39,14 +39,14 @@ We click now on the button “create new record” at the top of the page.
 In the next view you have to choose a Pair (don't choose a Pairs!). In the next view you need to set
 the pairs type to “Two Pictures” and give it a meaningful name. We like to give for our example
 the name triangle. On the tab Image1 we assign the image triangel1.jpg and on the tab Image2 the
-picture triangle2.jpg. Both pictures can you copy from the folder typo3conf/ext/glpairs/doc/Images/
+picture triangle2.jpg. Both pictures can you copy from the folder typo3conf/ext/glpairs/Documentation/Images/Example/
 in any image folder of your homepage.
 
-|image-20| |image-19|
+|create_pair_triangle| |create_pair_general|
 
-.. |image-20| image:: ../../Images/image-20.png
+.. |create_pair_triangle| image:: ../../Images/create_pair_triangle.png
 
-.. |image-19| image:: ../../Images/image-19.png
+.. |create_pair_general| image:: ../../Images/create_pair_general.png
 
 After pressing the button at the top of the page you can save the pair an create a new one at the
 same time. Now you need to create with the other images 5 other Pair.

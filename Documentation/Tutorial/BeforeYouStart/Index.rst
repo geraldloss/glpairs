@@ -30,5 +30,5 @@ introduction explained, you have four kinds of pairs.
 
 In our case we like to maintain a pairs game with the mode two pictures. You need, before you start,
 create proper images and upload them in your image folder of your homepage. For this tutorial we
-provide pictures in the directory *typo3conf/ext/glpairs/doc/Images/* of this extension. You can copy
+provide pictures in the directory *typo3conf/ext/glpairs/Documentation/Images/Example/* of this extension. You can copy
 it from there to any directory you want of your homepage.

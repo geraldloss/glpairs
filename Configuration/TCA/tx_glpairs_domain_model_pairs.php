@@ -67,6 +67,7 @@ $tx_glpairs_domain_model_pairs = array(
 					array('LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0)
 				),
 				'renderType' => 'selectSingle',
+			    'default' => 0
 			),
 		),
 		'l10n_parent' => array(
@@ -109,7 +110,7 @@ $tx_glpairs_domain_model_pairs = array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 13,
-				'eval' => 'datetime',
+				'eval' => 'datetime,int',
 				'checkbox' => 0,
 				'default' => 0,
 				'range' => array(
@@ -127,7 +128,7 @@ $tx_glpairs_domain_model_pairs = array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 13,
-				'eval' => 'datetime',
+				'eval' => 'datetime,int',
 				'checkbox' => 0,
 				'default' => 0,
 				'range' => array(
@@ -207,7 +208,8 @@ $tx_glpairs_domain_model_pairs = array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 4,
-				'eval' => 'int'
+			    'eval' => 'int',
+			    'default' => 0
 			),
 		),
 		'cardwidth' => array(
@@ -216,7 +218,8 @@ $tx_glpairs_domain_model_pairs = array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 4,
-				'eval' => 'int'
+			    'eval' => 'int',
+			    'default' => 0
 			),
 		), 
 		'fontsize' => array(
@@ -225,7 +228,8 @@ $tx_glpairs_domain_model_pairs = array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 4,
-				'eval' => 'int'
+			    'eval' => 'int',
+			    'default' => 0
 			),
 		), 
 		'pluspoints' => array(
@@ -378,42 +382,47 @@ $tx_glpairs_domain_model_pairs = array(
 				'minitems' => 0,
 				'multiple' => 0,
 				'renderType' => 'selectMultipleSideBySide',
+			    'default' => 0
 			),
 		),
 		'finaltextwidth' => array(
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.finaltextwidth',
 				'config' => array(
-						'type' => 'input',
-						'size' => 4,
-						'eval' => 'int'
+					'type' => 'input',
+					'size' => 4,
+				    'eval' => 'int',
+				    'default' => 0
 				),
 		),
 		'finaltextheight' => array(
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.finaltextheight',
 				'config' => array(
-						'type' => 'input',
-						'size' => 4,
-						'eval' => 'int'
+					'type' => 'input',
+					'size' => 4,
+				    'eval' => 'int',
+				    'default' => 0
 				),
 		),
 		'finalpicwidth' => array(
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.finalpic_width',
 				'config' => array(
-						'type' => 'input',
-						'size' => 4,
-						'eval' => 'int'
+					'type' => 'input',
+					'size' => 4,
+				    'eval' => 'int',
+				    'default' => 0
 				),
 		),
 		'finalpicheight' => array(
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.finalpic_height',
 				'config' => array(
-						'type' => 'input',
-						'size' => 4,
-						'eval' => 'int'
+					'type' => 'input',
+					'size' => 4,
+				    'eval' => 'int',
+				    'default' => 0
 				),
 		),
 				

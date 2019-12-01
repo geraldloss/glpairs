@@ -17,3 +17,4 @@ Administration
 
     Installation/Index
     LanguageSetting/Index
+    FalMigration/Index

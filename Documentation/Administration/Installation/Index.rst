@@ -26,23 +26,6 @@ With apache put the following lines in your Virtual Host declaration.
 ::
 
     <Location typo3conf/ext/glpairs/Resources/Public/>
-    allow from all
+		Require all granted
     </Location>
 
-You need to check in your install tool or in your localconf.php or your AdditionalConfiguration.php
-(Typo3 6.x) the parameter [SYS][setDBinit]. There you need the following configuration.
-
-::
-
-    SET NAMES utf8 COLLATE utf8_unicode_ci;
-    SET SESSION character_set_server=utf8;
-
-**Attention!** Don't use this parameter in your [SYS][setDBinit]
-
-::
-
-    SET CHARACTER SET utf8;
-
-This can destroy your session especially if you use umlauts in your pairs game.
-
-For further informations see http://wiki.typo3.org/UTF-8_support.
