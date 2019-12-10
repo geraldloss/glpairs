@@ -153,9 +153,14 @@ class AjaxDispatcher {
 	protected function buildRequest() {
 		/* @var $request \TYPO3\CMS\Extbase\Mvc\Web\Request */
 		$request = $this->objectManager->get('TYPO3\CMS\Extbase\Mvc\Web\Request');
+	   
+		// remove this request in Typo3 Version 10.x again, the method setControllerVendorName don't exist there any more
 		$request->setControllerVendorName(PairsController::c_strVendor);
+		
 		$request->setControllerExtensionName(PairsController::c_strExtensionName);
 		$request->setPluginName(PairsController::c_strPluginName);
+        // insert this request for Typo3 10.x again
+		// $request->setControllerAliasToClassNameMapping(array($this->controllerName => PairsController::class ));
 		$request->setControllerName($this->controllerName);
 		$request->setControllerActionName($this->actionName);
 		$request->setArguments($this->actionArguments);
