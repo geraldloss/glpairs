@@ -11,7 +11,7 @@ use Loss\Glpairs\Container\SessionContainer;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2014 Gerald Loﬂ
+ *  (c) 2014 Gerald Lo√ü
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is

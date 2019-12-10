@@ -27,7 +27,7 @@ Pairs
         types. You can assign two cards with the same image, two cards with similar images, two
         cards with an image and a description of the image or two text cards with the same
         description (i.e. in different languages). See an example on
-        http://www.schulze-thulin.de/en/games/pairs-german-welsh-irish/
+        https://www.schulze-thulin.de/en/games/pairs-german-welsh-irish
 
     :Keywords:
         pairs, memory, typo3, plugin, game, extbase, forAdmins, forIntermediates
@@ -52,9 +52,9 @@ Pairs
     a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
 
 
-    ===================================================================================================================================================================================
-    Attention! Since version 2.0.0 you need to include a static template. Please take sure to include this template like in the chapter :ref:`Configuration<configuration>` described.
-    ===================================================================================================================================================================================
+    ==================================================================================================================================================================================================================
+    Attention! Since version 2.2 the images in the pairs are referenced by FAL. So after the update you need to reconfigure all images. See for that in chapter** :ref:`FAL Migration for Version 2.2<fal-migration>`
+    ==================================================================================================================================================================================================================
 
     **Table of Contents**
 
