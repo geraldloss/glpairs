@@ -2,7 +2,6 @@
 namespace Loss\Glpairs\Ajax;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Frontend\Utility\EidUtility;
 use Loss\Glpairs\Controller\PairsController;
 
 /***************************************************************
@@ -47,37 +46,6 @@ use Loss\Glpairs\Controller\PairsController;
 */
 class AjaxDispatcher {
 	
-	
-	
-	/**
-	 * Extbase Object Manager
-	 * 
-	 * @var \TYPO3\CMS\Extbase\Object\ObjectManager
-	 */
-	protected $objectManager;
-
-	/**
-	 * The name of the controller which will be used for the request.
-	 * 
-	 * @var string
-	 */
-	protected $controllerName;
-	
-	/**
-	 * The action of the controller which will be called for the request.
-	 * 
-	 * @var string
-	 */
-	protected $actionName;
-	
-	/**
-	 * The arguments for the called action.
-	 * 
-	 * @var array
-	 */
-	protected $actionArguments = array();
-	
-	
 	/**
 	 * Handle the ajax request and call finally a given controller with its action.
 	 * 
@@ -88,133 +56,67 @@ class AjaxDispatcher {
 		// the output of the ajax request
 		$arrOutput = array();
 		
-		// read the arguments like controller, action etc from the POST variables
-		// and set it in the global attributes 'controllerName', 'actionName' and 'actionArguments'
-		$this->initCallArguments();
-		
-		// call the controller action
-		$arrOutput = $this->dispatchControllerAction();
+		// retrieve the Ajax data
+		$arrOutput = $this->getAjaxBasicData( );
 		
 		// return the JSON encoded content
 		return json_encode($arrOutput);
 	}
-	
-	/**
-	 * Builds an extbase context and returns the response of the controller action.
-	 *
-	 * return array()	Response of the controller action.
-	 */
-	protected function dispatchControllerAction() {
-		
-		// the response object
-		/* @var $response \TYPO3\CMS\Extbase\Mvc\Web\Response */
-		$response = NULL;
-		// the request object
-		/* @var $request \TYPO3\CMS\Extbase\Mvc\Web\Request */
-		$request = NULL;
-		// the bootstra class
-		/* @var $bootstrap \TYPO3\CMS\Extbase\Core\Bootstrap */
-		$bootstrap = NULL;
-		// the dispatcher for the extbaste request
-		/* @var $dispatcher \TYPO3\CMS\Extbase\Mvc\Dispatcher */
-		$dispatcher = NULL;
-		// the configuration
-		$configuration = array();
-		
-		$configuration['extensionName'] = PairsController::c_strExtensionName;
-		$configuration['pluginName'] = PairsController::c_strPluginName;
-		$configuration['vendorName'] = PairsController::c_strVendor;
-		
-		$bootstrap = GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Core\Bootstrap');
-		$bootstrap->initialize($configuration);
-	
-		$this->objectManager = GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
-		
-		// build the request object with the requested controller and action name
-		$request = $this->buildRequest();
-		$response = $this->objectManager->get('TYPO3\CMS\Extbase\Mvc\Web\Response');
-	
-		$dispatcher =  $this->objectManager->get('TYPO3\CMS\Extbase\Mvc\Dispatcher');
-		
-		// call the desired action in the controller
-		$dispatcher->dispatch($request, $response);
-	
-		$response->sendHeaders();
-		
-		// retrieve the export values from the called action 
-		return $request->getArgument('e_objAjaxResponse');
-	}
-	
-	/**
-	 * Build a request object with the requested controller and action name
-	 *
-	 * @return \TYPO3\CMS\Extbase\Mvc\Web\Request $request
-	 */
-	protected function buildRequest() {
-		/* @var $request \TYPO3\CMS\Extbase\Mvc\Web\Request */
-		$request = $this->objectManager->get('TYPO3\CMS\Extbase\Mvc\Web\Request');
-	   
-		// remove this request in Typo3 Version 10.x again, the method setControllerVendorName don't exist there any more
-		$request->setControllerVendorName(PairsController::c_strVendor);
-		
-		$request->setControllerExtensionName(PairsController::c_strExtensionName);
-		$request->setPluginName(PairsController::c_strPluginName);
-        // insert this request for Typo3 10.x again
-		// $request->setControllerAliasToClassNameMapping(array($this->controllerName => PairsController::class ));
-		$request->setControllerName($this->controllerName);
-		$request->setControllerActionName($this->actionName);
-		$request->setArguments($this->actionArguments);
-	
-		return $request;
-	}
-	
-	/**
-	 * Prepare the call arguments
-	 * 
-	 */
-	protected function initCallArguments() {
-		// the requested arguments
-		$arrReqArguments = array();
-		
-		// get the argument request from the POST or GET
-		$request = GeneralUtility::_GP('request');
-		
-		// if there was the request argument
-		if ($request) {
-			// extract all data from the JSON encoding
-			$arrReqArguments = $this->getRequestArgumentsFromJSON($request);
-		
-		// or all arguments ar given in extra arguments
-		} else {
-			$arrReqArguments = $this->getRequestArgumentsFromGetPost();
-		}
-	
-		$this->controllerName = $arrReqArguments['controllerName'];
-		$this->actionName = $arrReqArguments['actionName'];
-		$this->actionArguments = $arrReqArguments['actionArguments'];
-	
-		if (!is_array($this->actionArguments)) $this->actionArguments = array();
-	}
 
-	
 	/**
-	 * Set the request array from JSON
+	 * Returns the basic data from the ajax request
 	 *
-	 * @param string $request	
-	 * @return array 			All the arguments
+	 * @param string $i_strUniquId	The unique ID of the pairs game.
+	 * @return array				Array with the both external ID Mapping arrays
+	 * 		arrExtIdMap:	Array with Mapping from external ID to uID
+	 * 		arrUidMap:		Array with Mapping from uID to external ID
+	 * See also the constants with the prefix c_strArrPairsData*
 	 */
-	protected function getRequestArgumentsFromJSON($request) {
-		// the returning array
-		$arrArguments = array();
-		
-		$requestArray = json_decode($request, true);
-		if(is_array($requestArray)) {
-			$arrArguments = GeneralUtility::array_merge_recursive_overrule($arrArguments, $requestArray);
-		}
-		
-		return $arrArguments;
+	protected  function getAjaxBasicData() {
+	    // array with the ajax response
+	    $l_arrAjaxResponse = array();
+	    // UniqueId of the Pairs Game
+	    $l_strUniquId = array();
+	    // the Session data container
+	    /* @var $l_objSessionContainer \Loss\Glpairs\Container\SessionContainer */
+	    $l_objSessionContainer = NULL;
+	    
+	    // get the UniqeID from the GET/POST
+	    $l_strUniquId = $this->getRequestArgumentsFromGetPost( )['actionArguments']['i_strUniquId'];
+	    
+	    /* @var \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController $GLOBALS['TSFE'] */
+	    // restore the static array with all pairs data from the session
+	    PairsController::$arrPairsData = $GLOBALS['TSFE']->fe_user->getKey('ses',
+	        PairsController::c_strSessionIdPairsData . '_' . $l_strUniquId);
+	    
+	    // get the session data container
+	    $l_objSessionContainer = PairsController::$arrPairsData[$l_strUniquId];
+	    
+	    $l_arrAjaxResponse = array(
+	        PairsController::c_strArrAjaxUniqueID 	=> $l_strUniquId,
+	        PairsController::c_strArrAjaxResult	=> array(
+	            PairsController::c_strArrPairsDataExtId 	=> $l_objSessionContainer->getm_arrExtIdMapping(),
+	            PairsController::c_strArrPairsDataUid		=> $l_objSessionContainer->getm_arrUidMapping(),
+	            PairsController::c_strArrPairsPairsType	=> $l_objSessionContainer->getm_intPairsType(),
+	            PairsController::c_strArrPairsSplitMode	=> $l_objSessionContainer->getm_blnSplitMode(),
+	            PairsController::c_strArrPairsI18n			=> $l_objSessionContainer->getm_arrI18n(),
+	            PairsController::c_strArrPairsPairscount	=> $l_objSessionContainer->getm_intPairsCount(),
+	            PairsController::c_strArrPairsPluspoints	=> $l_objSessionContainer->getPluspoints(),
+	            PairsController::c_strArrPairsMinuspoints	=> $l_objSessionContainer->getMinuspoints(),
+	            PairsController::c_strArrPairsTurnbackdelay =>	$l_objSessionContainer->getTurnbackdelay(),
+	            PairsController::c_strArrPairsHintdelay	=> $l_objSessionContainer->getHintdelay(),
+	            PairsController::c_strArrPairsTurnduration	=> $l_objSessionContainer->getTurnduration(),
+	            PairsController::c_strArrPairsStackduration => $l_objSessionContainer->getStackduration(),
+	            PairsController::c_strArrPairsTestmode		=> $l_objSessionContainer->getTestmode(),
+	            PairsController::c_strArrPairsTestmodeTurnDelay => $l_objSessionContainer->getTestModeTurnDelay(),
+	            PairsController::c_strArrPairsFinalInformation => $l_objSessionContainer->getFinalInformation()
+	        )
+	    );
+	    
+	    // return the array with the mapping data for the pairs game
+	    return $l_arrAjaxResponse;
 	}
-
+	    
 	/**
 	 * Set the request array from the getPost array
 	 */
