@@ -25,9 +25,6 @@ $tx_glpairs_domain_model_pair = array(
         'searchFields' => 'name,fal_image1,fal_image2,description,use_description,',
         'iconfile' => 'EXT:glpairs/Resources/Public/Icons/tx_glpairs_domain_model_pair.gif'
     ),
-	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, fal_image1, fal_image2, description, use_description',
-	),
 	'types' => array(
 	    '0' => array(  'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, bordersize, finaltextactive, 
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabimage1,fal_image1, height1, width1, 
@@ -78,7 +75,6 @@ $tx_glpairs_domain_model_pair = array(
 		),
 		'l10n_parent' => array(
 			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
 			'config' => array(
 				'type' => 'select',
