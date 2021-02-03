@@ -38,7 +38,7 @@
 			</trans-unit>
 			<trans-unit id="tx_glpairs_domain_model_pair.width2">
 				<source>Width of image2</source>
-				<target><![CDATA[Breits von Bild2]]></target>
+				<target><![CDATA[Breite von Bild2]]></target>
 			</trans-unit>
 			<trans-unit id="tx_glpairs_domain_model_pair.bordersize">
 				<source>Border width</source>
