@@ -212,9 +212,9 @@ $tx_glpairs_domain_model_pair = array(
 		), 
 	    'fal_image2' => array(
 	        'exclude' => 0,
-	        'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.image1',
+	        'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.image2',
 	        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-	            'fal_image1',
+	            'fal_image2',
 	            array(
 	                'maxitems' => 1,
 	            ),
@@ -225,7 +225,7 @@ $tx_glpairs_domain_model_pair = array(
 	    'image2' => array(
 	        'exclude' => 0,
 	        'displayCond' => 'FIELD:uid:<:0',
-	        'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.image1',
+	        'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.image2',
 	        'config' => array(
 	            'type' => 'input',
 	            'size' => 30,
