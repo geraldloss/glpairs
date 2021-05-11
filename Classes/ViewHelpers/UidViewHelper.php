@@ -32,7 +32,7 @@ use TYPO3Fluid;
  * {namespace glpairs=Loss\Glpairs\ViewHelpers}
  * <glpairs:uid/>
  * 
- * @author Gerald Loﬂ
+ * @author Gerald Lo√ü
  * @package Loss
  * @subpackage glpairs
  *
