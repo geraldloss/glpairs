@@ -23,6 +23,7 @@
  ***************************************************************/
 namespace Loss\Glpairs\Middleware;
 
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -38,6 +39,15 @@ use Loss\Glpairs\Ajax\AjaxDispatcher;
  * @internal
  */
 class GlpairsMiddleware implements MiddlewareInterface{
+
+    /** @var ResponseFactoryInterface */
+    private $responseFactory;
+    
+    public function __construct(ResponseFactoryInterface $responseFactory)
+    {
+        $this->responseFactory = $responseFactory;
+    }
+    
     
     /**
      * Provides alle informations about the pairs content
@@ -54,20 +64,17 @@ class GlpairsMiddleware implements MiddlewareInterface{
             return $handler->handle($request);
         }
         
-        // Remove any output produced until now
-        ob_clean();
         
         /** @var Response $response */
-        $response = GeneralUtility::makeInstance(Response::class);
+        $response = $this->responseFactory->createResponse()
+        ->withHeader('Content-Type', 'application/json; charset=utf-8');
         
-        /** @var GlpairsAjax $glpairsAjax */
+        /** @var AjaxDispatcher $glpairsAjax */
         $glpairsAjax = GeneralUtility::makeInstance(AjaxDispatcher::class);
         
-        // call the actual ajax handler and write the result in the standard output
-        echo $glpairsAjax->handleAjaxRequest();
+        $response->getBody()->write($glpairsAjax->handleAjaxRequest());
         
-        // no further middleware processing
-        return new NullResponse();
+        return $response;
     }
 }
 ?>

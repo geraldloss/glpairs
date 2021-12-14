@@ -92,6 +92,8 @@ class AjaxDispatcher {
 	    // get the session data container
 	    $l_objSessionContainer = PairsController::$arrPairsData[$l_strUniquId];
 	    
+	    $l_objSessionContainer = $this->fixSessionObject($l_objSessionContainer);
+	    
 	    $l_arrAjaxResponse = array(
 	        PairsController::c_strArrAjaxUniqueID 	=> $l_strUniquId,
 	        PairsController::c_strArrAjaxResult	=> array(
@@ -130,5 +132,18 @@ class AjaxDispatcher {
 		}
 		
 		return $arrArguments;
-	}	
+	}
+	
+	/**
+	 * Korrigiert Objekte aus der Session die beim deserialisieren ein __PHP_Incomplete_Class Objekt werden
+	 * @param object $i_objObject
+	 * @return object
+	 */
+	protected function fixSessionObject(&$i_objObject){
+	    
+	    if (is_object ($i_objObject) && get_class($i_objObject) == '__PHP_Incomplete_Class')
+	        return ($i_objObject = unserialize(serialize($i_objObject)));
+	        
+	        return $i_objObject;
+	}
 }

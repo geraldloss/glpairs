@@ -6,6 +6,8 @@ use TYPO3\CMS\Extbase\Service\CacheService;
 use Loss\Glpairs\Domain\Model\Pair;
 use Loss\Glpairs\ViewHelpers\UidViewHelper;
 use Loss\Glpairs\Container\SessionContainer;
+use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 
 /***************************************************************
@@ -330,8 +332,12 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		
 		// the init javascript content
 		$l_strJsInit = '';
+		/**
+		 * @var $pageRenderer $pageRenderer
+		 */
+		$pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
 		
-		$this->response->addAdditionalHeaderData('<!-- Start of include files for glpairs ' . $this->getPairsUniqueId() . ' -->');
+		$pageRenderer->addHeaderData('<!-- Start of include files for glpairs ' . $this->getPairsUniqueId() . ' -->');
 		
 		// set the init javascript content
 		$l_strJsInit = 
@@ -345,9 +351,8 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 					arrGlpairsIds.push( "' . $this->getPairsUniqueId() . '" );
 				}
 			</script>';
-		$this->response->addAdditionalHeaderData($l_strJsInit);
-
-		$this->response->addAdditionalHeaderData('<!-- End of include files for glpairs ' . $this->getPairsUniqueId() . ' -->');
+		$pageRenderer->addHeaderData($l_strJsInit);
+		$pageRenderer->addHeaderData('<!-- End of include files for glpairs ' . $this->getPairsUniqueId() . ' -->');
 	} 
 	
 	/**
@@ -500,12 +505,12 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 				break;
 			
 		    default:
-		        throw new \Loss\Glpairs\Exceptions\Exception('Unknown pairs type \'' . 
-		        											 $l_objPairsData->getType() . 
-		        											 '\' for the pairs game with the uID\'' . 
-		        											 $l_objPairsData->getUid() . 
-		        											 '\' and the name \'' . 
-		        											 $l_objPairsData->getName() . '\'');
+		        throw new \Exception('Unknown pairs type \'' . 
+									 $l_objPairsData->getType() . 
+									 '\' for the pairs game with the uID\'' . 
+									 $l_objPairsData->getUid() . 
+									 '\' and the name \'' . 
+									 $l_objPairsData->getName() . '\'');
 		    break;
 		}
 		

@@ -8,12 +8,12 @@ if (!defined('TYPO3_MODE')) {
 	'Loss.glpairs',
 	'Pi1',
 	array(
-		'Pairs' => 'list,ajaxBasicData',
+	    \Loss\Glpairs\Controller\PairsController::class  => 'list,ajaxBasicData',
 		
 	),
 	// non-cacheable actions
 	array(
-		'Pairs' => 'list',
+	    \Loss\Glpairs\Controller\PairsController::class => 'list',
 		
 	)
 );
