@@ -20,13 +20,13 @@
 # -- Project information -----------------------------------------------------
 
 project = 'glpairs'
-copyright = '2019, Gerald Loß'
+copyright = '2021, Gerald Loß' 
 author = 'Gerald Loß'
 
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
-release = '2.2.0'
+release = '2.3.0'
 
 
 # -- General configuration ---------------------------------------------------
