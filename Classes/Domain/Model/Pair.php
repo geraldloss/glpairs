@@ -1243,11 +1243,11 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		
 		// if this should be a red back
 		if ($this->parentPairs->getBackimage() == Pairs::C_INT_BACKIMAGE_RED) {
-		    return Pairs::C_STR_BACKIMAGE_RED;
+		    return $this->getInternalImgPath() . Pairs::C_STR_BACKIMAGE_RED;
 		    
 		// if this should be a blue image
 		} else if ($this->parentPairs->getBackimage() == Pairs::C_INT_BACKIMAGE_BLUE) {
-		    return Pairs::C_STR_BACKIMAGE_BLUE;
+		    return $this->getInternalImgPath() . Pairs::C_STR_BACKIMAGE_BLUE;
 		
 		// if this should be mixed images
 		} else if ($this->parentPairs->getBackimage() == Pairs::C_INT_BACKIMAGE_MIXED) {
@@ -1255,21 +1255,39 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 			// for the first card
 			if ($this->getCardNumber()== 1) {
 				// the red backside
-			    return Pairs::C_STR_BACKIMAGE_RED;
+			    return $this->getInternalImgPath() . Pairs::C_STR_BACKIMAGE_RED;
 			    
 			// for the second card
 			} else if ($this->getCardNumber() == 2){
 				// the blue backside
-			    return Pairs::C_STR_BACKIMAGE_BLUE;
+			    return $this->getInternalImgPath() . Pairs::C_STR_BACKIMAGE_BLUE;
 			
 			// fall back, should never happen
 			} else {
-				return Pairs::C_STR_BACKIMAGE_RED;
+			    return $this->getInternalImgPath() . Pairs::C_STR_BACKIMAGE_RED;
 			}
+		
+	    // if there is a cutom image  
+		} else if($this->parentPairs->getBackimage() == Pairs::C_INT_BACKIMAGE_CUSTOM_IMAGE) {
+			
+		    // for the first card
+		    if ($this->getCardNumber()== 1) {
+		        // the custom image number one
+		        return $this->parentPairs->getCustomBackimage1Path( );
+		        
+		    // for the second card
+		    } else if ($this->getCardNumber() == 2){
+		        // the custom image number two
+		        return $this->parentPairs->getCustomBackimage2Path( );
+		        
+		    // fall back, should never happen
+		    } else {
+		        return $this->parentPairs->getCustomBackimage1Path( );
+		    }
 		
 		// fall back for older updated versions with empty backimage value
 		} else {
-			return Pairs::C_STR_BACKIMAGE_RED;
+		    return $this->getInternalImgPath() . Pairs::C_STR_BACKIMAGE_RED;
 		}
 	}	
 	

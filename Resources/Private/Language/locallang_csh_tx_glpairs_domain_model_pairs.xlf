@@ -125,10 +125,24 @@
 			</trans-unit>		
 
 			<trans-unit id="backimage.alttitle">
-				<source>Color of the backside of the cards</source>
+				<source>Color or image of the backside of the cards</source>
 			</trans-unit>
 			<trans-unit id="backimage.description">
-				<source>You have three choices. You can choose a red backside, a blue backside or mixed backsides. In the latter case has the fist card of a pair the red backside and the second card the blue backside. In this case it is a bit easyer to find the correct pair.</source>
+				<source>You have four choices. You can choose a red backside, a blue backside, mixed backsides or a custom image for the backside. In the third case has the fist card of a pair the red backside and the second card the blue backside. In this case it is a bit easyer to find the correct pair. For the custom images choose images in the fields below.</source>
+			</trans-unit>		
+
+			<trans-unit id="customBackimage1.alttitle">
+				<source>Custom image for the backside of the first cards.</source>
+			</trans-unit>
+			<trans-unit id="customBackimage1.description">
+				<source>Here you can choose an image for the backside of the first or upper cards. You should either choose an image in exact size of the cards, or an image with borders that will be a matching image when repeated.</source>
+			</trans-unit>		
+
+			<trans-unit id="customBackimage2.alttitle">
+				<source>Custom image for the backside of the second cards.</source>
+			</trans-unit>
+			<trans-unit id="customBackimage2.description">
+				<source>Here you can choose an image for the backside of the second or lower cards. You should either choose an image in exact size of the cards, or an image with borders that will be a matching image when repeated.</source>
 			</trans-unit>		
 
 			<trans-unit id="turnbackdelay.alttitle">

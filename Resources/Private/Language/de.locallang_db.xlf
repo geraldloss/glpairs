@@ -189,6 +189,18 @@
 				<source>Mixed</source>
 				<target><![CDATA[Gemischt]]></target>
 			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.backimage.custom">
+				<source>Custom image</source>
+				<target><![CDATA[Eigenes Bild]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.customBackimage1">
+				<source>Path to custom image for the backside of the first cards</source>
+				<target><![CDATA[Eigenes Bild für die Rückseite der ersten Karten]]></target>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.customBackimage2">
+				<source>Path to custom image for the backside of the second cards</source>
+				<target><![CDATA[Eigenes Bild für die Rückseite der zweiten Karten]]></target>
+			</trans-unit>
 			<trans-unit id="tx_glpairs_domain_model_pairs.turnbackdelay">
 				<source>Delay for turning cards back</source>
 				<target><![CDATA[Verzögerung für das umdrehen der Karten]]></target>

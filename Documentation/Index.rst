@@ -51,11 +51,6 @@ Pairs
     The content of this document is related to TYPO3,
     a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
 
-
-    ==================================================================================================================================================================================================================
-    Attention! Since version 2.2 the images in the pairs are referenced by FAL. So after the update you need to reconfigure all images. See for that in chapter** :ref:`FAL Migration for Version 2.2<fal-migration>`
-    ==================================================================================================================================================================================================================
-
     **Table of Contents**
 
 .. toctree::

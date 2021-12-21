@@ -49,6 +49,11 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	const C_INT_BACKIMAGE_MIXED = 2;
 	
 	/**
+	 * Custom image at the back of the cards
+	 */
+	const C_INT_BACKIMAGE_CUSTOM_IMAGE = 3;
+	
+	/**
 	 * Imagename of the red backside
 	 */
 	const C_STR_BACKIMAGE_RED = 'card_back_red.jpg';
@@ -175,6 +180,23 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $backimage;
 	
+	
+	/**
+	 * The custom image number 1 of the backside
+	 *
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("Collection", options={"elementType: \TYPO3\CMS\Extbase\Domain\Model\FileReference"})
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+	 */
+	protected $customBackimage1;
+	
+	
+	/**
+	 * The custom image number 2 of the backside
+	 *
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("Collection", options={"elementType: \TYPO3\CMS\Extbase\Domain\Model\FileReference"})
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+	 */
+	protected $customBackimage2;
 	
 	/**
 	 * The delay for the automatic turn back of the cards
@@ -596,6 +618,96 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*/
 	public function setBackimage($i_intBackimage){
 		$this->backimage = $i_intBackimage;
+	}
+	
+	/**
+	 * Get custom image number one for the backside
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+	 */
+	public function getCustomBackimage1()
+	{
+	    
+	    return $this->customBackimage1;
+	}
+	
+	/**
+	 * Set custom image number one for the backside
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $falMedia
+	 */
+	public function setCustomBackimage1(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $customBackimage1)
+	{
+	    $this->customBackimage1 = $customBackimage1;
+	}
+	
+	/**
+	 * Get the server path of custom backside Image 1 over File Abstract Layer (FAL)
+	 *
+	 * @return string
+	 */
+	public function getCustomBackimage1Path(){
+	    
+	    // if no image is defined
+	    if ($this->getCustomBackimage1()->current() === Null) {
+	        // no image path is returned
+	        return '';
+	    }
+	    
+	    // get the path of the image
+	    $imagePath = Pair::C_STR_FILEADMIN_PATH .
+	    $this->getCustomBackimage1()
+	    ->current()
+	    ->getOriginalResource()
+	    ->getIdentifier();
+	    
+	    // return the path without leading slash
+	    return ltrim($imagePath, '/');
+	}
+	
+	/**
+	 * Get custom image number two for the backside
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+	 */
+	public function getCustomBackimage2()
+	{
+	    
+	    return $this->customBackimage2;
+	}
+	
+	/**
+	 * Set custom image number one for the backside
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $falMedia
+	 */
+	public function setCustomBackimage2(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $customBackimage2)
+	{
+	    $this->customBackimage2 = $customBackimage2;
+	}
+	
+	/**
+	 * Get the server path of custom backside Image 2 over File Abstract Layer (FAL)
+	 *
+	 * @return string
+	 */
+	public function getCustomBackimage2Path(){
+	    
+	    // if no image is defined
+	    if ($this->getCustomBackimage2()->current() === Null) {
+	        // no image path is returned
+	        return '';
+	    }
+	    
+	    // get the path of the image
+	    $imagePath = Pair::C_STR_FILEADMIN_PATH .
+	    $this->getCustomBackimage2()
+	    ->current()
+	    ->getOriginalResource()
+	    ->getIdentifier();
+	    
+	    // return the path without leading slash
+	    return ltrim($imagePath, '/');
 	}
 	
 	/**

@@ -143,6 +143,15 @@
 			<trans-unit id="tx_glpairs_domain_model_pairs.backimage.mixed">
 				<source>Mixed</source>
 			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.backimage.custom">
+				<source>Custom image</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.customBackimage1">
+				<source>Path to custom image for the backside of the first cards</source>
+			</trans-unit>
+			<trans-unit id="tx_glpairs_domain_model_pairs.customBackimage2">
+				<source>Path to custom image for the backside of the second cards</source>
+			</trans-unit>
 			<trans-unit id="tx_glpairs_domain_model_pairs.turnbackdelay">
 				<source>Delay for turning cards back</source>
 			</trans-unit>

@@ -81,6 +81,8 @@ CREATE TABLE tx_glpairs_domain_model_pairs (
 	pluspoints int(11) DEFAULT '0' NOT NULL,
 	minuspoints int(11) DEFAULT '0' NOT NULL,
 	backimage int(11) DEFAULT '0' NOT NULL,
+	custom_backimage1 int(11) unsigned DEFAULT '0' NOT NULL,
+	custom_backimage2 int(11) unsigned DEFAULT '0' NOT NULL,
  	turnbackdelay int(11) DEFAULT '0' NOT NULL,	
  	hintdelay int(11) DEFAULT '0' NOT NULL,	
  	turnduration int(11) DEFAULT '0' NOT NULL,	
