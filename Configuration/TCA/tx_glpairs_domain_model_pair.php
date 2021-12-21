@@ -214,7 +214,7 @@ $tx_glpairs_domain_model_pair = array(
 	        'exclude' => 0,
 	        'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.image1',
 	        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-	            'fal_image1',
+	            'fal_image2',
 	            array(
 	                'maxitems' => 1,
 	            ),

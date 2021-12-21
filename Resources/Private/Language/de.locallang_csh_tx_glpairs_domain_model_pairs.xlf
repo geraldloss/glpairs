@@ -160,12 +160,30 @@
 			</trans-unit>		
 
 			<trans-unit id="backimage.alttitle">
-				<source>Color of the backside of the cards</source>
-				<target><![CDATA[Die Farber für die Rückseite der Karten.]]></target>
+				<source>Color or image of the backside of the cards</source>
+				<target><![CDATA[Die Farber oder ein Bild für die Rückseite der Karten.]]></target>
 			</trans-unit>
 			<trans-unit id="backimage.description">
-				<source>You have three choices. You can choose a red backside, a blue backside or mixed backsides. In the latter case has the fist card of a pair the red backside and the second card the blue backside. In this case it is a bit easyer to find the correct pair.</source>
-				<target><![CDATA[Sie haben drei Möglichkeiten. Sie können eine rote Rückseite, eine blaue Rückseite oder gemischte Rückseiten auswählen. Im letzen Fall bekommt die erste Karten eine zusammenghörigen Kartenpaares die rote und die Zweite die blaue Karte. In diesem Fall ist es etwas einfacher das richtige Kartenpaar zu finden.]]></target>
+				<source>You have four choices. You can choose a red backside, a blue backside, mixed backsides or a custom image for the backside. In the third case has the fist card of a pair the red backside and the second card the blue backside. In this case it is a bit easyer to find the correct pair. For the custom images choose images in the fields below.</source>
+				<target><![CDATA[Sie haben vier Möglichkeiten. Sie können eine rote Rückseite, eine blaue Rückseite, gemischte Rückseiten oder eigene Bilder auswählen. Im dritten Fall bekommt die erste Karten eine zusammenghörigen Kartenpaares die rote und die Zweite die blaue Karte. In diesem Fall ist es etwas einfacher das richtige Kartenpaar zu finden. Für eigene Bilder müssen Sie Bilder in den Feldern weiter unten auswählen.]]></target>
+			</trans-unit>		
+
+			<trans-unit id="customBackimage1.alttitle">
+				<source>Custom image for the backside of the first cards.</source>
+				<target><![CDATA[Eigenes Bild für die Rückseite der ersten Karten]]></target>
+			</trans-unit>
+			<trans-unit id="customBackimage1.description">
+				<source>Here you can choose an image for the backside of the first or upper cards. You should either choose an image in exact size of the cards, or an image with borders that will be a matching image when repeated.</source>
+				<target><![CDATA[Hier können Sie ein Bild auswählen, dass für ersten bzw. oberen Karten verwendet werden soll. Dafür sollten Sie entweder ein Bild in exakt der größe der Karten auswählen oder ein Bild mit Rändern die bei einer Wiederholung zu einem harmonischen Bild führen.]]></target>
+			</trans-unit>		
+
+			<trans-unit id="customBackimage2.alttitle">
+				<source>Custom image for the backside of the second cards.</source>
+				<target><![CDATA[Eigenes Bild für die Rückseite der zweiten Karten]]></target>
+			</trans-unit>
+			<trans-unit id="customBackimage2.description">
+				<source>Here you can choose an image for the backside of the second or lower cards. You should either choose an image in exact size of the cards, or an image with borders that will be a matching image when repeated.</source>
+				<target><![CDATA[Hier können Sie ein Bild auswählen, dass für zweiten bzw. unterne Karten verwendet werden soll. Dafür sollten Sie entweder ein Bild in exakt der größe der Karten auswählen oder ein Bild mit Rändern die bei einer Wiederholung zu einem harmonischen Bild führen.]]></target>
 			</trans-unit>		
 
 			<trans-unit id="turnbackdelay.alttitle" approved="yes">

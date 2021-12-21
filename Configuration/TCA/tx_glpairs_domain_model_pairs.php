@@ -26,23 +26,23 @@ $tx_glpairs_domain_model_pairs = array(
         'iconfile' => 'EXT:glpairs/Resources/Public/Icons/tx_glpairs_domain_model_pairs.gif'
 	),
 	'types' => array(
-	    '0' => array(  'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, splitmode, width, bordersize, cardheight, cardwidth, pluspoints, minuspoints, backimage, maxcards, has_pairs, 
+	    '0' => array(  'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, splitmode, width, bordersize, cardheight, cardwidth, pluspoints, minuspoints, backimage, custom_backimage1, custom_backimage2, maxcards, has_pairs, 
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabfinalinfo, finaltextwidth, finaltextheight, finalpicwidth, finalpicheight,
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabadvanced, turnbackdelay, hintdelay, turnduration, stackduration, testmodeturndelay, testmode,
 									--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'
 				),
-	    '1' => array(  'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, splitmode, width, bordersize, cardheight, cardwidth, pluspoints, minuspoints, backimage, maxcards, has_pairs,
+	    '1' => array(  'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, splitmode, width, bordersize, cardheight, cardwidth, pluspoints, minuspoints, backimage, custom_backimage1, custom_backimage2, maxcards, has_pairs,
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabfinalinfo, finaltextwidth, finaltextheight, finalpicwidth, finalpicheight,
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabadvanced, turnbackdelay, hintdelay, turnduration, stackduration, testmodeturndelay, testmode,
 									--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'
 				),
-	    '2' => array(  'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, splitmode, width, bordersize, cardheight, cardwidth, fontsize, pluspoints, minuspoints, backimage, maxcards, has_pairs,
+	    '2' => array(  'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, splitmode, width, bordersize, cardheight, cardwidth, fontsize, pluspoints, minuspoints, backimage, custom_backimage1, custom_backimage2, maxcards, has_pairs,
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabfinalinfo, finaltextwidth, finaltextheight, finalpicwidth, finalpicheight,
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabadvanced, turnbackdelay, hintdelay, turnduration, stackduration, testmodeturndelay, testmode,
 									--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime',
 									'subtype_value_field' => 'finaltext_active'
 				),
-	    '3' => array( 'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, splitmode, width, bordersize, cardheight, cardwidth, fontsize, pluspoints, minuspoints, backimage, maxcards, has_pairs,
+	    '3' => array( 'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, splitmode, width, bordersize, cardheight, cardwidth, fontsize, pluspoints, minuspoints, backimage, custom_backimage1, custom_backimage2, maxcards, has_pairs,
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabfinalinfo, finaltextwidth, finaltextheight, finalpicwidth, finalpicheight,
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabadvanced, turnbackdelay, hintdelay, turnduration, stackduration, testmodeturndelay, testmode,
 									--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'
@@ -258,14 +258,16 @@ $tx_glpairs_domain_model_pairs = array(
 		),
 		'backimage' => array(
 			'exclude' => 0,
+		    'onChange' => 'reload',
 			'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.backimage',
 			'config' => array(
 				'type' => 'select',
 			    'items' => 	array( 
 			    				array( 	'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.backimage.red', 0 ),
 			    				array(	'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.backimage.blue', 1 ),
-			    				array(	'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.backimage.mixed', 2 )
-			    			),
+			    				array(	'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.backimage.mixed', 2 ),
+            			        array(	'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.backimage.custom', 3 )
+            			    ),
 				'size' => 1,
 				'maxitems' => 1,
 				'eval' => 'required',
@@ -273,7 +275,33 @@ $tx_glpairs_domain_model_pairs = array(
 				'renderType' => 'selectSingle',
 			),
 		),
-		'turnbackdelay' => array(
+	    'custom_backimage1' => array(
+	        'exclude' => 0,
+	        'displayCond' => 'FIELD:backimage:=:3',
+	        'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.customBackimage1',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'custom_backimage1',
+                array(
+                    'maxitems' => 1,
+                    'minitems' => 1,
+                ),
+                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                ),
+	    ),
+	    'custom_backimage2' => array(
+	        'exclude' => 0,
+	        'displayCond' => 'FIELD:backimage:=:3',
+	        'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.customBackimage2',
+	        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+	            'custom_backimage2',
+	            array(
+	                'maxitems' => 1,
+	                'minitems' => 1,
+	            ),
+	            $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+	            ),
+	    ),
+	    'turnbackdelay' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pairs.turnbackdelay',
 			'config' => array(
