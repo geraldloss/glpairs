@@ -4,7 +4,6 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use Loss\Glpairs\Controller\PairsController;
-use Loss\Glpairs\Domain\Model\Pairs;
 
 /***************************************************************
  *  Copyright notice
