@@ -1,6 +1,6 @@
 <?php
 namespace Loss\Glpairs\Domain\Repository;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
 
 /***************************************************************
  *  Copyright notice
@@ -44,10 +44,6 @@ class PairsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		// The query object
 		/* @var $l_objQuery  \TYPO3\CMS\Extbase\Persistence\QueryInterface */
 		$l_objQuery = null;
-		
-		// Object with the result of the query with the pairs game
-		/* @var $l_objPairs  \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult */
-		$l_objQueryPairs = NULL;
 		
 		// the returning pairs game data model
 		/* @var $l_objPairsData \Loss\Glpairs\Domain\Model\Pairs */

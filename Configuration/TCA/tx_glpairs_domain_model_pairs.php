@@ -39,8 +39,7 @@ $tx_glpairs_domain_model_pairs = array(
 	    '2' => array(  'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, splitmode, width, bordersize, cardheight, cardwidth, fontsize, pluspoints, minuspoints, backimage, custom_backimage1, custom_backimage2, maxcards, has_pairs,
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabfinalinfo, finaltextwidth, finaltextheight, finalpicwidth, finalpicheight,
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabadvanced, turnbackdelay, hintdelay, turnduration, stackduration, testmodeturndelay, testmode,
-									--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime',
-									'subtype_value_field' => 'finaltext_active'
+									--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'
 				),
 	    '3' => array( 'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, splitmode, width, bordersize, cardheight, cardwidth, fontsize, pluspoints, minuspoints, backimage, custom_backimage1, custom_backimage2, maxcards, has_pairs,
 									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.tabfinalinfo, finaltextwidth, finaltextheight, finalpicwidth, finalpicheight,

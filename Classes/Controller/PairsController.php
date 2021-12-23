@@ -1,11 +1,7 @@
 <?php
 namespace Loss\Glpairs\Controller;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Extbase\Service\CacheService;
 use Loss\Glpairs\Domain\Model\Pair;
-use Loss\Glpairs\ViewHelpers\UidViewHelper;
-use Loss\Glpairs\Container\SessionContainer;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -368,7 +364,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		
 		// Structured ObjectStorage of the pairs for the view
 		/* @var $l_objPairsStorage \TYPO3\CMS\Extbase\Persistence\ObjectStorage */
-		$l_objPairsStorage = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+		$l_objPairsStorage = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class);
 		
 		/* @var $l_objPairsData \Loss\Glpairs\Domain\Model\Pairs */
 		$l_objPairsData = NULL;
@@ -379,7 +375,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		
 		// disable caching for this action, the paramter in the ext_localconf.php for the method
 		// ExtensionUtility::configurePlugin() is not enough
-		$l_objCacheService = $this->objectManager->get('TYPO3\CMS\Extbase\Service\CacheService');
+		$l_objCacheService = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Service\CacheService::class);
 		$l_objCacheService->clearPageCache( intval($GLOBALS['TSFE']->id));
 		
 		// retreive the pairs game from the database
@@ -518,7 +514,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		$this->view->assign('pairsGame', $l_objPairsData);
 		
 		// create the session container
-		$l_objSessionContainer = $this->objectManager->get('Loss\Glpairs\Container\SessionContainer');
+		$l_objSessionContainer = GeneralUtility::makeInstance(\Loss\Glpairs\Container\SessionContainer::class);
 		
 		// set the data
 		$l_objSessionContainer->setm_arrExtIdMapping($this->m_arrExtIdMapping);
@@ -608,7 +604,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	protected function randomizeObjectStorage($i_objObjectStorage, $i_intMaxCards = 0){
 		// the returning ObjectStorage
 		/* @var $l_objObjectStorage  \TYPO3\CMS\Extbase\Persistence\ObjectStorage */
-		$l_objObjectStorage = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\ObjectStorage'); 
+	    $l_objObjectStorage = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class); 
 		// buffer array for the sorting
 		$l_arrSort = array();
 		// sorting key
@@ -678,9 +674,9 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		
 		// if all positions of the array are set
 		if (count($i_arrArray) >= getrandmax()) {
-		    throw new \Loss\Glpairs\Exceptions\Exception('Unable to get a new key. To many postitions (' . 
-		    											 getrandmax() .
-														 ') are already set in the array. You have to many pairs in this game.');
+		    throw new \Exception('Unable to get a new key. To many postitions (' . 
+        						 getrandmax() .
+								 ') are already set in the array. You have to many pairs in this game.');
 		}
 		
 		$l_intKey = $i_intKey;
@@ -813,7 +809,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		// if we are in test mode and no split mode 
 		elseif ($i_strCardNumber == self::c_strCardNumberAll){
 			// create a new object storage
-			$l_objRandomObjectStorage = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+		    $l_objRandomObjectStorage = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class);
 			
 			foreach ($l_objRawPairsObjectStorage as $l_objPair1) {
 				// attach the first card
@@ -851,11 +847,11 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
 		// The returning ObjectStorage 
 		/* @var $l_objRetObjectStorage \TYPO3\CMS\Extbase\Persistence\ObjectStorage */
-		$l_objRetObjectStorage = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+	    $l_objRetObjectStorage = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class);
 
 		// The ObjectStorage for one row
 		/* @var $l_objRowStorage \TYPO3\CMS\Extbase\Persistence\ObjectStorage */
-		$l_objRowStorage = NULL;
+		$l_objRowStorage = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class);
 		
 		// a pair of cards
 		/* @var $l_objPair \Loss\Glpairs\Domain\Model\Pair */
@@ -869,7 +865,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 			
 			// if this is the first pair
 			if ($l_intKey == 0) {
-			    $l_objRowStorage = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+			    $l_objRowStorage = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class);
 			}
 			
 			// if width of the game is set
@@ -878,7 +874,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 				// attach the row to the storage
 			    $l_objRetObjectStorage->attach($l_objRowStorage);
 			    // create a new row
-			    $l_objRowStorage = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+			    $l_objRowStorage = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class);
 			}
 			
 			// attach pair to the row
@@ -891,7 +887,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		// and if the last row is not already full
 		while ($i_objPairs->getWidth() != 0 && $l_objRowStorage->count() < $i_objPairs->getWidth()) {
 		    // create an empty pair
-		    $l_objPair = $this->objectManager->get('Loss\Glpairs\Domain\Model\Pair');
+		    $l_objPair = GeneralUtility::makeInstance(\Loss\Glpairs\Domain\Model\Pair::class);
 		    $l_objPair->setEmpty(true);
 		    $l_objRowStorage->attach($l_objPair);
 		}
@@ -920,7 +916,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		
 		// The returning ObjectStorage
 		/* @var $l_objRetStorage \TYPO3\CMS\Extbase\Persistence\ObjectStorage */
-		$l_objRetStorage = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+		$l_objRetStorage = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class);
 		
 		
 		foreach ($i_objObjectStorage as $l_objPair) {
@@ -1029,9 +1025,9 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		
 		// if all positions of the array are set
 		if (count($i_arrExtIdMapping) >= getrandmax()) {
-			throw new \Loss\Glpairs\Exceptions\Exception('Unable to get a new external ID. We have already ' .
-														 getrandmax() .
-														 ' defined. You have to many pairs in this game.');
+			throw new \Exception('Unable to get a new external ID. We have already ' .
+								 getrandmax() .
+								 ' defined. You have to many pairs in this game.');
 		}
 		
 		$l_intExtId = rand(1, getrandmax());
