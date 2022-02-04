@@ -3,7 +3,7 @@
 [![TYPO3 11](https://img.shields.io/badge/TYPO3-11-orange.svg)](https://get.typo3.org/version/11)
 [![Latest Stable Version](http://poser.pugx.org/geraldloss/glpairs/v)](https://packagist.org/packages/geraldloss/glpairs)
 
->Typo3 Extension for an interactive Pairs Game
+> Typo3 Extension for an interactive Pairs Game
 
 ## 1 Features
 
@@ -14,7 +14,7 @@
 
 ## 2 Documentation
 
-[Comprehensive documentation][1]
+ [Comprehensive documentation][1]
 
 ## 3 Installation
 
@@ -26,6 +26,7 @@ Run the following command within your Composer based TYPO3 project:
 
 ```
 composer require geraldloss/glpairs
+```
 
 #### Installation as extension from TYPO3 Extension Repository (TER)
 
