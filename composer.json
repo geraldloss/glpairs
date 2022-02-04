@@ -16,7 +16,6 @@
 		}
 	},
 	"replace" : {
-		"glpairs" : "self.version",
 		"typo3-ter/glpairs" : "self.version"
 	},
 	"homepage" : "https://www.schulze-thulin.de/en/games/pairs-german-welsh-irish/pairs-halle-in-german",
@@ -25,7 +24,7 @@
 		"issues" : "https://github.com/geraldloss/glpairs/issues",
 		"source" : "https://github.com/geraldloss/glpairs"
 	},
-	"license" : "GPL-3.0+",
+	"license" : "GPL-3.0-or-later",
 	"keywords" : [
 		"TYPO3",
 		"extension",
