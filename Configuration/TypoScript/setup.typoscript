@@ -17,11 +17,11 @@ plugin.tx_glpairs {
 
 page.includeJSFooter { 
 	# include jQuery library at the end of the body, if it is not deactivated
-	jQueryLib = EXT:glpairs/Resources/Public/js/jquery-3.1.1.min.js
+	jQueryLib = EXT:glpairs/Resources/Public/js/jquery.min.js
 	jQueryLib.if.isTrue = {$plugin.tx_glpairs.libraries.inlcudeJQuery}
 
 	# include Bootstrap library at the end of the body, if it is not deactivated
-	bootstrapLib = EXT:glpairs/Resources/Public/js/bootstrap.min.js
+	bootstrapLib = EXT:glpairs/Resources/Public/js/bootstrap.bundle.min.js
 	bootstrapLib.if.isTrue = {$plugin.tx_glpairs.libraries.includeBootstrapJs}
 
 	# include the glpairs library at the end of the body, if it is not deactivated

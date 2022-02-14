@@ -11,6 +11,12 @@
 Final information after every pair
 ----------------------------------
 
+**For this feature you need the** 
+`bootstrap modal component. <https://getbootstrap.com/docs/5.1/components/modal/>`_
+**Make shure you have included the bootstrap library of this extension (which is the default) or you 
+have included your own bootstrap library.** 
+:ref:`See configuration for bootstrap library<bootstrap_lib_config>`
+
 You are able to display a final information, if the user has select a correct pair. This could be
 useful if you have a pairs game with pictures of your hometown. If the user has select a correct
 pair you can display now some additional informations about the memorial he can see on the cards.

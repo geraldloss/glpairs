@@ -85,9 +85,9 @@ libraries.inlcudeJQuery
 
 :typoscript:`plugin.tx_glpairs.libraries.inlcudeJQuery =` :ref:`t3tsref:data-type-boolean`
 
-Activate this flag, if you want to inlcude the jQuery 3.x library shipped with this extension. If you have your own 
-jQuery library included in your homepage, you can deactivate this flag. Keep in mind, that you use always jQuery 3.x.
-Other versions could break this extension.
+Activate this flag, if you want to inlcude the jQuery 3.6 library shipped with this extension. If you have your own 
+jQuery library included in your homepage, you can deactivate this flag. Keep in mind, that you use always jQuery 3.6.
+Pobably it works with other versins, but it is only tested with jQery 3.6.
 
 
 .. _ts-plugin-tx-glpairs-libraries.includeBootstrapJs:
@@ -96,11 +96,14 @@ Other versions could break this extension.
 libraries.includeBootstrapJs
 """"""""""""""""""""""""""""
 
+.. _bootstrap_lib_config:
+
 :typoscript:`plugin.tx_glpairs.libraries.includeBootstrapJs =` :ref:`t3tsref:data-type-boolean`
 
-Activate this flag, if you want to inlcude the Bootstrap 3.x library shipped with this extension. If you have your own 
-Bootstrap library included in your homepage, you can deactivate this flag. Keep in mind, that you use always Bootstrap 3.x.
-Other versions could break this extension.
+Activate this flag, if you want to inlcude the Bootstrap 5.1 library shipped with this extension. If you have your own 
+Bootstrap library included in your homepage, you can deactivate this flag. Keep in mind, that you should use Bootstrap 5.1. 
+with the bundle, so you have the modal component included. It could work with other versons, but is only tested with 
+version 5.1. Keep an eye on the final information. The modal dialog is made with Bootstrap.
 
 
 .. _ts-plugin-tx-glpairs-libraries.includeBootstrapCss:
@@ -112,7 +115,7 @@ libraries.includeBootstrapCss
 
 Activate this flag, if you want to inlcude the Bootstrap CSS content file shipped with this extension. If you have your own 
 Bootstrap library with CSS file included in your homepage, you can deactivate this flag. Keep in mind, that you use always 
-Bootstrap 3.x. Other versions could break this extension.
+Bootstrap 5.1. Other versions may not work.
 
 
 .. _ts-plugin-tx-glpairs-cssFile:

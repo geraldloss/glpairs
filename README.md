@@ -2,6 +2,7 @@
 [![TYPO3 10](https://img.shields.io/badge/TYPO3-10-orange.svg)](https://get.typo3.org/version/10)
 [![TYPO3 11](https://img.shields.io/badge/TYPO3-11-orange.svg)](https://get.typo3.org/version/11)
 [![Latest Stable Version](http://poser.pugx.org/geraldloss/glpairs/v)](https://packagist.org/packages/geraldloss/glpairs)
+[![License](http://poser.pugx.org/geraldloss/glpairs/license)](https://packagist.org/packages/geraldloss/glpairs)
 
 > Typo3 Extension for an interactive Pairs Game
 
