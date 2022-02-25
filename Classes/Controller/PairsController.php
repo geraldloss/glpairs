@@ -376,7 +376,8 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		// disable caching for this action, the paramter in the ext_localconf.php for the method
 		// ExtensionUtility::configurePlugin() is not enough
 		$l_objCacheService = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Service\CacheService::class);
-		$l_objCacheService->clearPageCache( intval($GLOBALS['TSFE']->id));
+		//$l_objCacheService->clearPageCache( intval($GLOBALS['TSFE']->id));
+		$l_objCacheService->clearPageCache( intval(GeneralUtility::_GP('id')));
 		
 		// retreive the pairs game from the database
 		$l_objPairsData = $this->m_objPairsRepository->getPairByName($this->settings['pairsgame']);
