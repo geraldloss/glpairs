@@ -1,8 +1,11 @@
 <?php
+declare(strict_types=1);
+
 namespace Loss\Glpairs\Ajax;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Loss\Glpairs\Controller\PairsController;
+use Psr\Http\Message\ServerRequestInterface;
 
 /***************************************************************
  *  Copyright notice
@@ -49,18 +52,19 @@ class AjaxDispatcher {
 	/**
 	 * Handle the ajax request and call finally a given controller with its action.
 	 * 
+	 * @param ServerRequestInterface $request
 	 * @return	object() The JSON object with the data for the ajax request.
 	 */
-	public function handleAjaxRequest() {
+	public function handleAjaxRequest(ServerRequestInterface $request): string {
 		
 		// the output of the ajax request
-		$arrOutput = array();
+		$arrOutput = [];
 		
 		// retrieve the Ajax data
-		$arrOutput = $this->getAjaxBasicData( );
+		$arrOutput = $this->getAjaxBasicData( $request );
 		
 		// return the JSON encoded content
-		return json_encode($arrOutput);
+		return json_encode($arrOutput, JSON_THROW_ON_ERROR);
 	}
 
 	/**
@@ -72,17 +76,17 @@ class AjaxDispatcher {
 	 * 		arrUidMap:		Array with Mapping from uID to external ID
 	 * See also the constants with the prefix c_strArrPairsData*
 	 */
-	protected  function getAjaxBasicData() {
+	protected function getAjaxBasicData(ServerRequestInterface $request): array {
 	    // array with the ajax response
-	    $l_arrAjaxResponse = array();
+	    $l_arrAjaxResponse = [];
 	    // UniqueId of the Pairs Game
-	    $l_strUniquId = array();
+	    $l_strUniquId = [];
 	    // the Session data container
 	    /* @var $l_objSessionContainer \Loss\Glpairs\Container\SessionContainer */
-	    $l_objSessionContainer = NULL;
+	    $l_objSessionContainer = null;
 	    
 	    // get the UniqeID from the GET/POST
-	    $l_strUniquId = $this->getRequestArgumentsFromGetPost( )['actionArguments']['i_strUniquId'];
+	    $l_strUniquId = (string) $this->getRequestArgumentsFromGetPost( $request )['actionArguments']['i_strUniquId'];
 	    
 	    /* @var \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController $GLOBALS['TSFE'] */
 	    // restore the static array with all pairs data from the session
@@ -94,9 +98,9 @@ class AjaxDispatcher {
 	    
 	    $l_objSessionContainer = $this->fixSessionObject($l_objSessionContainer);
 	    
-	    $l_arrAjaxResponse = array(
+	    $l_arrAjaxResponse = [
 	        PairsController::c_strArrAjaxUniqueID 	=> $l_strUniquId,
-	        PairsController::c_strArrAjaxResult	=> array(
+	        PairsController::c_strArrAjaxResult	=> [
 	            PairsController::c_strArrPairsDataExtId 	=> $l_objSessionContainer->getm_arrExtIdMapping(),
 	            PairsController::c_strArrPairsDataUid		=> $l_objSessionContainer->getm_arrUidMapping(),
 	            PairsController::c_strArrPairsPairsType	=> $l_objSessionContainer->getm_intPairsType(),
@@ -112,8 +116,8 @@ class AjaxDispatcher {
 	            PairsController::c_strArrPairsTestmode		=> $l_objSessionContainer->getTestmode(),
 	            PairsController::c_strArrPairsTestmodeTurnDelay => $l_objSessionContainer->getTestModeTurnDelay(),
 	            PairsController::c_strArrPairsFinalInformation => $l_objSessionContainer->getFinalInformation()
-	        )
-	    );
+	        ]
+	    ];
 	    
 	    // return the array with the mapping data for the pairs game
 	    return $l_arrAjaxResponse;
@@ -122,13 +126,13 @@ class AjaxDispatcher {
 	/**
 	 * Set the request array from the getPost array
 	 */
-	protected function getRequestArgumentsFromGetPost() {
+	protected function getRequestArgumentsFromGetPost(ServerRequestInterface $request): array {
 		// the returning array
-		$arrArguments = array();
+		$arrArguments = [];
 		
-		$validArguments = array('controllerName','actionName','actionArguments');
+		$validArguments = ['controllerName','actionName','actionArguments'];
 		foreach($validArguments as $argument) {
-			if(GeneralUtility::_GP($argument)) $arrArguments[$argument] = GeneralUtility::_GP($argument);
+			$arrArguments[$argument] = $this->extractValueFromPost($request, $argument);
 		}
 		
 		return $arrArguments;
@@ -139,11 +143,22 @@ class AjaxDispatcher {
 	 * @param object $i_objObject
 	 * @return object
 	 */
-	protected function fixSessionObject(&$i_objObject){
+	protected function fixSessionObject(&$i_objObject): object {
 	    
 	    if (is_object ($i_objObject) && get_class($i_objObject) == '__PHP_Incomplete_Class')
 	        return ($i_objObject = unserialize(serialize($i_objObject)));
 	        
 	        return $i_objObject;
+	}
+
+	/**
+	 * Extracts a specific value from the POST parameters of the request.
+	 *
+	 * @param ServerRequestInterface $request
+	 * @param string $argument The name of the argument to extract from the POST parameters.
+	 * @return mixed The extracted value from the POST parameters.
+	 */
+	protected function extractValueFromPost(ServerRequestInterface $request, string $argument): mixed {
+		return $request->getParsedBody()[$argument] ?? $request->getQueryParams()[$argument] ?? null;
 	}
 }

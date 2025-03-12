@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace Loss\Glpairs\Domain\Model;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -122,14 +124,14 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 * @var string
 	 */
-	protected $name;
+	protected string $name;
 
 	/**
 	 * First image
 	 *
 	 * @var string
 	 */
-	protected $image1;
+	protected string $image1;
 
 	/**
 	 * First Fal Image
@@ -137,7 +139,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Collection", options={"elementType: \TYPO3\CMS\Extbase\Domain\Model\FileReference"})
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
 	 */
-	protected $falImage1;
+	protected \TYPO3\CMS\Extbase\Persistence\ObjectStorage $falImage1;
 	
 	/**
 	 * Height of image1
@@ -145,7 +147,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $height1;
+	protected int $height1;
 
 	/**
 	 * Width of image1
@@ -153,14 +155,14 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $width1;
+	protected int $width1;
 
 	/**
 	 * Second Image
 	 *
 	 * @var string
 	 */
-	protected $image2;
+	protected string $image2;
 
 	/**
 	 * Second Fal Image
@@ -168,7 +170,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Collection", options={"elementType: \TYPO3\CMS\Extbase\Domain\Model\FileReference"})
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
 	 */
-	protected $falImage2;
+	protected \TYPO3\CMS\Extbase\Persistence\ObjectStorage $falImage2;
 	
 	
 	/**
@@ -177,7 +179,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $height2;
+	protected int $height2;
 
 	/**
 	 * Width of image2
@@ -185,7 +187,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $width2;
+	protected int $width2;
 
 	/**
 	 * Description of the image 1
@@ -193,7 +195,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("String")
 	 * @var string
 	 */
-	protected $description1;
+	protected string $description1;
 
 	/**
 	 * Description of the image 2
@@ -201,7 +203,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("String")
 	 * @var string
 	 */
-	protected $description2;
+	protected string $description2;
 	
 	/**
 	 * 1 if this is the first card of the pair or 2 if this is the second card.
@@ -209,7 +211,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var integer
 	 */
-	protected $intCardNumber = 0;
+	protected int $intCardNumber = 0;
 	
 	/**
 	 * The default images setting.
@@ -217,7 +219,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("String")
 	 * @var string
 	 */
-	protected $strSettingsDefaultImage = "";
+	protected string $strSettingsDefaultImage = "";
 	
 	/**
 	 * The default text description settings.
@@ -225,7 +227,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("String")
 	 * @var string
 	 */
-	protected $strSettingsDefaultText = "";
+	protected string $strSettingsDefaultText = "";
 	
 	/**
 	 * Height of the text card
@@ -233,7 +235,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $textheight1;
+	protected int $textheight1;
 
 	/**
 	 * Width of the text card
@@ -241,7 +243,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $textwidth1;
+	protected int $textwidth1;
 	
 	/**
 	 * The fontsize of the descriptiontext
@@ -249,7 +251,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $fontsize2;
+	protected int $fontsize2;
 	
 	/**
 	 * Height of the text card
@@ -257,7 +259,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $textheight2;
+	protected int $textheight2;
 
 	/**
 	 * Width of the text card
@@ -265,7 +267,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $textwidth2;
+	protected int $textwidth2;
 	
 	/**
 	 * The fontsize of the descriptiontext
@@ -273,14 +275,14 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $fontsize1;
+	protected int $fontsize1;
 	
 	/**
 	 * Flag if this is an empty pair.
 	 * 
 	 * @var boolean
 	 */
-	protected $empty = false;
+	protected bool $empty = false;
 	
 	/**
 	 * The bordersize of the pair.
@@ -288,7 +290,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $bordersize;
+	protected int $bordersize;
 	
 	/**
 	 * The parent pairs game of the pair.
@@ -296,7 +298,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("GenericObject")
 	 * @var \Loss\Glpairs\Domain\Model\Pairs
 	 */
-	protected $parentPairs = Null;
+	protected ?\Loss\Glpairs\Domain\Model\Pairs $parentPairs = null;
 
 	
 	/**
@@ -307,7 +309,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * uID of the pair itself, so that the pragramm can proof if the cards belong thogether. 
 	 * @var int
 	 */
-	protected $intExternalId1 = 0;
+	protected int $intExternalId1 = 0;
 	
 	/**
 	 * The second internal ID of the pair.
@@ -318,7 +320,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * 
 	 * @var int
 	 */
-	protected $intExternalId2 = 0;
+	protected int $intExternalId2 = 0;
 	
 	
 	/**
@@ -326,21 +328,21 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *  
 	 * @var string
 	 */
-	protected $strCardType = '';
+	protected string $strCardType = '';
 	
 	/**
 	 * The default partial for this pair. Depending if the card is a textcard or an imagecard.
 	 * 
 	 * @var string
 	 */
-	protected $strDefaultPartial = '';
+	protected string $strDefaultPartial = '';
 	
 	/**
 	 * Flag for the final information. If true the final information is activated.
 	 * 
 	 * @var boolean
 	 */
-	protected $finaltextactive = false;
+	protected bool $finaltextactive = false;
 	
 	/**
 	 * Content of the final information, if it is activated.
@@ -348,7 +350,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("String")
 	 * @var string
 	 */
-	protected $finaltext = '';
+	protected string $finaltext = '';
 	
 	/**
 	 * The height of the final information.
@@ -356,7 +358,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var integer
 	 */
-	protected $finaltextheight = 0;
+	protected int $finaltextheight = 0;
 	
 	/**
 	 * The width of the final information.
@@ -364,7 +366,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var integer
 	 */
-	protected $finaltextwidth = 0;
+	protected int $finaltextwidth = 0;
 	
 	/**
 	 * The height of the image of the final information.
@@ -372,7 +374,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var integer
 	 */
-	protected $finalpicheight = 0;
+	protected int $finalpicheight = 0;
 	
 	/**
 	 * The width of the image of the final information.
@@ -380,7 +382,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var integer
 	 */
-	protected $finalpicwidth = 0;
+	protected int $finalpicwidth = 0;
 	
 	/**
 	 * __construct
@@ -399,7 +401,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return string $name
 	 */
-	public function getName() {
+	public function getName(): string {
 		return $this->name;
 	}
 
@@ -409,7 +411,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param string $name
 	 * @return void
 	 */
-	public function setName($name) {
+	public function setName(string $name): void {
 		$this->name = $name;
 	}
 
@@ -418,7 +420,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return string $image1
 	 */
-	public function getImage1() {
+	public function getImage1(): string {
 		return pair::C_STR_IMAGE_PATH . $this->image1;
 	}
 
@@ -428,7 +430,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param string $image1
 	 * @return void
 	 */
-	public function setImage1($image1) {
+	public function setImage1(string $image1): void {
 		$this->image1 = $image1;
 	}
 
@@ -437,7 +439,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return int $height1
 	 */
-	public function getHeight1() {
+	public function getHeight1(): int {
 		return $this->height1;
 	}
 
@@ -447,7 +449,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param int $height1
 	 * @return void
 	 */
-	public function setHeight1($height1) {
+	public function setHeight1(int $height1): void {
 		$this->height1 = $height1;
 	}
 
@@ -456,7 +458,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return int $width1
 	 */
-	public function getWidth1() {
+	public function getWidth1(): int {
 		return $this->width1;
 	}
 
@@ -466,7 +468,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param int $width1
 	 * @return void
 	 */
-	public function setWidth1($width1) {
+	public function setWidth1(int $width1): void {
 		$this->width1 = $width1;
 	}
 
@@ -475,7 +477,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return string $image2
 	 */
-	public function getImage2() {
+	public function getImage2(): string {
 		return pair::C_STR_IMAGE_PATH . $this->image2;
 	}
 
@@ -485,7 +487,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param string $image2
 	 * @return void
 	 */
-	public function setImage2($image2) {
+	public function setImage2(string $image2): void {
 		$this->image2 = $image2;
 	}
 
@@ -494,7 +496,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return int $height2
 	 */
-	public function getHeight2() {
+	public function getHeight2(): int {
 		return $this->height2;
 	}
 
@@ -504,7 +506,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param int $height2
 	 * @return void
 	 */
-	public function setHeight2($height2) {
+	public function setHeight2(int $height2): void {
 		$this->height2 = $height2;
 	}
 
@@ -513,7 +515,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return int $width2
 	 */
-	public function getWidth2() {
+	public function getWidth2(): int {
 		return $this->width2;
 	}
 
@@ -523,7 +525,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param int $width2
 	 * @return void
 	 */
-	public function setWidth2($width2) {
+	public function setWidth2(int $width2): void {
 		$this->width2 = $width2;
 	}
 
@@ -532,7 +534,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return string $description1
 	 */
-	public function getDescription1() {
+	public function getDescription1(): string {
 		return $this->description1;
 	}
 
@@ -542,7 +544,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param string $description1
 	 * @return void
 	 */
-	public function setDescription1($description1) {
+	public function setDescription1(string $description1): void {
 		$this->description1 = $description1;
 	}
 
@@ -551,7 +553,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return string $description2
 	 */
-	public function getDescription2() {
+	public function getDescription2(): string {
 		return $this->description2;
 	}
 
@@ -561,7 +563,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param string $description2
 	 * @return void
 	 */
-	public function setDescription2($description2) {
+	public function setDescription2(string $description2): void {
 		$this->description2 = $description2;
 	}
 
@@ -571,7 +573,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param string $strSettingsDefaultImage
 	* @return void
 	*/
-	public function setSettingsDefaultImage($i_strSettingsDefaultImage){
+	public function setSettingsDefaultImage(string $i_strSettingsDefaultImage): void {
 		$this->strSettingsDefaultImage = $i_strSettingsDefaultImage;
 	}
 	
@@ -580,7 +582,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return string $strSettingsDefaultImage
 	*/
-	public function getSettingsDefaultImage(){
+	public function getSettingsDefaultImage(): string {
 		return $this->strSettingsDefaultImage;
 	}
 
@@ -590,7 +592,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param string $strSettingsDefaultText
 	* @return void
 	*/
-	public function setSettingsDefaultText($strSettingsDefaultText){
+	public function setSettingsDefaultText(string $strSettingsDefaultText): void {
 		$this->strSettingsDefaultText = $strSettingsDefaultText;
 	}
 	
@@ -599,7 +601,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return string $strSettingsDefaultText
 	*/
-	public function getSettingsDefaultText(){
+	public function getSettingsDefaultText(): string {
 		return $this->strSettingsDefaultText;
 	}
 	
@@ -608,7 +610,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return string
 	*/
-	public function getDefaultImage(){
+	public function getDefaultImage(): string {
 		// depending of the setting of the default image
 		switch ($this->strSettingsDefaultImage) {
 		    case Pair::C_STR_DEFAULT_IMAGE1:
@@ -630,7 +632,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return string
 	 */
-	public function getDefaultDescription(){
+	public function getDefaultDescription(): string {
 		// depending of the setting of the default image
 		switch ($this->strSettingsDefaultText) {
 			case Pair::C_STR_DEFAULT_TEXT1:
@@ -652,7 +654,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $DefaultExternalID
 	*/
-	public function getDefaultExternalID(){
+	public function getDefaultExternalID(): int {
 		
 		// if we got a defaultImage1 or defaultText1
 		if ($this->intCardNumber == 1) {
@@ -674,7 +676,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $DefaultHeight
 	*/
-	public function getDefaultHeight(){
+	public function getDefaultHeight(): int {
 		
 		// the dimensions of the default image
 		$l_arrImageSize = array();
@@ -726,9 +728,9 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* returns the default hight with the formatted css syntax
 	*
-	* @return int $DefaultHeight
+	* @return string $DefaultHeight
 	*/
-	public function getDefaultHeightTxt(){
+	public function getDefaultHeightTxt(): string {
 		return ('height: ' . $this->getDefaultHeight() . 'px;');
 	}
 	
@@ -737,7 +739,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $DefaultHeightMax
 	*/
-	public function getDefaultHeightMax(){
+	public function getDefaultHeightMax(): int {
 		// the returning DefaultHeightMax
 		$l_intDefaultHeightMax = 0;
 		
@@ -751,9 +753,9 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* returns the default hight max with the formatted css syntax
 	*
-	* @return int $DefaultHeight
+	* @return string $DefaultHeight
 	*/
-	public function getDefaultHeightMaxTxt(){
+	public function getDefaultHeightMaxTxt(): string {
 		return ('height: ' . $this->getDefaultHeightMax() . 'px;');
 	}
 	
@@ -762,7 +764,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $DefaultHeightMin
 	*/
-	public function getDefaultHeightMin(){
+	public function getDefaultHeightMin(): int {
 		// the returning DefaultHeightMin
 		$l_intDefaultHeightMin = 0;
 		
@@ -776,9 +778,9 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* returns the default hight min with the formatted css syntax
 	*
-	* @return int $DefaultHeight
+	* @return string $DefaultHeight
 	*/
-	public function getDefaultHeightMinTxt(){
+	public function getDefaultHeightMinTxt(): string {
 		return ('height: ' . $this->getDefaultHeightMin() . 'px;');
 	}
 	
@@ -788,7 +790,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $DefaultWidth
 	*/
-	public function getDefaultWidth(){
+	public function getDefaultWidth(): int {
 	
 		// the dimensions of the default image
 		$l_arrImageSize = array();
@@ -840,9 +842,9 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* returns the default width with the formatted css syntax
 	*
-	* @return int 
+	* @return string 
 	*/
-	public function getDefaultWidthTxt(){
+	public function getDefaultWidthTxt(): string {
 		return ('width: ' . $this->getDefaultWidth() . 'px;');
 	}
 	
@@ -851,7 +853,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $DefaultWidthMax
 	*/
-	public function getDefaultWidthMax(){
+	public function getDefaultWidthMax(): int {
 		// the returning DefaultWidthMax
 		$l_intDefaultHeightMax = 0;
 		
@@ -864,9 +866,9 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* returns the default width max with the formatted css syntax
 	*
-	* @return int 
+	* @return string 
 	*/
-	public function getDefaultWidthMaxTxt(){
+	public function getDefaultWidthMaxTxt(): string {
 		return ('width: ' . $this->getDefaultWidthMax() . 'px;');
 	}
 	
@@ -875,7 +877,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $DefaultWidthMin
 	*/
-	public function getDefaultWidthMin(){
+	public function getDefaultWidthMin(): int {
 			// the returning DefaultWidthMin
 		$l_intDefaultHeightMin = 0;
 		
@@ -889,9 +891,9 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* returns the default width with min the formatted css syntax
 	*
-	* @return int 
+	* @return string 
 	*/
-	public function getDefaultWidthMinTxt(){
+	public function getDefaultWidthMinTxt(): string {
 		return ('width: ' . $this->getDefaultWidthMin() . 'px;');
 	}
 	
@@ -899,9 +901,9 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the default fontsize.
 	 * 
-	 * @return integer
+	 * @return int
 	 */
-	public function getDefaultFontsize() {
+	public function getDefaultFontsize(): int {
 		
 		if ($this->isEmpty()) {
 		    return 0;
@@ -924,7 +926,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $textwidth1
 	* @return void
 	*/
-	public function setTextwidth1($textwidth1){
+	public function setTextwidth1(int $textwidth1): void {
 		$this->textwidth1 = $textwidth1;
 	}
 	
@@ -933,7 +935,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $textwidth1
 	*/
-	public function getTextwidth1(){
+	public function getTextwidth1(): int {
 		return $this->textwidth1;
 	}
 	
@@ -943,7 +945,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $textheight1
 	* @return void
 	*/
-	public function setTextheight1($textheight1){
+	public function setTextheight1(int $textheight1): void {
 		$this->textheight1 = $textheight1;
 	}
 	
@@ -952,7 +954,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $textheight1
 	*/
-	public function getTextheight1(){
+	public function getTextheight1(): int {
 		return $this->textheight1;
 	}
 	
@@ -962,7 +964,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $fontsize1
 	* @return void
 	*/
-	public function setFontsize1($fontsize1){
+	public function setFontsize1(int $fontsize1): void {
 		$this->fontsize1 = $fontsize1;
 	}
 	
@@ -971,7 +973,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $fontsize1
 	*/
-	public function getFontsize1(){
+	public function getFontsize1(): int {
 		return $this->fontsize1;
 	}
 
@@ -982,7 +984,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $textwidth2
 	* @return void
 	*/
-	public function setTextwidth2($textwidth2){
+	public function setTextwidth2(int $textwidth2): void {
 		$this->textwidth2 = $textwidth2;
 	}
 	
@@ -991,7 +993,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $textwidth2
 	*/
-	public function getTextwidth2(){
+	public function getTextwidth2(): int {
 		return $this->textwidth2;
 	}
 	
@@ -1001,7 +1003,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $textheight2
 	* @return void
 	*/
-	public function setTextheight2($textheight2){
+	public function setTextheight2(int $textheight2): void {
 		$this->textheight2 = $textheight2;
 	}
 	
@@ -1010,7 +1012,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $textheight2
 	*/
-	public function getTextheight2(){
+	public function getTextheight2(): int {
 		return $this->textheight2;
 	}
 	
@@ -1020,7 +1022,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $fontsize2
 	* @return void
 	*/
-	public function setFontsize2($fontsize2){
+	public function setFontsize2(int $fontsize2): void {
 		$this->fontsize2 = $fontsize2;
 	}
 	
@@ -1029,7 +1031,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $fontsize2
 	*/
-	public function getFontsize2(){
+	public function getFontsize2(): int {
 		return $this->fontsize2;
 	}
 
@@ -1040,7 +1042,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param boolean $i_blnEmpty
 	* @return void
 	*/
-	public function setEmpty($i_blnEmpty){
+	public function setEmpty(bool $i_blnEmpty): void {
 		$this->empty = $i_blnEmpty;
 	}
 	
@@ -1049,7 +1051,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return boolean $empty
 	*/
-	public function isEmpty(){
+	public function isEmpty(): bool {
 		return $this->empty;
 	}
 	
@@ -1059,7 +1061,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $bordersize
 	* @return void
 	*/
-	public function setBordersize($bordersize){
+	public function setBordersize(int $bordersize): void {
 		$this->bordersize = $bordersize;
 	}
 	
@@ -1068,7 +1070,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $bordersize
 	*/
-	public function getBordersize(){
+	public function getBordersize(): int {
 		
 			// if this is an empty pair
 		if ($this->isEmpty()) {
@@ -1090,7 +1092,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param \Loss\Glpairs\Domain\Model\Pairs $parentPairs
 	* @return void
 	*/
-	public function setParentPairs($parentPairs){
+	public function setParentPairs(\Loss\Glpairs\Domain\Model\Pairs $parentPairs): void {
 		$this->parentPairs = $parentPairs;
 	}
 	
@@ -1099,7 +1101,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return \Loss\Glpairs\Domain\Model\Pairs $parentPairs
 	*/
-	public function getParentPairs(){
+	public function getParentPairs(): ?\Loss\Glpairs\Domain\Model\Pairs {
 		return $this->parentPairs;
 	}
 	
@@ -1108,7 +1110,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return string $internalImgPath
 	*/
-	public function getInternalImgPath(){
+	public function getInternalImgPath(): string {
 	    return PathUtility::getAbsoluteWebPath(GeneralUtility::getFileAbsFileName(
 	        'EXT:' . PairsController::c_strExtensionName . '/Resources/Public/images/' ));
 	}
@@ -1119,7 +1121,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $intExternalId1
 	* @return void
 	*/
-	public function setintExternalId1($intExternalId1){
+	public function setintExternalId1(int $intExternalId1): void {
 		$this->intExternalId1 = $intExternalId1;
 	}
 	
@@ -1128,7 +1130,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $intExternalId1
 	*/
-	public function getintExternalId1(){
+	public function getintExternalId1(): int {
 		return $this->intExternalId1;
 	}
 
@@ -1138,7 +1140,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $intExternalId2
 	* @return void
 	*/
-	public function setintExternalId2($intExternalId2){
+	public function setintExternalId2(int $intExternalId2): void {
 		$this->intExternalId2 = $intExternalId2;
 	}
 	
@@ -1147,7 +1149,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $intExternalId2
 	*/
-	public function getintExternalId2(){
+	public function getintExternalId2(): int {
 		return $this->intExternalId2;
 	}
 	
@@ -1157,7 +1159,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param string $strCardType
 	* @return void
 	*/
-	public function setCardType($strCardType){
+	public function setCardType(string $strCardType): void {
 		$this->strCardType = $strCardType;
 	}
 	
@@ -1166,7 +1168,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return string $strCardType
 	*/
-	public function getCardType(){
+	public function getCardType(): string {
 		return $this->strCardType;
 	}
 	
@@ -1176,7 +1178,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param string $i_strDefaultPartial
 	* @return void
 	*/
-	public function setDefaultPartial($i_strDefaultPartial){
+	public function setDefaultPartial(string $i_strDefaultPartial): void {
 		$this->strDefaultPartial = $i_strDefaultPartial;
 	}
 	
@@ -1185,7 +1187,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return string $strDefaultPartial
 	*/
-	public function getDefaultPartial(){
+	public function getDefaultPartial(): string {
 		// if this is an empty card
 		if ($this->empty) {
 			return self::C_STR_PARTIAL_EMPTY;
@@ -1207,19 +1209,19 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* Sets the intCardNumber
 	*
-	* @param integer $intCardNumber
+	* @param int $intCardNumber
 	* @return void
 	*/
-	public function setCardNumber($intCardNumber){
+	public function setCardNumber(int $intCardNumber): void {
 		$this->intCardNumber = $intCardNumber;
 	}
 	
 	/**
 	* Returns the intCardNumber
 	*
-	* @return integer $intCardNumber
+	* @return int $intCardNumber
 	*/
-	public function getCardNumber(){
+	public function getCardNumber(): int {
 		return $this->intCardNumber;
 	}
 	
@@ -1228,7 +1230,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * 
 	 * @return void
 	 */
-	public function revalidate() {
+	public function revalidate(): void {
 		$this->parentPairs->setMaxPairHeight($this->getDefaultHeightMax());
 		$this->parentPairs->setMaxPairWidth($this->getDefaultWidthMax());
 	}
@@ -1238,7 +1240,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * 
 	 * @return string The Name of the image for the backside of the card
 	 */
-	public function getDefaultBackImage() {
+	public function getDefaultBackImage(): string {
 		
 		// if this should be a red back
 		if ($this->parentPairs->getBackimage() == Pairs::C_INT_BACKIMAGE_RED) {
@@ -1295,7 +1297,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return boolean $blnfinaltextactive
 	*/
-	public function getfinaltextactive(){
+	public function getfinaltextactive(): bool {
 		return $this->finaltextactive;
 	}
 	
@@ -1306,7 +1308,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param boolean $blnfinaltextactive
 	* @return void
 	*/
-	public function setfinaltextactive($i_blnfinaltextactive){
+	public function setfinaltextactive(bool $i_blnfinaltextactive): void {
 		$this->finaltextactive = $i_blnfinaltextactive;
 	}
 	
@@ -1315,7 +1317,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return string $strFinalText
 	*/
-	public function getFinalText(){
+	public function getFinalText(): string {
 		return $this->finaltext;
 	}
 	
@@ -1325,7 +1327,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param string $strFinalText
 	* @return void
 	*/
-	public function setFinalText($i_strFinalText){
+	public function setFinalText(string $i_strFinalText): void {
 		$this->finaltext = $i_strFinalText;
 	}
 	
@@ -1334,7 +1336,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return integer $finaltextwidth
 	*/
-	public function getfinaltextwidth(){
+	public function getfinaltextwidth(): int {
 		if ($this->finaltextwidth != 0) {
 			return $this->finaltextwidth;
 		} elseif ($this->parentPairs->getfinaltextwidth() != 0) {
@@ -1350,7 +1352,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param integer $finaltextwidth
 	* @return void
 	*/
-	public function setfinaltextwidth($finaltextwidth){
+	public function setfinaltextwidth(int $finaltextwidth): void {
 		$this->finaltextwidth = $finaltextwidth;
 	}
 	
@@ -1359,7 +1361,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return integer $finaltextheight
 	*/
-	public function getfinaltextheight(){
+	public function getfinaltextheight(): int {
 		if ($this->finaltextheight != 0) {
 			return $this->finaltextheight;
 		} elseif ($this->parentPairs->getfinaltextheight() != 0) {
@@ -1375,7 +1377,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param integer $finaltextheight
 	* @return void
 	*/
-	public function setfinaltextheight($finaltextheight){
+	public function setfinaltextheight(int $finaltextheight): void {
 		$this->finaltextheight = $finaltextheight;
 	}
 	
@@ -1384,7 +1386,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return integer $finalpicwidth
 	*/
-	public function getfinalpicwidth(){
+	public function getfinalpicwidth(): int {
 		if ($this->finalpicwidth != 0) {
 			return $this->finalpicwidth;
 		} elseif ($this->parentPairs->getfinalpicwidth() != 0){
@@ -1397,19 +1399,19 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* Sets the finalpicwidth
 	*
-	* @param integer $finalpicwidth
+	* @param int $finalpicwidth
 	* @return void
 	*/
-	public function setfinalpicwidth($finalpicwidth){
+	public function setfinalpicwidth(int $finalpicwidth): void {
 		$this->finalpicwidth = $finalpicwidth;
 	}
 	
 	/**
 	* Returns the finalpicheight
 	*
-	* @return integer $finalpicheight
+	* @return int $finalpicheight
 	*/
-	public function getfinalpicheight(){
+	public function getfinalpicheight(): int {
 		if ($this->finalpicheight != 0) {
 			return $this->finalpicheight;
 		} elseif ($this->parentPairs->getfinalpicheight() != 0){
@@ -1422,10 +1424,10 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* Sets the finalpicheight
 	*
-	* @param integer $finalpicheight
+	* @param int $finalpicheight
 	* @return void
 	*/
-	public function setfinalpicheight($finalpicheight){
+	public function setfinalpicheight(int $finalpicheight): void {
 		$this->finalpicheight = $finalpicheight;
 	}
 	
@@ -1438,9 +1440,9 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * Returns the internal default fontsize in this pair without considering the overall
 	 * fontsize of the pairs game.
 	 *
-	 * @return integer
+	 * @return int
 	 */
-	protected function getDefaultFontsizeInternal() {
+	protected function getDefaultFontsizeInternal(): int {
 		// depending of the setting of the default image
 		switch ($this->strSettingsDefaultText) {
 			case Pair::C_STR_DEFAULT_TEXT1:
@@ -1463,7 +1465,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return int $DefaultHeight
 	 */
-	protected function getDefaultHeightInternal(){
+	protected function getDefaultHeightInternal(): int {
 	
 		// depending of the card type
 		switch ($this->strCardType) {
@@ -1515,7 +1517,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return int $DefaultWidth
 	 */
-	protected function getDefaultWidthInternal(){
+	protected function getDefaultWidthInternal(): int {
 	
 		// depending of the card type
 		switch ($this->strCardType) {
@@ -1567,8 +1569,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getFalImage1()
-	{
+	public function getFalImage1(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 	    return $this->falImage1;
 	}
 	
@@ -1577,9 +1578,8 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $falMedia
 	 */
-	public function setFalImage1(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $falImage1)
-	{
-	    $this->falImag1 = $falImage1;
+	public function setFalImage1(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $falImage1): void {
+	    $this->falImage1 = $falImage1;
 	}
 	
 	/**
@@ -1587,8 +1587,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getFalImage2()
-	{
+	public function getFalImage2(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 	    
 	    return $this->falImage2;
 	}
@@ -1598,9 +1597,8 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $falMedia
 	 */
-	public function setFalImage2(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $falImage2)
-	{
-	    $this->falImag2 = $falImage2;
+	public function setFalImage2(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $falImage2): void {
+	    $this->falImage2 = $falImage2;
 	}
 	
 	/**
@@ -1608,7 +1606,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *  
      * @return string
 	 */
-	public function getFalImage1Path(){
+	public function getFalImage1Path(): string {
 	    
 	    // if no image is defined
 	    if ($this->getFalImage1()->current() === Null) {
@@ -1632,7 +1630,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * 
      * @return string
 	 */
-	public function getFalImage2Path(){
+	public function getFalImage2Path(): string {
 	    
 	    // if no image is defined
 	    if ($this->getFalImage2()->current() === Null) {

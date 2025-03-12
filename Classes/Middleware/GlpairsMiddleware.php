@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /***************************************************************
  *  Copyright notice
  *
@@ -37,16 +39,15 @@ use Loss\Glpairs\Ajax\AjaxDispatcher;
  *
  * @internal
  */
-class GlpairsMiddleware implements MiddlewareInterface{
+class GlpairsMiddleware implements MiddlewareInterface {
 
     /** @var ResponseFactoryInterface */
-    private $responseFactory;
+    private ResponseFactoryInterface $responseFactory;
     
     public function __construct(ResponseFactoryInterface $responseFactory)
     {
         $this->responseFactory = $responseFactory;
     }
-    
     
     /**
      * Provides alle informations about the pairs content
@@ -55,7 +56,7 @@ class GlpairsMiddleware implements MiddlewareInterface{
      * @param RequestHandlerInterface $handler
      * @return ResponseInterface
      */
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface{
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface {
         
         $psr15eID = $request->getParsedBody()['PSR-15-eID'] ?? $request->getQueryParams()['PSR-15-eID'] ?? null;
         
@@ -63,15 +64,14 @@ class GlpairsMiddleware implements MiddlewareInterface{
             return $handler->handle($request);
         }
         
-        
         /** @var Response $response */
         $response = $this->responseFactory->createResponse()
-        ->withHeader('Content-Type', 'application/json; charset=utf-8');
+            ->withHeader('Content-Type', 'application/json; charset=utf-8');
         
         /** @var AjaxDispatcher $glpairsAjax */
         $glpairsAjax = GeneralUtility::makeInstance(AjaxDispatcher::class);
         
-        $response->getBody()->write($glpairsAjax->handleAjaxRequest());
+        $response->getBody()->write($glpairsAjax->handleAjaxRequest($request));
         
         return $response;
     }

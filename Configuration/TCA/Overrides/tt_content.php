@@ -1,4 +1,5 @@
 <?php
+defined('TYPO3') or die();
 
 // register frontend plugin pi1
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(

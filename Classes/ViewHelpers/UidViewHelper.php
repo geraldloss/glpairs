@@ -1,7 +1,10 @@
 <?php
+declare(strict_types=1);
+
 namespace Loss\Glpairs\ViewHelpers;
 
-use TYPO3Fluid;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 /***************************************************************
  *  Copyright notice
@@ -32,52 +35,47 @@ use TYPO3Fluid;
  * {namespace glpairs=Loss\Glpairs\ViewHelpers}
  * <glpairs:uid/>
  * 
- * @author Gerald Loß
+ * @author Gerald LoÃŸ
  * @package Loss
  * @subpackage glpairs
  *
  */
-class UidViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
+class UidViewHelper extends AbstractViewHelper {
+    
     /**
-	 * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
-	 */
-	protected $configurationManager;
+     * Initialize arguments
+     */
+    public function initializeArguments(): void
+    {
+        parent::initializeArguments();
+    }
 
-	/**
-	 * Inject Configuration Manager
-	 *
-	 * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
-	 */
-	public function injectConfigurationManager(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager)
-	{
-	    $this->configurationManager = $configurationManager;
-	}
-	
-	/**
-	 * Set uid of the content element
-	 *
-	 * @return int $uid The uid of the content element
-	 */
-	public function render() {
-		
-		// The content object, where this extension is embedded
-		/* @var $l_obj_cObj \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer */
-		$l_obj_cObj = NULL;
-		// the returning uid
-		$l_int_uid = 0;
+    /**
+     * @var ContentObjectRenderer
+     */
+    protected ContentObjectRenderer $contentObjectRenderer;
 
-		// read the content object
-		$l_obj_cObj = $this->configurationManager->getContentObject();
-		
-		if (isset($l_obj_cObj->data['uid'])) {
-			// read the uid of the content object
-			$l_int_uid = $l_obj_cObj->data['uid'];
-		} else {
-			// workaround if no unique id is found
-			$l_int_uid = -1;
-		}
-		// return the uid
-		return $l_int_uid;
-	}
+    /**
+     * @param ContentObjectRenderer $contentObjectRenderer
+     */
+    public function injectContentObjectRenderer(ContentObjectRenderer $contentObjectRenderer): void
+    {
+        $this->contentObjectRenderer = $contentObjectRenderer;
+    }
+
+    /**
+     * Set uid of the content element
+     *
+     * @return int $uid The uid of the content element
+     */
+    public function render(): int {
+        // get ID for current content element
+        if (isset($GLOBALS['TSFE']->cObj->data['uid'])) {
+            return (int)$GLOBALS['TSFE']->cObj->data['uid'];
+        }
+
+        // Wenn keine UID gefunden wurde
+        return -1;
+    }
 }
 ?>

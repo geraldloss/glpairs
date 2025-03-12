@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace Loss\Glpairs\Domain\Model;
 
 /***************************************************************
@@ -69,7 +71,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("String")
 	 * @var string
 	 */
-	protected $name;
+	protected string $name;
 
 	/**
 	 * Type of the pairs game
@@ -77,14 +79,14 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $type;
+	protected int $type;
 
 	/**
 	 * Flag if split mode is activated
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
-	protected $splitmode;
+	protected bool $splitmode;
 	
 	/**
 	 * The number of The number of cards in one row
@@ -92,7 +94,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $width;
+	protected int $width;
 
 	/**
 	 * The number of The number of cards in one row
@@ -100,7 +102,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $cardheight;
+	protected int $cardheight;
 
 	/**
 	 * The number of The number of cards in one row
@@ -108,7 +110,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $cardwidth;
+	protected int $cardwidth;
 
 	/**
 	 * The default border width of the pairs game.
@@ -116,15 +118,15 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
 	 * @var int
 	 */
-	protected $bordersize;
+	protected int $bordersize;
 	
 	/**
 	 * The fontsize of the textcard.
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $fontsize;
+	protected int $fontsize;
 	
 	/**
 	 * all pairs that belong to this game
@@ -132,53 +134,53 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Collection", options={"elementType: \Loss\Glpairs\Domain\Model\Pair"})
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Loss\Glpairs\Domain\Model\Pair>
 	 */
-	protected $hasPairs;
+	protected \TYPO3\CMS\Extbase\Persistence\ObjectStorage $hasPairs;
 	
 	/**
 	 * The string points language dependend set.
 	 * 
 	 * @var string
 	 */
-	protected $strI18nPoints;
+	protected string $strI18nPoints;
 	
 	/**
 	 * The width of the pair with the widest width of all pairs.
 	 * 
-	 * @var integer
+	 * @var int
 	 */
-	protected $intMaxPairWidth;
+	protected int $intMaxPairWidth = 0;
 	
 	/**
 	 * The width of the pair with the heighest height of all pairs.
 	 * 
-	 * @var integer
+	 * @var int
 	 */
-	protected $intMaxPairHeight;
+	protected int $intMaxPairHeight = 0;
 	
 	/**
 	 * Plus points for correct choice
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $pluspoints;
+	protected int $pluspoints;
 	
 	/**
 	 * penalty points for wrong choice
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $minuspoints;
+	protected int $minuspoints;
 	
 	/**
 	 * The image of the backside
 	 * See Constants of Pairs::C_INT_BACKIMAGE_*
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $backimage;
+	protected int $backimage;
 	
 	
 	/**
@@ -187,7 +189,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Collection", options={"elementType: \TYPO3\CMS\Extbase\Domain\Model\FileReference"})
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
 	 */
-	protected $customBackimage1;
+	protected \TYPO3\CMS\Extbase\Persistence\ObjectStorage $customBackimage1;
 	
 	
 	/**
@@ -196,94 +198,94 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Collection", options={"elementType: \TYPO3\CMS\Extbase\Domain\Model\FileReference"})
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
 	 */
-	protected $customBackimage2;
+	protected \TYPO3\CMS\Extbase\Persistence\ObjectStorage $customBackimage2;
 	
 	/**
 	 * The delay for the automatic turn back of the cards
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $turnbackdelay;
+	protected int $turnbackdelay;
 	
 	/**
 	 * Delay for the hint to click on the screen
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $hintdelay;
+	protected int $hintdelay;
 	
 	/**
 	 * Duration for the turn of the cards
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $turnduration;
+	protected int $turnduration;
 	
 	/**
 	 * Duration for the move to the card stack
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $stackduration;
+	protected int $stackduration;
 	
 	/**
 	 * Flag if test mode is activated
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
-	protected $testmode;
+	protected bool $testmode;
 	
 	/**
 	 * Delay between every card turn in the test mode.
 	 *
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $testmodeturndelay;
+	protected int $testmodeturndelay;
 	
 	/**
 	 * The height of the final information.
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $finaltextheight = 0;
+	protected int $finaltextheight = 0;
 	
 	/**
 	 * The width of the final information.
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $finaltextwidth = 0;
+	protected int $finaltextwidth = 0;
 	
 	/**
 	 * The height of the images of the final information.
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $finalpicheight = 0;
+	protected int $finalpicheight = 0;
 	
 	/**
 	 * The width of the images of the final information.
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $finalpicwidth = 0;
+	protected int $finalpicwidth = 0;
 	
 	/**
 	 * The max. number of cards for one game.
 	 * 
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
-	 * @var integer
+	 * @var int
 	 */
-	protected $maxcards = 0;
+	protected int $maxcards = 0;
 	
 	/**
 	 * __construct
@@ -293,8 +295,6 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function __construct() {
 		//Do not remove the next line: It would break the functionality
 		$this->initStorageObjects();
-		$this->intMaxPairHeight = 0;
-		$this->intMaxPairWidth = 0;
 	}
 
 	/**
@@ -302,7 +302,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return void
 	 */
-	protected function initStorageObjects() {
+	protected function initStorageObjects(): void {
 		/**
 		 * Do not modify this method!
 		 * It will be rewritten on each save in the extension builder
@@ -316,7 +316,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return string $name
 	 */
-	public function getName() {
+	public function getName(): string {
 		return $this->name;
 	}
 
@@ -326,7 +326,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param string $name
 	 * @return void
 	 */
-	public function setName($name) {
+	public function setName(string $name): void {
 		$this->name = $name;
 	}
 
@@ -335,7 +335,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return int $type
 	 */
-	public function getType() {
+	public function getType(): int {
 		return $this->type;
 	}
 
@@ -345,26 +345,26 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param int $type
 	 * @return void
 	 */
-	public function setType($type) {
+	public function setType(int $type): void {
 		$this->type = $type;
 	}
 
 	/**
 	* Returns the splitmode
 	*
-	* @return boolean $splitmode
+	* @return bool $splitmode
 	*/
-	public function getSplitmode(){
+	public function getSplitmode(): bool {
 		return $this->splitmode;
 	}
 	
 	/**
 	* Sets the splitmode
 	*
-	* @param boolean $splitmode
+	* @param bool $splitmode
 	* @return void
 	*/
-	public function setSplitmode($splitmode){
+	public function setSplitmode(bool $splitmode): void {
 		$this->splitmode = $splitmode;
 	}
 	
@@ -373,7 +373,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return int $width
 	 */
-	public function getWidth() {
+	public function getWidth(): int {
 		return $this->width;
 	}
 
@@ -383,7 +383,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param int $width
 	 * @return void
 	 */
-	public function setWidth($width) {
+	public function setWidth(int $width): void {
 		$this->width = $width;
 	}
 	
@@ -392,7 +392,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $cardheight
 	*/
-	public function getCardheight(){
+	public function getCardheight(): int {
 		return $this->cardheight;
 	}
 	
@@ -402,7 +402,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $cardheight
 	* @return void
 	*/
-	public function setCardheight($cardheight){
+	public function setCardheight(int $cardheight): void {
 		$this->cardheight = $cardheight;
 	}
 	
@@ -411,7 +411,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $cardwidth
 	*/
-	public function getCardwidth(){
+	public function getCardwidth(): int {
 		return $this->cardwidth;
 	}
 	
@@ -421,7 +421,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $cardwidth
 	* @return void
 	*/
-	public function setCardwidth($cardwidth){
+	public function setCardwidth(int $cardwidth): void {
 		$this->cardwidth = $cardwidth;
 	}
 	
@@ -430,7 +430,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return int $borderSize
 	*/
-	public function getBorderSize(){
+	public function getBorderSize(): int {
 		return $this->bordersize;
 	}
 	
@@ -440,7 +440,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param int $borderSize
 	* @return void
 	*/
-	public function setBorderSize($borderSize){
+	public function setBorderSize(int $borderSize): void {
 		$this->bordersize = $borderSize;
 	}
 	
@@ -450,7 +450,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param \Loss\Glpairs\Domain\Model\Pair $hasPair
 	 * @return void
 	 */
-	public function addHasPair(\Loss\Glpairs\Domain\Model\Pair $hasPair) {
+	public function addHasPair(\Loss\Glpairs\Domain\Model\Pair $hasPair): void {
 		$this->hasPairs->attach($hasPair);
 	}
 
@@ -460,7 +460,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param \Loss\Glpairs\Domain\Model\Pair $hasPairToRemove The Pair to be removed
 	 * @return void
 	 */
-	public function removeHasPair(\Loss\Glpairs\Domain\Model\Pair $hasPairToRemove) {
+	public function removeHasPair(\Loss\Glpairs\Domain\Model\Pair $hasPairToRemove): void {
 		$this->hasPairs->detach($hasPairToRemove);
 	}
 
@@ -469,7 +469,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Loss\Glpairs\Domain\Model\Pair> $hasPairs
 	 */
-	public function getHasPairs() {
+	public function getHasPairs(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->hasPairs;
 	}
 
@@ -479,7 +479,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Loss\Glpairs\Domain\Model\Pair> $hasPairs
 	 * @return void
 	 */
-	public function setHasPairs(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $hasPairs) {
+	public function setHasPairs(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $hasPairs): void {
 		$this->hasPairs = $hasPairs;
 	}
 	
@@ -488,7 +488,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	*
 	* @return string $strI18nPoints
 	*/
-	public function getStrI18nPoints(){
+	public function getStrI18nPoints(): string {
 		return $this->strI18nPoints;
 	}
 	
@@ -498,45 +498,45 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* @param string $strI18nPoints
 	* @return void
 	*/
-	public function setStrI18nPoints($strI18nPoints){
+	public function setStrI18nPoints(string $strI18nPoints): void {
 		$this->strI18nPoints = $strI18nPoints;
 	}
 	
 	/**
 	* Returns the fontsize
 	*
-	* @return integer $fontsize
+	* @return int $fontsize
 	*/
-	public function getFontsize(){
+	public function getFontsize(): int {
 		return $this->fontsize;
 	}
 	
 	/**
 	* Sets the fontsize
 	*
-	* @param integer $fontsize
+	* @param int $fontsize
 	* @return void
 	*/
-	public function setFontsize($fontsize){
+	public function setFontsize(int $fontsize): void {
 		$this->fontsize = $fontsize;
 	}
 	
 	/**
 	* Returns the intMaxPairWidth plus a certain buffer
 	*
-	* @return integer $intMaxPairWidth
+	* @return int $intMaxPairWidth
 	*/
-	public function getMaxPairWidth(){
+	public function getMaxPairWidth(): int {
 		return $this->intMaxPairWidth + 20;
 	}
 	
 	/**
 	* Sets the intMaxPairWidth
 	*
-	* @param integer $intMaxPairWidth
+	* @param int $intMaxPairWidth
 	* @return void
 	*/
-	public function setMaxPairWidth($intMaxPairWidth){
+	public function setMaxPairWidth(int $intMaxPairWidth): void {
 		if ($this->intMaxPairWidth < $intMaxPairWidth) {
 			$this->intMaxPairWidth = $intMaxPairWidth;
 		}
@@ -545,19 +545,19 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* Returns the intMaxPairHeight plus a certain buffer
 	*
-	* @return integer $intMaxPairHeight
+	* @return int $intMaxPairHeight
 	*/
-	public function getMaxPairHeight(){
+	public function getMaxPairHeight(): int {
 		return $this->intMaxPairHeight + 20;
 	}
 	
 	/**
 	* Sets the intMaxPairHeight
 	*
-	* @param integer $intMaxPairHeight
+	* @param int $intMaxPairHeight
 	* @return void
 	*/
-	public function setMaxPairHeight($intMaxPairHeight){
+	public function setMaxPairHeight(int $intMaxPairHeight): void {
 		if ($this->intMaxPairHeight < $intMaxPairHeight) {
 			$this->intMaxPairHeight = $intMaxPairHeight;
 		}
@@ -566,57 +566,57 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* Returns the pluspoints
 	*
-	* @return integer $pluspoints
+	* @return int $pluspoints
 	*/
-	public function getPluspoints(){
+	public function getPluspoints(): int {
 		return $this->pluspoints;
 	}
 	
 	/**
 	* Sets the pluspoints
 	*
-	* @param integer $pluspoints
+	* @param int $pluspoints
 	* @return void
 	*/
-	public function setPluspoints($i_intPpluspoints){
+	public function setPluspoints(int $i_intPpluspoints): void {
 		$this->pluspoints = $i_intPpluspoints;
 	}
 	
 	/**
 	* Returns the minuspoints
 	*
-	* @return integer $minuspoints
+	* @return int $minuspoints
 	*/
-	public function getMinuspoints(){
+	public function getMinuspoints(): int {
 		return $this->minuspoints;
 	}
 	
 	/**
 	* Sets the minuspoints
 	*
-	* @param integer $minuspoints
+	* @param int $minuspoints
 	* @return void
 	*/
-	public function setMinuspoints($i_intMinuspoints){
+	public function setMinuspoints(int $i_intMinuspoints): void {
 		$this->minuspoints = $i_intMinuspoints;
 	}
 	
 	/**
 	* Returns the backimage
 	*
-	* @return integer $backimage
+	* @return int $backimage
 	*/
-	public function getBackimage(){
+	public function getBackimage(): int {
 		return $this->backimage;
 	}
 	
 	/**
 	* Sets the backimage
 	*
-	* @param integer $backimage
+	* @param int $backimage
 	* @return void
 	*/
-	public function setBackimage($i_intBackimage){
+	public function setBackimage(int $i_intBackimage): void {
 		$this->backimage = $i_intBackimage;
 	}
 	
@@ -625,8 +625,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getCustomBackimage1()
-	{
+	public function getCustomBackimage1(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 	    
 	    return $this->customBackimage1;
 	}
@@ -634,10 +633,9 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Set custom image number one for the backside
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $falMedia
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $customBackimage1
 	 */
-	public function setCustomBackimage1(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $customBackimage1)
-	{
+	public function setCustomBackimage1(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $customBackimage1): void {
 	    $this->customBackimage1 = $customBackimage1;
 	}
 	
@@ -646,7 +644,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return string
 	 */
-	public function getCustomBackimage1Path(){
+	public function getCustomBackimage1Path(): string {
 	    
 	    // if no image is defined
 	    if ($this->getCustomBackimage1()->current() === Null) {
@@ -670,8 +668,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getCustomBackimage2()
-	{
+	public function getCustomBackimage2(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 	    
 	    return $this->customBackimage2;
 	}
@@ -679,10 +676,9 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Set custom image number one for the backside
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $falMedia
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $customBackimage2
 	 */
-	public function setCustomBackimage2(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $customBackimage2)
-	{
+	public function setCustomBackimage2(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $customBackimage2): void {
 	    $this->customBackimage2 = $customBackimage2;
 	}
 	
@@ -691,7 +687,7 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @return string
 	 */
-	public function getCustomBackimage2Path(){
+	public function getCustomBackimage2Path(): string {
 	    
 	    // if no image is defined
 	    if ($this->getCustomBackimage2()->current() === Null) {
@@ -713,209 +709,209 @@ class Pairs extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	* Returns the turnbackdelay
 	*
-	* @return integer $turnbackdelay
+	* @return int $turnbackdelay
 	*/
-	public function getTurnbackdelay(){
+	public function getTurnbackdelay(): int {
 		return $this->turnbackdelay;
 	}
 	
 	/**
 	* Sets the turnbackdelay
 	*
-	* @param integer $turnbackdelay
+	* @param int $turnbackdelay
 	* @return void
 	*/
-	public function setTurnbackdelay($i_intTurnbackdelay){
+	public function setTurnbackdelay(int $i_intTurnbackdelay): void {
 		$this->turnbackdelay = $i_intTurnbackdelay;
 	}
 	
 	/**
 	* Returns the hintdelay
 	*
-	* @return integer $hintdelay
+	* @return int $hintdelay
 	*/
-	public function getHintdelay(){
+	public function getHintdelay(): int {
 		return $this->hintdelay;
 	}
 	
 	/**
 	* Sets the hintdelay
 	*
-	* @param integer $hintdelay
+	* @param int $hintdelay
 	* @return void
 	*/
-	public function setHintdelay($i_intHintdelay){
+	public function setHintdelay(int $i_intHintdelay): void {
 		$this->hintdelay = $i_intHintdelay;
 	}
 	
 	/**
 	* Returns the turnduration
 	*
-	* @return integer $turnduration
+	* @return int $turnduration
 	*/
-	public function getTurnduration(){
+	public function getTurnduration(): int {
 		return $this->turnduration;
 	}
 	
 	/**
 	* Sets the turnduration
 	*
-	* @param integer $turnduration
+	* @param int $turnduration
 	* @return void
 	*/
-	public function setTurnduration($i_intTurnduration){
+	public function setTurnduration(int $i_intTurnduration): void {
 		$this->turnduration = $i_intTurnduration;
 	}
 	
 	/**
 	* Returns the stackduration
 	*
-	* @return integer $stackduration
+	* @return int $stackduration
 	*/
-	public function getStackduration(){
+	public function getStackduration(): int {
 		return $this->stackduration;
 	}
 	
 	/**
 	* Sets the stackduration
 	*
-	* @param integer $stackduration
+	* @param int $stackduration
 	* @return void
 	*/
-	public function setStackduration($i_intStackduration){
+	public function setStackduration(int $i_intStackduration): void {
 		$this->stackduration = $i_intStackduration;
 	}
 	
 	/**
 	* Returns the testmode
 	*
-	* @return boolean $testmode
+	* @return bool $testmode
 	*/
-	public function getTestmode(){
+	public function getTestmode(): bool {
 		return $this->testmode;
 	}
 	
 	/**
 	* Sets the testmode
 	*
-	* @param boolean $testmode
+	* @param bool $testmode
 	* @return void
 	*/
-	public function setTestmode($i_blnTestmode){
+	public function setTestmode(bool $i_blnTestmode): void {
 		$this->testmode = $i_blnTestmode;
 	}
 
 	/**
 	* Returns the testmodeturndelay
 	*
-	* @return integer $testmodeturndelay
+	* @return int $testmodeturndelay
 	*/
-	public function getTestModeTurnDelay(){
+	public function getTestModeTurnDelay(): int {
 		return $this->testmodeturndelay;
 	}
 	
 	/**
 	* Sets the testmodeturndelay
 	*
-	* @param integer $testmodeturndelay
+	* @param int $testmodeturndelay
 	* @return void
 	*/
-	public function setTestModeTurnDelay($i_intTestModeTurnDelay){
+	public function setTestModeTurnDelay(int $i_intTestModeTurnDelay): void {
 		$this->testmodeturndelay = $i_intTestModeTurnDelay;
 	}
 
 	/**
 	* Returns the finaltextwidth
 	*
-	* @return integer $finaltextwidth
+	* @return int $finaltextwidth
 	*/
-	public function getfinaltextwidth(){
+	public function getfinaltextwidth(): int {
 		return $this->finaltextwidth;
 	}
 	
 	/**
 	* Sets the finaltextwidth
 	*
-	* @param integer $finaltextwidth
+	* @param int $finaltextwidth
 	* @return void
 	*/
-	public function setfinaltextwidth($finaltextwidth){
+	public function setfinaltextwidth(int $finaltextwidth): void {
 		$this->finaltextwidth = $finaltextwidth;
 	}
 	
 	/**
 	* Returns the finaltextheight
 	*
-	* @return integer $finaltextheight
+	* @return int $finaltextheight
 	*/
-	public function getfinaltextheight(){
+	public function getfinaltextheight(): int {
 		return $this->finaltextheight;
 	}
 	
 	/**
 	* Sets the finaltextheight
 	*
-	* @param integer $finaltextheight
+	* @param int $finaltextheight
 	* @return void
 	*/
-	public function setfinaltextheight($finaltextheight){
+	public function setfinaltextheight(int $finaltextheight): void {
 		$this->finaltextheight = $finaltextheight;
 	}
 	
 	/**
 	* Returns the finalpicwidth
 	*
-	* @return integer $finalpicwidth
+	* @return int $finalpicwidth
 	*/
-	public function getfinalpicwidth(){
+	public function getfinalpicwidth(): int {
 		return $this->finalpicwidth;
 	}
 	
 	/**
 	* Sets the finalpicwidth
 	*
-	* @param integer $finalpicwidth
+	* @param int $finalpicwidth
 	* @return void
 	*/
-	public function setfinalpicwidth($finalpicwidth){
+	public function setfinalpicwidth(int $finalpicwidth): void {
 		$this->finalpicwidth = $finalpicwidth;
 	}
 	
 	/**
 	* Returns the finalpicheight
 	*
-	* @return integer $finalpicheight
+	* @return int $finalpicheight
 	*/
-	public function getfinalpicheight(){
+	public function getfinalpicheight(): int {
 		return $this->finalpicheight;
 	}
 	
 	/**
 	* Sets the finalpicheight
 	*
-	* @param integer $finalpicheight
+	* @param int $finalpicheight
 	* @return void
 	*/
-	public function setfinalpicheight($finalpicheight){
+	public function setfinalpicheight(int $finalpicheight): void {
 		$this->finalpicheight = $finalpicheight;
 	}
 	
 	/**
 	* Returns the maxcards
 	*
-	* @return integer $maxcards
+	* @return int $maxcards
 	*/
-	public function getmaxcards(){
+	public function getmaxcards(): int {
 		return $this->maxcards;
 	}
 	
 	/**
 	* Sets the maxcards
 	*
-	* @param integer $maxcards
+	* @param int $maxcards
 	* @return void
 	*/
-	public function setmaxcards($maxcards){
+	public function setmaxcards(int $maxcards): void {
 		$this->maxcards = $maxcards;
 	}
 }

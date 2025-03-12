@@ -1,3 +1,13 @@
+tt_content.list.20.glpairs_pi1 = USER
+tt_content.list.20.glpairs_pi1{
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = Glpairs
+    pluginName = Pi1
+    vendorName = Loss
+    controller = Glpairs
+    action = list
+}
+
 plugin.tx_glpairs {
 	view {
 		templateRootPath {

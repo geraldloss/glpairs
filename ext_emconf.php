@@ -14,7 +14,7 @@ $EM_CONF[$_EXTKEY] = array (
   'title' => 'Pairs/Memory Card Game',
   'description' => 'Provide a flexible pairs game. You are able to configure the pairs game in many different types. You can assign two cards with the same image, two cards with similar images, two cards with an image and a description of the image or two text cards with the same description (i.e. in different languages). See an example on https://www.schulze-thulin.de/en/games/pairs-german-welsh-irish',
   'category' => 'plugin',
-  'version' => '2.3.6',
+  'version' => '2.4.0',
   'state' => 'stable',
   'uploadfolder' => true,
   'createDirs' => '',
@@ -26,8 +26,8 @@ $EM_CONF[$_EXTKEY] = array (
   array (
     'depends' => 
     array (
-      'php' => '7.3.0-8.0.99',
-      'typo3' => '10.0.0-11.9.99',
+      'php' => '8.0.0-8.4.99',
+      'typo3' => '12.0.00-12.4.99',
     ),
     'conflicts' => 
     array (

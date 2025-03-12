@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace Loss\Glpairs\Container;
 
 /***************************************************************
@@ -42,7 +44,7 @@ class SessionContainer {
 	 * Value:			The uID of the Pair
 	 * @var array
 	 */
-	protected $m_arrExtIdMapping = array();
+	protected array $m_arrExtIdMapping = [];
 	
 	/**
 	 * Array with the mapping from the uID to the external ID
@@ -52,86 +54,86 @@ class SessionContainer {
 	 * 		  extID2: 	The extID2 of the pair
 	 * @var array
 	*/
-	protected $m_arrUidMapping = array();
+	protected array $m_arrUidMapping = [];
 	
 	
 	/**
-	 * Mode of the pairs game. See Constants with the prefix c_strPairsType*
-	 * @var string
+	 * Mode of the pairs game. See Constants with the prefix c_intPairsType*
+	 * @var int
 	 */
-	protected $m_intPairsType = '';
+	protected int $m_intPairsType = 0;
 	
 	/**
 	 * If True, then the game is in splitmode. If False all cards are displayed together.
-	 * @var boolean
+	 * @var bool
 	 */
-	protected $m_blnSplitMode = false;
+	protected bool $m_blnSplitMode = false;
 	
 	/**
 	 * Array with all localized strings for the frontend dialogs
 	 */
-	protected $m_arrI18n = array();
+	protected array $m_arrI18n = [];
 	
 	/**
 	 * The number of pairs in the game.
 	 */
-	protected $m_intPairsCount = 0;
+	protected int $m_intPairsCount = 0;
 	
 	/**
 	 * Plus points for correct choice
 	 *
-	 * @var integer
+	 * @var int
 	 */
-	protected $pluspoints;
+	protected int $pluspoints = 0;
 	
 	/**
 	 * penalty points for wrong choice
 	 *
-	 * @var integer
+	 * @var int
 	 */
-	protected $minuspoints;
+	protected int $minuspoints = 0;
 	
 	/**
 	 * The delay for the automatic turn back of the cards
 	 *
-	 * @var integer
+	 * @var int
 	 */
-	protected $turnbackdelay;
+	protected int $turnbackdelay = 0;
 	
 	/**
 	 * Delay for the hint to click on the screen
 	 *
-	 * @var integer
+	 * @var int
 	 */
-	protected $hintdelay;
+	protected int $hintdelay = 0;
 	
 	/**
 	 * Duration for the turn of the cards
 	 *
-	 * @var integer
+	 * @var int
 	 */
-	protected $turnduration;
+	protected int $turnduration = 0;
 	
 	/**
 	 * Duration for the move to the card stack
 	 *
-	 * @var integer
+	 * @var int
 	 */
-	protected $stackduration;
+	protected int $stackduration = 0;
 	
 	/**
 	 * Flag if test mode is activated.
 	 * 
-	 * @var boolean
+	 * @var bool
 	 */
-	protected $testmode;
+	protected bool $testmode = false;
 		
 	/**
 	 * Delay between every card turn in the test mode.
 	 * 
-	 * @var integer
+	 * @var int
 	 */
-	protected $testmodeturndelay;
+	protected int $testmodeturndelay = 0;
 	
 	/**
 	 * Array with the final information.
@@ -142,7 +144,7 @@ class SessionContainer {
 	 *			)
 	 * @var array 
 	 */
-	protected $m_arrFinalInformation = array();
+	protected array $m_arrFinalInformation = [];
 	
 	/**
 	 * __construct
@@ -164,7 +166,7 @@ class SessionContainer {
 	* @param array $m_arrExtIdMapping
 	* @return void
 	*/
-	public function setm_arrExtIdMapping($m_arrExtIdMapping){
+	public function setm_arrExtIdMapping(array $m_arrExtIdMapping): void {
 		$this->m_arrExtIdMapping = $m_arrExtIdMapping;
 	}
 	
@@ -174,7 +176,7 @@ class SessionContainer {
 	*
 	* @return array $m_arrExtIdMapping
 	*/
-	public function getm_arrExtIdMapping(){
+	public function getm_arrExtIdMapping(): array {
 		return $this->m_arrExtIdMapping;
 	}
 	
@@ -185,7 +187,7 @@ class SessionContainer {
 	* @param array $m_arrUidMapping
 	* @return void
 	*/
-	public function setm_arrUidMapping($m_arrUidMapping){
+	public function setm_arrUidMapping(array $m_arrUidMapping): void {
 		$this->m_arrUidMapping = $m_arrUidMapping;
 	}
 	
@@ -195,57 +197,57 @@ class SessionContainer {
 	*
 	* @return array $m_arrUidMapping
 	*/
-	public function getm_arrUidMapping(){
+	public function getm_arrUidMapping(): array {
 		return $this->m_arrUidMapping;
 	}
 	
 	/**
-	* Sets the m_strPairsType
+	* Sets the m_intPairsType
 	* Mode of the pairs game. See Constants with the prefix PairsController::c_intPairsType*
 	*
-	* @param integer $i_strPairsType
+	* @param int $i_intPairsType
 	* @return void
 	*/
-	public function setm_intPairsType($i_intPairsType){
+	public function setm_intPairsType(int $i_intPairsType): void {
 		$this->m_intPairsType = $i_intPairsType;
 	}
 	
 	/**
-	* Returns the m_strPairsType
+	* Returns the m_intPairsType
 	* Mode of the pairs game. See Constants with the prefix PairsController::c_intPairsType*
 	*
-	* @return integer $m_strPairsType
+	* @return int $m_intPairsType
 	*/
-	public function getm_intPairsType(){
+	public function getm_intPairsType(): int {
 		return $this->m_intPairsType;
 	}
 	
 	/**
 	* Sets the m_blnSplitMode
 	*
-	* @param boolean $m_blnSplitMode
+	* @param bool $i_blnSplitMode
 	* @return void
 	*/
-	public function setm_blnSplitMode($i_blnSplitMode){
+	public function setm_blnSplitMode(bool $i_blnSplitMode): void {
 		$this->m_blnSplitMode = $i_blnSplitMode;
 	}
 	
 	/**
 	* Returns the m_blnSplitMode
 	*
-	* @return boolean $m_blnSplitMode
+	* @return bool $m_blnSplitMode
 	*/
-	public function getm_blnSplitMode(){
+	public function getm_blnSplitMode(): bool {
 		return $this->m_blnSplitMode;
 	}
 	
 	/**
 	* Sets the m_arrI18n
 	*
-	* @param array $m_arrI18n
+	* @param array $i_arrI18n
 	* @return void
 	*/
-	public function setm_arrI18n($i_arrI18n){
+	public function setm_arrI18n(array $i_arrI18n): void {
 		$this->m_arrI18n = $i_arrI18n;
 	}
 	
@@ -254,178 +256,178 @@ class SessionContainer {
 	*
 	* @return array $m_arrI18n
 	*/
-	public function getm_arrI18n(){
+	public function getm_arrI18n(): array {
 		return $this->m_arrI18n;
 	}
 	
 	/**
 	* Sets the m_intPairsCount
 	*
-	* @param integer $m_intPairsCount
+	* @param int $i_intPairsCount
 	* @return void
 	*/
-	public function setm_intPairsCount($i_intPairsCount){
+	public function setm_intPairsCount(int $i_intPairsCount): void {
 		$this->m_intPairsCount = $i_intPairsCount;
 	}
 	
 	/**
 	* Returns the m_intPairsCount
 	*
-	* @return integer $m_intPairsCount
+	* @return int $m_intPairsCount
 	*/
-	public function getm_intPairsCount(){
+	public function getm_intPairsCount(): int {
 		return $this->m_intPairsCount;
 	}
 
 	/**
 	* Returns the pluspoints
 	*
-	* @return integer $pluspoints
+	* @return int $pluspoints
 	*/
-	public function getPluspoints(){
+	public function getPluspoints(): int {
 		return $this->pluspoints;
 	}
 	
 	/**
 	* Sets the pluspoints
 	*
-	* @param integer $pluspoints
+	* @param int $i_intPpluspoints
 	* @return void
 	*/
-	public function setPluspoints($i_intPpluspoints){
+	public function setPluspoints(int $i_intPpluspoints): void {
 		$this->pluspoints = $i_intPpluspoints;
 	}
 	
 	/**
 	* Returns the minuspoints
 	*
-	* @return integer $minuspoints
+	* @return int $minuspoints
 	*/
-	public function getMinuspoints(){
+	public function getMinuspoints(): int {
 		return $this->minuspoints;
 	}
 	
 	/**
 	* Sets the minuspoints
 	*
-	* @param integer $minuspoints
+	* @param int $i_intMinuspoints
 	* @return void
 	*/
-	public function setMinuspoints($i_intMinuspoints){
+	public function setMinuspoints(int $i_intMinuspoints): void {
 		$this->minuspoints = $i_intMinuspoints;
 	}
 	
 	/**
 	* Returns the turnbackdelay
 	*
-	* @return integer $turnbackdelay
+	* @return int $turnbackdelay
 	*/
-	public function getTurnbackdelay(){
+	public function getTurnbackdelay(): int {
 		return $this->turnbackdelay;
 	}
 	
 	/**
 	* Sets the turnbackdelay
 	*
-	* @param integer $turnbackdelay
+	* @param int $i_intTurnbackdelay
 	* @return void
 	*/
-	public function setTurnbackdelay($i_intTurnbackdelay){
+	public function setTurnbackdelay(int $i_intTurnbackdelay): void {
 		$this->turnbackdelay = $i_intTurnbackdelay;
 	}
 	
 	/**
 	* Returns the hintdelay
 	*
-	* @return integer $hintdelay
+	* @return int $hintdelay
 	*/
-	public function getHintdelay(){
+	public function getHintdelay(): int {
 		return $this->hintdelay;
 	}
 	
 	/**
 	* Sets the hintdelay
 	*
-	* @param integer $hintdelay
+	* @param int $i_intHintdelay
 	* @return void
 	*/
-	public function setHintdelay($i_intHintdelay){
+	public function setHintdelay(int $i_intHintdelay): void {
 		$this->hintdelay = $i_intHintdelay;
 	}
 	
 	/**
 	* Returns the turnduration
 	*
-	* @return integer $turnduration
+	* @return int $turnduration
 	*/
-	public function getTurnduration(){
+	public function getTurnduration(): int {
 		return $this->turnduration;
 	}
 	
 	/**
 	* Sets the turnduration
 	*
-	* @param integer $turnduration
+	* @param int $i_intTurnduration
 	* @return void
 	*/
-	public function setTurnduration($i_intTurnduration){
+	public function setTurnduration(int $i_intTurnduration): void {
 		$this->turnduration = $i_intTurnduration;
 	}
 	
 	/**
 	* Returns the stackduration
 	*
-	* @return integer $stackduration
+	* @return int $stackduration
 	*/
-	public function getStackduration(){
+	public function getStackduration(): int {
 		return $this->stackduration;
 	}
 	
 	/**
 	* Sets the stackduration
 	*
-	* @param integer $stackduration
+	* @param int $i_intStackduration
 	* @return void
 	*/
-	public function setStackduration($i_intStackduration){
+	public function setStackduration(int $i_intStackduration): void {
 		$this->stackduration = $i_intStackduration;
 	}
 	
 	/**
 	* Returns the testmode
 	*
-	* @return boolean $testmode
+	* @return bool $testmode
 	*/
-	public function getTestmode(){
+	public function getTestmode(): bool {
 		return $this->testmode;
 	}
 	
 	/**
 	* Sets the testmode
 	*
-	* @param boolean $testmode
+	* @param bool $i_blnTestmode
 	* @return void
 	*/
-	public function setTestmode($i_blnTestmode){
+	public function setTestmode(bool $i_blnTestmode): void {
 		$this->testmode = $i_blnTestmode;
 	}
 	
 	/**
 	* Returns the testmodeturndelay
 	*
-	* @return integer $testmodeturndelay
+	* @return int $testmodeturndelay
 	*/
-	public function getTestModeTurnDelay(){
+	public function getTestModeTurnDelay(): int {
 		return $this->testmodeturndelay;
 	}
 	
 	/**
 	* Sets the testmodeturndelay
 	*
-	* @param integer $testmodeturndelay
+	* @param int $i_intTestModeTurnDelay
 	* @return void
 	*/
-	public function setTestModeTurnDelay($i_intTestModeTurnDelay){
+	public function setTestModeTurnDelay(int $i_intTestModeTurnDelay): void {
 		$this->testmodeturndelay = $i_intTestModeTurnDelay;
 	}
 	
@@ -434,7 +436,7 @@ class SessionContainer {
 	*
 	* @return array $m_arrFinalInformation
 	*/
-	public function getFinalInformation(){
+	public function getFinalInformation(): array {
 		return $this->m_arrFinalInformation;
 	}
 	
@@ -444,7 +446,7 @@ class SessionContainer {
 	* @param array $i_arrFinalInformation
 	* @return void
 	*/
-	public function setFinalInformation($i_arrFinalInformation){
+	public function setFinalInformation(array $i_arrFinalInformation): void {
 		$this->m_arrFinalInformation = $i_arrFinalInformation;
 	}
 }

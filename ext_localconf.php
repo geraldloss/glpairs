@@ -1,11 +1,12 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
+if (!defined('TYPO3')) {
+    die('Do not access the file ext_localconf.php directly.');
 }
+
 
 // configure the plugin
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Loss.glpairs',
+	'Glpairs',
 	'Pi1',
 	array(
 	    \Loss\Glpairs\Controller\PairsController::class  => 'list,ajaxBasicData',

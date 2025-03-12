@@ -1,9 +1,13 @@
 <?php
+declare(strict_types=1);
+
 namespace Loss\Glpairs\Controller;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use Loss\Glpairs\Domain\Model\Pair;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+use Psr\Http\Message\ResponseInterface;
 
 
 /***************************************************************
@@ -284,11 +288,9 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	
 	
 	/**
-	 * m_objPairsRepository
-	 *
 	 * @var \Loss\Glpairs\Domain\Repository\PairsRepository
 	 */
-	protected $m_objPairsRepository;
+	protected \Loss\Glpairs\Domain\Repository\PairsRepository $m_objPairsRepository;
 	
 
     /**
@@ -297,7 +299,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * Value:			The uID of the Pair
      * @var array
      */
-    protected $m_arrExtIdMapping = array();
+    protected array $m_arrExtIdMapping = [];
 	     
     /**
      * Array with the mapping from the uID to the external ID 
@@ -307,24 +309,36 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * 		  extID2: 	The extID2 of the pair
      * @var array
      */
-    protected $m_arrUidMapping = array();
+    protected array $m_arrUidMapping = [];
 	     
-
+    /**
+     * @var \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer
+     */
+    protected \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer $contentObjectRenderer;
+	
     /**
      * Inject a Pairs repository to enable DI
      *
      * @param \Loss\Glpairs\Domain\Repository\PairsRepository $pairsRepository
      */
-    public function injectPairsRepository(\Loss\Glpairs\Domain\Repository\PairsRepository $pairsRepository)
+    public function injectPairsRepository(\Loss\Glpairs\Domain\Repository\PairsRepository $pairsRepository): void
     {
         $this->m_objPairsRepository = $pairsRepository;
     }
     
     /**
+     * @param \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer $contentObjectRenderer
+     */
+    public function injectContentObjectRenderer(\TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer $contentObjectRenderer): void
+    {
+        $this->contentObjectRenderer = $contentObjectRenderer;
+    }
+    
+	/**
 	 * All actions which we need to perform before avery other action
 	 * @see \TYPO3\CMS\Extbase\Mvc\Controller\ActionController::initializeAction()
 	 */
-	protected function initializeAction() {
+	protected function initializeAction(): void {
 		
 		// the init javascript content
 		$l_strJsInit = '';
@@ -354,9 +368,9 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	/**
 	 * action list
 	 *
-	 * @return void
+	 @return \Psr\Http\Message\ResponseInterface
 	 */
-	public function listAction() {
+	public function listAction(): ResponseInterface {
 		
 		// the Session container object
 		/* @var $l_objSessionContainer \Loss\Glpairs\Container\SessionContainer */
@@ -376,11 +390,10 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		// disable caching for this action, the paramter in the ext_localconf.php for the method
 		// ExtensionUtility::configurePlugin() is not enough
 		$l_objCacheService = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Service\CacheService::class);
-		//$l_objCacheService->clearPageCache( intval($GLOBALS['TSFE']->id));
-		$l_objCacheService->clearPageCache( intval(GeneralUtility::_GP('id')));
+		$l_objCacheService->clearPageCache((int)$GLOBALS['TSFE']->id);
 		
 		// retreive the pairs game from the database
-		$l_objPairsData = $this->m_objPairsRepository->getPairByName($this->settings['pairsgame']);
+		$l_objPairsData = $this->m_objPairsRepository->getPairByName((int)$this->settings['pairsgame']);
 		
 		// if the limit of max. cards in one game is activated
 		if ($l_objPairsData->getmaxcards() > 0) {
@@ -541,6 +554,9 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		$GLOBALS['TSFE']->fe_user->setAndSaveSessionData(
 								self::c_strSessionIdPairsData . '_' . $this->getPairsUniqueId(), 
 								self::$arrPairsData);
+		
+		// return response object
+		return $this->htmlResponse();
 	}
 	
 	/**
@@ -552,7 +568,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * 		arrUidMap:		Array with Mapping from uID to external ID
 	 * See also the constants with the prefix c_strArrPairsData*
 	 */	
-	public function ajaxBasicDataAction($i_strUniquId) {
+	public function ajaxBasicDataAction(string $i_strUniquId): void {
 		
 		// array with the ajax response
 		$l_arrAjaxResponse = array();
@@ -602,7 +618,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * 																		   If 0 then all obejcts are returned.
 	 * @return 	\TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	protected function randomizeObjectStorage($i_objObjectStorage, $i_intMaxCards = 0){
+	protected function randomizeObjectStorage(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $i_objObjectStorage, int $i_intMaxCards = 0): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		// the returning ObjectStorage
 		/* @var $l_objObjectStorage  \TYPO3\CMS\Extbase\Persistence\ObjectStorage */
 	    $l_objObjectStorage = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class); 
@@ -653,13 +669,8 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @param array  	$i_arrArray
 	 * @return boolean
 	 */
-	protected function existKeyOfArray($i_intKey, $i_arrArray) {
-		if (isset($i_arrArray[$i_intKey])) {
-		    return true;
-		}
-		else {
-		    return false;
-		}
+	protected function existKeyOfArray(int $i_intKey, array $i_arrArray): bool {
+		return isset($i_arrArray[$i_intKey]);
 	}
 	
 	/**
@@ -669,7 +680,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @param 	array 		$i_arrArray
 	 * @return 	int
 	 */
-	protected function getNextFreeKey($i_intKey, $i_arrArray) {
+	protected function getNextFreeKey(int $i_intKey, array $i_arrArray): int {
 		// the free key
 		$l_intKey = 0;
 		
@@ -699,7 +710,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @param 	int	       $i_intValue
 	 * @return 	int
 	 */
-	protected function addIntValue($i_intValue) {
+	protected function addIntValue(int $i_intValue): int {
 		
 		$l_intValue = $i_intValue;
 		
@@ -735,8 +746,8 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * 																here. See the descrition of parameter $i_intDefault1
 	 * @return 	\TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Persistence\ObjectStorage>
 	 */
-	protected function getStructuredPairs($i_objPairs, $i_strCardType1, $i_intDefault1, 
-											  $i_strCardNumber,  $i_strCardType2 = '', $i_intDefault2 = 0 ) {
+	protected function getStructuredPairs(\Loss\Glpairs\Domain\Model\Pairs $i_objPairs, string $i_strCardType1, int $i_intDefault1, 
+										  string $i_strCardNumber,  string $i_strCardType2 = '', int $i_intDefault2 = 0 ): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		
 		// the raw ObjectStorage with the pairs
 		/* @var $l_objRawPairsObjectStorage \TYPO3\CMS\Extbase\Persistence\ObjectStorage */ 
@@ -844,7 +855,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage 	$i_objObjectStorage	The object storage with all the pairs.
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage						A ObjectStorage with all the pairs structured into rows.
 	 */
-	protected function structurePairsIntoRows($i_objPairs, $i_objObjectStorage) {
+	protected function structurePairsIntoRows(\Loss\Glpairs\Domain\Model\Pairs $i_objPairs, \TYPO3\CMS\Extbase\Persistence\ObjectStorage $i_objObjectStorage): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 
 		// The returning ObjectStorage 
 		/* @var $l_objRetObjectStorage \TYPO3\CMS\Extbase\Persistence\ObjectStorage */
@@ -906,7 +917,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @param integer 	$i_intDefault	1 if the default is image1 or description1 or 2 if default is image2 or description2.
 	 * @param integer	$i_intCardNumber 1 For the first and 2 for the second card in the pair. 
 	 */
-	protected function setPairDefaultParameter($i_objObjectStorage, $i_strCardType, $i_intDefault, $i_intCardNumber) {
+	protected function setPairDefaultParameter(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $i_objObjectStorage, string $i_strCardType, int $i_intDefault, int $i_intCardNumber): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		// a pair of cards
 		/* @var $l_objPair \Loss\Glpairs\Domain\Model\Pair */
 		$l_objPair = NULL;
@@ -975,7 +986,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @param 	\Loss\Glpairs\Domain\Model\Pairs			$i_objPairs	The pairs game with all the pairs included.
 	 * @return 	\Loss\Glpairs\Domain\Model\Pairs						The updated pairs game with the interal IDs
 	 */
-	protected function setExternalIds($i_objPairs) {
+	protected function setExternalIds(\Loss\Glpairs\Domain\Model\Pairs $i_objPairs): void {
 		
 		// all the pairs of this pairs game
 		/* @var $l_objPairObjectStorage \TYPO3\CMS\Extbase\Persistence\ObjectStorage */
@@ -1020,7 +1031,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * 								    for a check the the external ID is unique
 	 * @return int					    The external ID
 	 */
-	protected function getRandomExtId($i_arrExtIdMapping) {
+	protected function getRandomExtId(array $i_arrExtIdMapping): int {
 		// the new external IDy
 		$l_intExtId = 0;
 		
@@ -1053,11 +1064,11 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * 
 	 * @return string	The unique ID.
 	 */
-	protected function getPairsUniqueId() {
+	protected function getPairsUniqueId(): string {
 		// the returning unique ID
 		$l_strUniqueID = '';
 		
-		$l_strUniqueID = $this->configurationManager->getContentObject()->data['uid'] . '_' . 
+		$l_strUniqueID = $GLOBALS['TSFE']->id . '_' . 
 						 $this->settings['pairsgame'];
 		
 		return  $l_strUniqueID;
@@ -1069,7 +1080,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @param 	string 	$i_strValue					The value vor which we should search
 	 * @return	boolean								True if we have found the value 
 	 */
-	protected function existAdditionalHeaderData($i_arrAdditionalHeaderData, $i_strValue) {
+	protected function existAdditionalHeaderData(array $i_arrAdditionalHeaderData, string $i_strValue): bool {
 		// one line in the header data
 		$l_strHeaderLine = '';
 		// the returning value
@@ -1091,7 +1102,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * Returns a array with all strings for the frontend dialogs in the given language
 	 * @return	array	Array with all internationalisation strings in the given language 
 	 */
-	protected function getI18nFrontendValues() {
+	protected function getI18nFrontendValues(): array {
 		// the returnung array with the I18N values
 		$l_arrI18nValues = array();
 
@@ -1112,7 +1123,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $i_objObjectStorage
 	 * @return \Loss\Glpairs\Domain\Model\Pair
 	 */
-	protected function searchPairFromObjStorage($i_intUid, $i_objObjectStorage) {
+	protected function searchPairFromObjStorage(int $i_intUid, \TYPO3\CMS\Extbase\Persistence\ObjectStorage $i_objObjectStorage): \Loss\Glpairs\Domain\Model\Pair {
 		// the current pair in the loop
 		/* @var $l_objPair \Loss\Glpairs\Domain\Model\Pair */
 		$l_objPair = NULL; 
@@ -1140,7 +1151,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * 						  height   => The height of the window with the final information
 	 *  					)
 	 */
-	protected function getFinalInformationArray($i_objPairs){
+	protected function getFinalInformationArray(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $i_objPairs): array {
 		// the current pair in the loop
 		/* @var $l_objPair \Loss\Glpairs\Domain\Model\Pair */
 		$l_objPair = NULL; 
