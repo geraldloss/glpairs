@@ -33,7 +33,7 @@ Pairs
         pairs, memory, typo3, plugin, game, extbase, forAdmins, forIntermediates
 
     :Copyright:
-        2010-2017
+        2010-2025
 
     :Author:
         Gerald Loss

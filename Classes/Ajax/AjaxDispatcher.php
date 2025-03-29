@@ -88,9 +88,10 @@ class AjaxDispatcher {
 	    // get the UniqeID from the GET/POST
 	    $l_strUniquId = (string) $this->getRequestArgumentsFromGetPost( $request )['actionArguments']['i_strUniquId'];
 	    
-	    /* @var \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController $GLOBALS['TSFE'] */
 	    // restore the static array with all pairs data from the session
-	    PairsController::$arrPairsData = $GLOBALS['TSFE']->fe_user->getKey('ses',
+		/** @var \TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication $frontendUser */
+		$frontendUser = $request->getAttribute('frontend.user');
+		PairsController::$arrPairsData = $frontendUser->getKey('ses',
 	        PairsController::c_strSessionIdPairsData . '_' . $l_strUniquId);
 	    
 	    // get the session data container

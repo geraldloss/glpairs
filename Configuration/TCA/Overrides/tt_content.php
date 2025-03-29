@@ -1,16 +1,21 @@
 <?php
+declare(strict_types=1);
 defined('TYPO3') or die();
 
-// register frontend plugin pi1
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
+// register frontend plugin pairs
+ExtensionUtility::registerPlugin(
     'glpairs',
-    'Pi1',
-    'A Pairs game for the frontend with many posibilities for configuration'
+    'pairs',
+    'LLL:EXT:glpairs/Resources/Private/Language/locallang.xlf:plugin_name'
 );
 
-// insert flexform for plugin pi1
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['glpairs_pi1'] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
-    'glpairs_pi1', 
+// insert flexform for plugin pairs
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['glpairs_pairs'] = 'recursive,select_key,pages';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['glpairs_pairs'] = 'pi_flexform';
+ExtensionManagementUtility::addPiFlexFormValue(
+    'glpairs_pairs', 
     'FILE:EXT:glpairs/Configuration/FlexForms/Pairs.xml'
 );

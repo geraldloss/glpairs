@@ -2,12 +2,14 @@
 declare(strict_types=1);
 
 namespace Loss\Glpairs\Controller;
+
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use Loss\Glpairs\Domain\Model\Pair;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Session\UserSessionManager;
+use TYPO3\CMS\Core\Http\ApplicationType;
 
 
 /***************************************************************
@@ -62,7 +64,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * The Plugin Name
 	 * @var \string
 	 */
-	const c_strPluginName = 'pi1';
+	const c_strPluginName = 'pairs';
 	
 	/**
 	 * Pairstype for the same picture for every pair.
@@ -384,13 +386,12 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		$l_objPairsData = NULL;
 		
 		// cache service object
-		/* @var $l_bojCacheService \TYPO3\CMS\Extbase\Service\CacheService */
-		$l_objCacheService = NULL;
-		
-		// disable caching for this action, the paramter in the ext_localconf.php for the method
-		// ExtensionUtility::configurePlugin() is not enough
 		$l_objCacheService = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Service\CacheService::class);
-		$l_objCacheService->clearPageCache((int)$GLOBALS['TSFE']->id);
+		
+		if (isset($this->request->getAttribute('currentContentObject')->data['pid'])) {
+			$content_pid = $this->request->getAttribute('currentContentObject')->data['pid'];
+		}
+		$l_objCacheService->clearPageCache((int)$content_pid);
 		
 		// retreive the pairs game from the database
 		$l_objPairsData = $this->m_objPairsRepository->getPairByName((int)$this->settings['pairsgame']);
@@ -527,6 +528,12 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		// assign the pairs object with the overall data for the pairs game
 		$this->view->assign('pairsGame', $l_objPairsData);
 		
+		// Get current content element uid from request
+		$currentContentUid = $this->request->getAttribute('currentContentObject')->data['uid'] ?? 0;
+		
+		// Assign it to your view if needed
+		$this->view->assign('contentUid', $currentContentUid);
+		
 		// create the session container
 		$l_objSessionContainer = GeneralUtility::makeInstance(\Loss\Glpairs\Container\SessionContainer::class);
 		
@@ -550,10 +557,16 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		// fill the static array for the session storage
 		self::$arrPairsData[$this->getPairsUniqueId()] = $l_objSessionContainer;
 
-		// store this data for later access in the ajax sessions
-		$GLOBALS['TSFE']->fe_user->setAndSaveSessionData(
-								self::c_strSessionIdPairsData . '_' . $this->getPairsUniqueId(), 
-								self::$arrPairsData);
+		// Get session manager and store data
+		if (ApplicationType::fromRequest($this->request)->isFrontend()) {
+		    $frontendUser = $this->request->getAttribute('frontend.user');
+		    if ($frontendUser) {
+		        $frontendUser->setAndSaveSessionData(
+		            self::c_strSessionIdPairsData . '_' . $this->getPairsUniqueId(),
+		            self::$arrPairsData
+		        );
+		    }
+		}
 		
 		// return response object
 		return $this->htmlResponse();
@@ -576,10 +589,16 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		/* @var $l_objSessionContainer \Loss\Glpairs\Container\SessionContainer */
 		$l_objSessionContainer = NULL;
 		
-		/* @var \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController $GLOBALS['TSFE'] */ 
 		// restore the static array with all pairs data from the session
-		self::$arrPairsData = $GLOBALS['TSFE']->fe_user->getKey('ses', 
-														self::c_strSessionIdPairsData . '_' . $i_strUniquId);
+		if (ApplicationType::fromRequest($this->request)->isFrontend()) {
+		    $sessionManager = UserSessionManager::create('FE');
+		    $session = $sessionManager->getSession(
+		        $this->request->getAttribute('frontend.user')->getSession()->getIdentifier()
+		    );
+		    self::$arrPairsData = $session->get(
+		        self::c_strSessionIdPairsData . '_' . $i_strUniquId
+		    );
+		}
 		
 		// get the session data container
 		$l_objSessionContainer = self::$arrPairsData[$i_strUniquId];
@@ -1062,16 +1081,16 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	/**
 	 * Returns the unique ID of the pairs game.
 	 * 
-	 * @return string	The unique ID.
+	 * @return string The unique ID.
 	 */
 	protected function getPairsUniqueId(): string {
-		// the returning unique ID
-		$l_strUniqueID = '';
-		
-		$l_strUniqueID = $GLOBALS['TSFE']->id . '_' . 
-						 $this->settings['pairsgame'];
-		
-		return  $l_strUniqueID;
+	    // Get current content element uid from request
+	    $currentContentUid = $this->request->getAttribute('currentContentObject')->data['uid'] ?? 0;
+	    
+// 		if (isset($this->request->getAttribute('currentContentObject')->data['pid'])) {
+// 			$content_pid = $this->request->getAttribute('currentContentObject')->data['pid'];
+// 		}
+	    return $currentContentUid . '_' . $this->settings['pairsgame'];
 	}
 	
 	/**
@@ -1079,7 +1098,7 @@ class PairsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @param 	array 	$i_arrAdditionalHeaderData	The array with all additional header datas
 	 * @param 	string 	$i_strValue					The value vor which we should search
 	 * @return	boolean								True if we have found the value 
-	 */
+
 	protected function existAdditionalHeaderData(array $i_arrAdditionalHeaderData, string $i_strValue): bool {
 		// one line in the header data
 		$l_strHeaderLine = '';

@@ -1622,7 +1622,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	    ->getIdentifier();
 	    
 	    // return the path without leading slash 
-	    return ltrim($imagePath, '/');
+	    return $imagePath;
 	}
 
 	/**
@@ -1646,7 +1646,7 @@ class Pair extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
                     	     ->getIdentifier();
 	    
 	    // return the path without leading slash
-	    return ltrim($imagePath, '/');
+	    return $imagePath;
 	}
 }
 ?>

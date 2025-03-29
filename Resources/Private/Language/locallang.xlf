@@ -21,6 +21,9 @@
 			<trans-unit id="frontend_testmode" xml:space="preserve">
 				<source><![CDATA[Test mode. The cards are only displayed.]]></source>
 			</trans-unit>
+			<trans-unit id="plugin_name" xml:space="preserve">
+				<source><![CDATA[A Pairs game]]></source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

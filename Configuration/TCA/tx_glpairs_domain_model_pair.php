@@ -10,7 +10,6 @@ $tx_glpairs_domain_model_pair = [
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'dividers2tabs' => TRUE,
         'origUid' => 't3_origuid',
         'languageField' => 'sys_language_uid',
@@ -26,73 +25,79 @@ $tx_glpairs_domain_model_pair = [
         'searchFields' => 'name,fal_image1,fal_image2,description,use_description,',
         'iconfile' => 'EXT:glpairs/Resources/Public/Icons/tx_glpairs_domain_model_pair.gif'
     ],
-	'types' => [
-	    '0' => [
-	        'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, bordersize, finaltextactive, 
-									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabimage1,fal_image1, height1, width1, 
-									--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime',
-	        'subtype_value_field' => 'finaltextactive',
-	        'subtypes_addlist' => ['1' => 'finaltextheight, finaltextwidth, finalpicheight, finalpicwidth, finaltext']
-	    ],
-	    '1' => [
-	        'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, bordersize, finaltextactive,
-									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabimage1, fal_image1, height1, width1, 
-									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabimage2, fal_image2, height2, width2, 
-									--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime',
-	        'subtype_value_field' => 'finaltextactive',
-	        'subtypes_addlist' => ['1' => 'finaltextheight, finaltextwidth, finalpicheight, finalpicwidth, finaltext']
-	    ],
-	    '2' => [
-	        'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, bordersize, finaltextactive,
-									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabtext1, description1, fontsize1, textheight1, textwidth1,
-									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabimage1, fal_image1, height1, width1, 
-									--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime',
-	        'subtype_value_field' => 'finaltextactive',
-	        'subtypes_addlist' => ['1' => 'finaltextheight, finaltextwidth, finalpicheight, finalpicwidth, finaltext']
-	    ],
-	    '3' => [
-	        'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1, type, name, bordersize, finaltextactive,
-									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabtext1, description1, fontsize1, textheight1, textwidth1,
-									--div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabtext2, description2, fontsize2, textheight2, textwidth2,
-									--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime',
-	        'subtype_value_field' => 'finaltextactive',
-	        'subtypes_addlist' => ['1' => 'finaltextheight, finaltextwidth, finalpicheight, finalpicwidth, finaltext']
-	    ]
-	],
+    'types' => [
+        '0' => [
+            'showitem' => '
+                sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1,
+                type, name, bordersize, finaltextactive,
+                finaltextheight, finaltextwidth, finalpicheight, finalpicwidth, finaltext,
+                --div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabimage1,
+                fal_image1, height1, width1,
+                --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:be_users.tabs.access,
+                starttime, endtime
+            ',
+        ],
+        '1' => [
+            'showitem' => '
+                sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1,
+                type, name, bordersize, finaltextactive,
+                finaltextheight, finaltextwidth, finalpicheight, finalpicwidth, finaltext,
+                --div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabimage1,
+                fal_image1, height1, width1,
+                --div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabimage2,
+                fal_image2, height2, width2,
+                --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:be_users.tabs.access,
+                starttime, endtime
+            ',
+        ],
+        '2' => [
+            'showitem' => '
+                sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1,
+                type, name, bordersize, finaltextactive,
+                finaltextheight, finaltextwidth, finalpicheight, finalpicwidth, finaltext,
+                --div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabtext1,
+                description1, fontsize1, textheight1, textwidth1,
+                --div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabimage1,
+                fal_image1, height1, width1,
+                --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:be_users.tabs.access,
+                starttime, endtime
+            ',
+        ],
+        '3' => [
+            'showitem' => '
+                sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;1,
+                type, name, bordersize, finaltextactive,
+                finaltextheight, finaltextwidth, finalpicheight, finalpicwidth, finaltext,
+                --div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabtext1,
+                description1, fontsize1, textheight1, textwidth1,
+                --div--;LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.tabtext2,
+                description2, fontsize2, textheight2, textwidth2,
+                --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:be_users.tabs.access,
+                starttime, endtime
+            ',
+        ],
+    ],
 	'palettes' => [
 		'1' => ['showitem' => '']
 	],
 	'columns' => [
-//      for Typo3 11.5 switch to this syntax. But in the moment it breakks with 10.4
-// 		'sys_language_uid' => array(
-// 			'exclude' => 1,
-// 			'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.language',
-// 		    'config' => array(
-// 		        'type'       => 'language',
-// 		    ),
-// 		),
 	    'sys_language_uid' => [
 	        'exclude' => 1,
-	        'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.language',
+	        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
 	        'config' => [
-	            'type' => 'select',
-	            'foreign_table' => 'sys_language',
-	            'foreign_table_where' => 'ORDER BY sys_language.title',
-	            'items' => [
-	                ['LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages', -1],
-	                ['LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0]
-	            ],
-	            'renderType' => 'selectSingle',
-	            'default' => 0
+	            'type' => 'language',
 	        ],
 	    ],
 	    'l10n_parent' => [
 			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
 			'config' => [
 				'type' => 'select',
 				'items' => [
-					['', 0],
+					[
+						'label' => '',
+						'value' => 0
+					],
 				],
 				'foreign_table' => 'tx_glpairs_domain_model_pair',
 				'foreign_table_where' => 'AND tx_glpairs_domain_model_pair.pid=###CURRENT_PID### AND tx_glpairs_domain_model_pair.sys_language_uid IN (-1,0)',
@@ -105,7 +110,7 @@ $tx_glpairs_domain_model_pair = [
 			],
 		],
 		't3ver_label' => [
-			'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
@@ -114,45 +119,31 @@ $tx_glpairs_domain_model_pair = [
 		],
 		'hidden' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
 			'config' => [
 				'type' => 'check',
 			],
 		],
 		'starttime' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
 			'config' => [
-				'type' => 'input',
-				'size' => 13,
-				'eval' => 'datetime,int',
-				'checkbox' => 0,
+				'type' => 'datetime',
 				'default' => 0,
-				'range' => [
-					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-				],
 			    'behaviour' => [
-			        'allowLanguageSynchronization' => TRUE
+			        'allowLanguageSynchronization' => true
 			    ],
-			    'renderType' => 'inputDateTime',
 			],
 		],
 		'endtime' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
 			'config' => [
-				'type' => 'input',
-				'size' => 13,
-				'eval' => 'datetime,int',
-				'checkbox' => 0,
+				'type' => 'datetime',
 				'default' => 0,
-				'range' => [
-					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-				],
 			    'behaviour' => [
-			        'allowLanguageSynchronization' => TRUE
+			        'allowLanguageSynchronization' => true
 			    ],
-			    'renderType' => 'inputDateTime',
 			],
 		],
 		'type' => [
@@ -161,14 +152,26 @@ $tx_glpairs_domain_model_pair = [
 				'config' => [
 					'type' => 'select',
 				    'items' => 	[
-				    				['LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.type.same', 0],
-				    				['LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.type.2pics', 1],
-				    				['LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.type.text', 2],
-				    				['LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.type.textonly', 3]
+				    				[
+				    					'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.type.same',
+				    					'value' => 0
+				    				],
+				    				[
+				    					'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.type.2pics',
+				    					'value' => 1
+				    				],
+				    				[
+				    					'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.type.text',
+				    					'value' => 2
+				    				],
+				    				[
+				    					'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model.type.textonly',
+				    					'value' => 3
+				    				]
 				    ],
 					'size' => 1,
 					'maxitems' => 1,
-					'eval' => 'required',
+					'required' => true,
 					'default' => 0,
 					'renderType' => 'selectSingle',
 			    ],
@@ -179,7 +182,8 @@ $tx_glpairs_domain_model_pair = [
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,required'
+				'required' => true,
+				'trim' => true
 			],
 		],
 	    'fal_image1' => [
@@ -199,7 +203,8 @@ $tx_glpairs_domain_model_pair = [
 	        'config' => [
 	            'type' => 'input',
 	            'size' => 30,
-	            'eval' => 'trim,required',
+	            'required' => true,
+	            'trim' => true,
 	            'default' => ''
 	        ],
 	    ],
@@ -207,18 +212,16 @@ $tx_glpairs_domain_model_pair = [
 			'exclude' => 0,
 			'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.height1',
 			'config' => [
-				'type' => 'input',
+				'type' => 'number',
 				'size' => 4,
-				'eval' => 'int'
 			],
 		],
 		'width1' => [
 			'exclude' => 0,
 			'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.width1',
 			'config' => [
-				'type' => 'input',
+				'type' => 'number',
 				'size' => 4,
-				'eval' => 'int'
 			],
 		], 
 	    'fal_image2' => [
@@ -238,7 +241,8 @@ $tx_glpairs_domain_model_pair = [
 	        'config' => [
 	            'type' => 'input',
 	            'size' => 30,
-	            'eval' => 'trim,required',
+	            'required' => true,
+	            'trim' => true,
 	            'default' => ''
 	        ],
 	    ],
@@ -246,9 +250,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.height2',
 				'config' => [
-						'type' => 'input',
+						'type' => 'number',
 						'size' => 4,
-						'eval' => 'int',
                         'default' => 0
 				],
 		],
@@ -256,9 +259,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.width2',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -266,9 +268,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.bordersize',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -278,16 +279,16 @@ $tx_glpairs_domain_model_pair = [
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,required'
+				'required' => true,
+				'trim' => true
 			],
 		],
 		'fontsize1' => [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.fontsize',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -296,9 +297,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.textheight',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -306,9 +306,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.textwidth',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -318,16 +317,16 @@ $tx_glpairs_domain_model_pair = [
 				'config' => [
 						'type' => 'input',
 						'size' => 30,
-						'eval' => 'trim,required'
+						'required' => true,
+						'trim' => true
 				],
 		],
 		'fontsize2' => [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.fontsize',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -335,9 +334,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.textheight',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -345,9 +343,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.textwidth',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -357,7 +354,7 @@ $tx_glpairs_domain_model_pair = [
 				'config' => [
 						'type' => 'check',
 				],
-		        'onChange' => 'reload',
+                'displayCond' => 'FIELD:type:IN:0,1,2,3'
 		],
 		'finaltext' => [
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.finaltext',
@@ -372,9 +369,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.finaltextwidth',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -382,9 +378,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.finaltextheight',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -392,9 +387,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.finalpic_width',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		],
@@ -402,9 +396,8 @@ $tx_glpairs_domain_model_pair = [
 				'exclude' => 0,
 				'label' => 'LLL:EXT:glpairs/Resources/Private/Language/locallang_db.xlf:tx_glpairs_domain_model_pair.finalpic_height',
 				'config' => [
-					'type' => 'input',
+					'type' => 'number',
 					'size' => 4,
-				    'eval' => 'int',
 				    'default' => 0
 				],
 		]

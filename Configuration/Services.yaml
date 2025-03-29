@@ -10,18 +10,4 @@ services:
 
   Loss\Glpairs\Middleware\GlpairsMiddleware:
     public: true
-
-  Vendor\Extension\ContextualHelp:
-    tags:
-      - name: context.help
-        table: tt_content.pi_flexform.glpairs_pi1.list
-        file: EXT:glpairs/Resources/Private/Language/locallang_csh_flexForm.xlf
-      
-      - name: context.help
-        table: tx_glpairs_domain_model_pair
-        file: EXT:glpairs/Resources/Private/Language/locallang_csh_tx_glpairs_domain_model_pair.xlf
-        
-      - name: context.help
-        table: tx_glpairs_domain_model_pairs
-        file: EXT:glpairs/Resources/Private/Language/locallang_csh_tx_glpairs_domain_model_pairs.xlf
-      
+     

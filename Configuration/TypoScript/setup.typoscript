@@ -1,8 +1,8 @@
-tt_content.list.20.glpairs_pi1 = USER
-tt_content.list.20.glpairs_pi1{
+tt_content.list.20.glpairs_pairs= USER
+tt_content.list.20.glpairs_pairs{
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
     extensionName = Glpairs
-    pluginName = Pi1
+    pluginName = Pairs
     vendorName = Loss
     controller = Glpairs
     action = list

@@ -27,6 +27,10 @@
 				<source><![CDATA[Test mode. The cards are only displayed.]]></source>
 				<target><![CDATA[Testmodus. Die Karten werden nur angezeigt.]]></target>
 			</trans-unit>
+			<trans-unit id="plugin_name" xml:space="preserve">
+				<source><![CDATA[A Pairs game]]></source>
+				<target><![CDATA[Ein Memory Spiel]]></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

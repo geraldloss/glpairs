@@ -1,6 +1,5 @@
 # TYPO3 Extension `glpairs`
-[![TYPO3 10](https://img.shields.io/badge/TYPO3-10-orange.svg)](https://get.typo3.org/version/10)
-[![TYPO3 11](https://img.shields.io/badge/TYPO3-11-orange.svg)](https://get.typo3.org/version/11)
+[![TYPO3 13](https://img.shields.io/badge/TYPO3-10-orange.svg)](https://get.typo3.org/version/13)
 [![Latest Stable Version](http://poser.pugx.org/geraldloss/glpairs/v)](https://packagist.org/packages/geraldloss/glpairs)
 [![License](http://poser.pugx.org/geraldloss/glpairs/license)](https://packagist.org/packages/geraldloss/glpairs)
 
